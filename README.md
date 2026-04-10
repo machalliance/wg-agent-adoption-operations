@@ -1,0 +1,1 @@
+# wg-agent-adoption-operations
