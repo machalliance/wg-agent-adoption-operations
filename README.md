@@ -8,7 +8,7 @@ This working group helps enterprises adopt agentic AI in a controlled way and bu
 
 | Name | Role | Organization | Title |
 |------|------|-------------|-------|
-| Andrew Kumar | Co-Chair | Bloomreach | Head of Agentic Platforms |
+| Andrew Kumar | Co-Chair | Bloomreach | Head of Loomi Connect |
 | Dylan Valade | Co-Chair | Cuesta Partners | Principal Consultant |
 | Everett Zufelt | Program Lead, Agent Ecosystem | Orium | VP, Agentic Systems & Partnerships |
 | Rebecca Veldon | Working Group Admin | MACH Alliance | Data and Systems Manager |
