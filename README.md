@@ -17,9 +17,9 @@ This working group helps enterprises adopt agentic AI in a controlled way and bu
 
 <!-- Add members as they join -->
 
-| Name | Organization |
-|------|-------------|
-| | |
+| Name       | Organization    |
+| ---------- | --------------- |
+| Ryan Lunka | Aries Solutions |
 
 ## Meeting Schedule
 
