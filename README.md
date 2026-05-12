@@ -26,7 +26,6 @@ This working group helps enterprises adopt agentic AI in a controlled way and bu
 - **Cadence:** Bi-weekly
 - **First meeting:** May 12, 2026
 - **Time:** 11:00 AM EST
-- **Video link:** TBD
 - **Minutes:** [meetings/](./meetings/)
 
 ## Deliverables
