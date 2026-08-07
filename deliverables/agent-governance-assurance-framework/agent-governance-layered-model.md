@@ -50,7 +50,7 @@ A human-oversight-and-escalation matrix answers what to do when something goes w
 
 This layer is one document per agent, produced before it goes near production. It covers the agent's purpose and scope, the tools and data it can touch, its decision authority (what it can do without a human, and what it cannot), its escalation and override design, and the evidence and reasoning for why this agent sits at the tier claimed in Layer 1.
 
-That last section carries the most weight. It answers Layer 1's diagnostic with this agent's specifics instead of in the abstract. The dossier is close in spirit to a model or system card, scoped to an agent's behavior and authority instead of a model's training data and benchmarks. It is the document a reviewer reads to decide whether the agent is what it claims to be.
+That last section carries the most weight. It answers Layer 1's diagnostic with this agent's specifics instead of in the abstract. The dossier is close in spirit to a model or system card, scoped to an agent's behavior and authority instead of a model's training data and benchmarks. The nearest counterpart in existing standards is [AIUC-1](https://aiuc-1.com/)'s accountability requirements for compliance documentation and failure planning, which sit at the level of an organization's conformance; the dossier is per-agent and carries its own tier justification. It is the document a reviewer reads to decide whether the agent is what it claims to be.
 
 ### Layer 4: Runtime operations, from observation to response
 
@@ -64,7 +64,7 @@ The continuous loop is also the mechanism that re-verifies Layers 1 and 3 over t
 
 **Primary artifact: Audit Trail & Compliance Logging Specification.**
 
-Layer 4's observability is scoped for debugging: decision traces and tool usage that help an operator understand what an agent did. Compliance has different requirements: immutability, defined retention periods, tamper-evidence, and mapping to existing frameworks such as SOC 2, ISO 27001, and the EU AI Act's logging obligations for higher-risk systems. This layer keeps the debugging question separate from the question an auditor asks, which is whether you can prove what happened and why. Both draw on overlapping telemetry, but they are not the same artifact.
+Layer 4's observability is scoped for debugging: decision traces and tool usage that help an operator understand what an agent did. Compliance has different requirements: immutability, defined retention periods, tamper-evidence, and mapping to existing frameworks such as SOC 2, ISO 27001, and the EU AI Act's logging obligations for higher-risk systems. [AIUC-1](https://aiuc-1.com/)'s accountability domain covers the same ground for agents specifically, and its published crosswalks to NIST AI RMF, ISO 42001, the EU AI Act, and MITRE ATLAS mean a log specification built against it inherits those mappings instead of re-deriving them. This layer keeps the debugging question separate from the question an auditor asks, which is whether you can prove what happened and why. Both draw on overlapping telemetry, but they are not the same artifact.
 
 The loop closes here: this layer's findings should periodically revise Layer 1's risk tiers and thresholds. Without that feedback path, governance stays fixed on paper while the agents it is meant to govern keep changing underneath it.
 

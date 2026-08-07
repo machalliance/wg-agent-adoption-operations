@@ -56,6 +56,11 @@ Related work worth reading alongside this framework:
   an emerging vendor category for independent oversight layers that supervise other
   agents, covering visibility & traceability, continuous assurance, and runtime inspection
   & enforcement. A parallel to Layer 4.
+- **[AIUC-1](https://aiuc-1.com/)**: a certifiable agent standard published by the AIUC-1
+  Consortium, covering data & privacy, security, safety, reliability, accountability, and
+  society, with third-party audit and published crosswalks to NIST AI RMF, ISO 42001, the
+  EU AI Act, MITRE ATLAS, and OWASP. It spans Layers 1 through 5 as certification criteria;
+  this framework differs in being an operating structure rather than a conformance target.
 - **[NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)**,
   extended by the **[Cloud Security Alliance's Agentic AI Profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/)**:
   a four-function (Govern/Map/Measure/Manage) extension with agent-specific categories. Its
