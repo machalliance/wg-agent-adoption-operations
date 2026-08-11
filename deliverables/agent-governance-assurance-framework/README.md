@@ -15,18 +15,19 @@ governance, production readiness, operations, and observability. Three of them c
 governance, safety, and compliance. This repository organizes those three as five
 interlocking layers instead of a flat list of deliverables. The layering is the point: a
 governance claim made at the policy level is only true if the platform enforces it, the
-agent's design reflects it, runtime behavior confirms it, and the audit record proves it.
-Break any link and every layer above it is an assertion.
+agent's design reflects it, someone accountable has accepted it, runtime behavior confirms
+it, and the audit record proves it. Break any link and every layer above it is an
+assertion.
 
 ## The model
 
-![Flow diagram titled "Agent Governance, Safety and Compliance: A Layered Model". Five boxes are stacked in a single column, shaded from light blue at the top to dark navy at the bottom, each connected by a downward arrow to the one below it. From top to bottom they are Layer 1, Enterprise Policy and Risk Classification; Layer 2, Permission and Access Control Maturity Ladder; Layer 3, Agent Design and Classification Dossier; Layer 4, Runtime Operations; and Layer 5, Audit Trail and Compliance Assurance. The table below this figure gives the contents of each box. A single orange line runs up the right-hand side from Layer 5 to an arrowhead at Layer 1, labelled "Audit findings revise risk tiers and enforcement thresholds".](layered_model.png)
+![Flow diagram titled "Agent Governance, Safety and Compliance: A Layered Model". Five boxes are stacked in a single column, shaded from light blue at the top to dark navy at the bottom, each connected by a downward arrow to the one below it. Each box names the layer and its primary artifact. From top to bottom they are Layer 1, Enterprise Policy and Risk Classification; Layer 2, Platform Enforcement; Layer 3, Agent Design; Layer 4, Runtime Operations, split into a Continuous half and a Triggered half; and Layer 5, Audit and Assurance. The table below this figure gives the contents of each box. The arrows between the boxes are labelled, in order, "tiers set enforcement requirements", "controls are scoped per agent", "risk accepted, operation authorized", and "telemetry becomes evidence". A single orange line runs up the right-hand side from Layer 5 to an arrowhead at Layer 1, labelled "Audit findings revise risk tiers and enforcement thresholds".](layered_model.png)
 
 | Layer | Primary artifact | What it does |
 |---|---|---|
 | 1. Enterprise Policy | Risk Classification Model + Diagnostic Rubric | Defines risk tiers and a repeatable way to place any agent into one |
 | 2. Platform Enforcement | Permission & Access Control Maturity Ladder | Turns tiers into enforceable controls, deployable incrementally per agent |
-| 3. Agent Design | Per-Agent Design & Classification Dossier | Documents one agent's purpose, tools, data access, oversight design, and its evidence for its claimed tier |
+| 3. Agent Design | Per-Agent Design & Classification Dossier | Documents one agent's purpose, tools, data access, oversight design, and its evidence for its claimed tier. An accountable owner accepts the residual risk and authorizes operation before it goes live |
 | 4. Runtime Operations | Observability & Alerting Spec + Incident Response Playbook | Continuously checks live behavior against the dossier; responds when an alert fires |
 | 5. Audit & Assurance | Audit Trail & Compliance Logging Specification | Produces immutable, retained evidence mapped to SOC 2 / ISO 27001 / EU AI Act obligations. Findings loop back to revise Layer 1 |
 
