@@ -1,91 +1,277 @@
-# Agent Governance, Safety & Compliance: A Layered Model
+# Agent Governance, Safety and Compliance: A Layered Model
 
-*Working document of the MACH Alliance Agent Adoption & Operations Working Group. Draft prepared August 2026, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Draft
+prepared August 2026, for discussion.*
 
 ## Purpose
 
-The working group's charter proposes six artifacts spanning adoption, operating model, governance, production readiness, operations, and observability. Three of them cover governance, safety, and compliance. Written as separate documents, the connections between them are easy to lose.
+The working group plans three documents about governance, safety and compliance. Written
+as three separate documents, they lose the connections between them.
 
-This document proposes organizing that work as five interlocking layers instead of a flat list of deliverables. Governance for agentic systems holds together only when policy, technical enforcement, per-agent design, runtime operation, and audit evidence form a connected loop. Each layer depends on the layer above it being true. The evidence produced at the bottom has to climb back up and correct the top.
+This document proposes five connected layers instead. Governance for agents holds together
+only when policy, platform controls, agent design, live operation and audit evidence make
+one loop. Each layer is true only if the layer above it is true. The evidence at the bottom
+must climb back up and correct the top.
+
+We also use plain words for each part. The
+[table of words](README.md#words-we-use) in the README gives our word, its meaning, and the
+word that other frameworks use.
 
 ## The model at a glance
 
-![Flow diagram titled "Agent Governance, Safety and Compliance: A Layered Model", from the MACH Alliance Agent Adoption and Operations Working Group. Five boxes are stacked in a single column, shaded from light blue at the top to dark navy at the bottom. Each box carries a small label naming the layer and, below it, the name of that layer's primary artifact. From top to bottom they are Layer 1, Enterprise Policy and Risk Classification, holding the Risk Classification Model and Diagnostic Rubric; Layer 2, Platform Enforcement, holding the Permission and Access Control Maturity Ladder; Layer 3, Agent Design, holding the Per-Agent Design and Classification Dossier; Layer 4, Runtime Operations, divided by a horizontal rule into Continuous above, holding the Observability and Alerting Spec, and Triggered below, holding the Incident Response Playbook; and Layer 5, Audit and Assurance, holding the Audit Trail and Compliance Logging Specification. The table below this figure describes what each layer does. Grey arrows connect each box down to the next, labelled in order: "tiers set enforcement requirements", "controls are scoped per agent", "risk accepted, operation authorized", and "telemetry becomes evidence". A single orange line runs down the right-hand side of the diagram, leaving the Layer 5 box at the bottom and arriving as an arrowhead at the Layer 1 box at the top; it is labelled "Audit findings revise risk tiers and enforcement thresholds".](layered_model.png)
+![Flow diagram titled "Agent Governance, Safety and Compliance: A Layered Model", from the MACH Alliance Agent Adoption & Operations Working Group. Five boxes are stacked in a single column, shaded from light blue at the top to dark navy at the bottom. Each box names the layer and, below it, the document you write for that layer. From top to bottom they are Layer 1, Policy, holding Risk Tiers and the Tier Test; Layer 2, Platform Controls, holding the Access Control Ladder; Layer 3, Agent Design, holding the Agent Design Document; Layer 4, Live Operations, divided by a horizontal rule into Continuous above, holding the Monitoring Plan, and Triggered below, holding the Incident Playbook; and Layer 5, Audit Evidence, holding the Audit Log Rules. The table below this figure gives the same contents and says what each layer does. Grey arrows connect each box down to the next, labelled in order: "tiers set the controls", "controls limit each agent", "a person approves the agent", and "records become evidence". A single orange line runs up the right-hand side of the diagram, leaving the Layer 5 box at the bottom and arriving as an arrowhead at the Layer 1 box at the top; it is labelled "audit findings correct the tiers".](layered-model.svg)
 
-*Figure 1. The five-layer governance loop. Blue arrows show the cascade from policy down to operations; the orange loop shows assurance evidence feeding back up to revise policy.*
+*Figure 1. The five layers as one loop. The grey arrows run from policy down to operations.
+The orange arrow returns audit evidence to policy.*
 
-| Layer | Primary artifact | What it does | Feeds into |
+| Layer | What you write | What it does | What it feeds |
 |---|---|---|---|
-| 1. Enterprise Policy | Risk Classification Model + Diagnostic Rubric | Defines risk tiers and a repeatable way to place any agent into one. | Sets enforcement requirements for Layer 2. |
-| 2. Platform Enforcement | Permission & Access Control Maturity Ladder | Turns tiers into enforceable, incrementally deployable controls. | Scopes what each agent in Layer 3 is technically permitted to do. |
-| 3. Agent Design | Per-Agent Design & Classification Dossier | Documents one agent's purpose, tools, data access, oversight design, and its evidence for its claimed tier. | An accountable owner accepts the residual risk and authorizes operation; the agent goes live under Layer 4's watch. |
-| 4. Runtime Operations | Observability & Alerting Spec + Incident Response Playbook | Continuously checks live behavior against the dossier; responds when an alert fires. | Telemetry becomes the evidence Layer 5 relies on. |
-| 5. Audit & Assurance | Audit Trail & Compliance Logging Specification | Produces immutable, retained evidence mapped to SOC 2 / ISO 27001 / EU AI Act obligations. | Findings loop back to revise Layer 1's tiers and thresholds. |
+| 1. Policy | Risk Tiers and the Tier Test | Sets the risk tiers. Gives you a test that puts any agent into the correct tier. | Tells Layer 2 which controls each tier needs. |
+| 2. Platform Controls | Access Control Ladder | Turns each tier into controls you can enforce, one step and one agent at a time. | Limits what each Layer 3 agent can do. |
+| 3. Agent Design | Agent Design Document | Records one agent: its purpose, its tools, its data, its limits, and why it is in its tier. | One named person accepts the risk that is left and approves the agent. It then goes live under Layer 4. |
+| 4. Live Operations | Monitoring Plan and Incident Playbook | Compares live behavior to the design document. Tells you what to do when an alert starts. | Its records become the evidence for Layer 5. |
+| 5. Audit Evidence | Audit Log Rules | Keeps locked proof of what the agent did, and maps it to SOC 2, ISO 27001 and the EU AI Act. | Its findings correct the tiers in Layer 1. |
 
-## The five layers
+## Layer 1: Policy and risk tiers
 
-### Layer 1: Enterprise policy & risk classification
+**What you write: Risk Tiers and the Tier Test.**
 
-**Primary artifact: Risk Classification Model + Diagnostic Rubric.**
+A list of tiers works only if it comes with two more things. You need a repeatable way to
+put a given agent into one tier. You also need a description of how an agent in each tier
+behaves in practice, not only the criteria on paper.
 
-A tier list works only if it comes with two things: a repeatable way to place a given agent into one of its tiers, and a description of what each tier's behavior looks like in practice, not just its criteria on paper.
+### The tiers
 
-So this layer has two parts. The first is the rubric itself, with criteria such as data sensitivity, financial exposure, reversibility of actions, and blast radius. The second is a diagnostic procedure: a structured set of questions or tests someone can walk through to determine, and justify, why a given agent is Tier 2 and not Tier 1 or Tier 3. Without the diagnostic, every team self-declares its agent low-risk to avoid scrutiny, which defeats the purpose of having tiers.
+The first part is the list of tiers and their criteria. Judge each agent on how sensitive
+its data is, how much money it can move, whether you can undo its actions, and how far the
+damage spreads.
 
-Declared tier and observed behavior also drift apart over time. A model update, a new tool grant, or a prompt change can push real-world behavior into a higher tier than the paperwork claims. So the diagnostic cannot be a one-time, design-time exercise. It has to be re-checked periodically against what Layer 4 observes.
+### The tier test
 
-### Layer 2: Platform enforcement, as a maturity ladder
+The second part is the test. It is a set of questions that a person walks through. The
+answers show why this agent is Tier 2 and not Tier 1 or Tier 3.
 
-**Primary artifact: Permission & Access Control Maturity Ladder.**
+Without the test, every team declares its own agent low risk to avoid attention. You then
+hold a document that asserts that somebody assessed the risk. That defeats the purpose of
+the tiers.
 
-An enterprise-wide permission and access-control standard, written as a single document that security has to bless before anything ships, gets scoped, debated for two quarters, and never deployed. For this layer to be real, it has to be adoptable for one agent, this sprint, with no enterprise-wide dependency.
+### Tiers drift
 
-The fix is a maturity ladder. Its baseline level is achievable immediately, per agent: a named service identity that is not shared, credentials scoped to only the tools and data that one agent needs, and a manual revocation process. A middle level ties credential scope automatically to the agent's Layer 1 tier, so policy narrows a higher-tier agent's permissions instead of an engineer's judgment call. A mature level adds policy-as-code, automated provisioning and revocation, and continuous verification that granted permissions still match the declared tier. That mature level is the full enterprise model, but the ladder makes it a destination rather than a prerequisite for starting.
+The declared tier and the real behavior move apart over time. A new model version, a new
+tool, or a change to a prompt can push the real behavior above the tier on paper.
 
-### Layer 3: Agent design & classification dossier
+So you cannot run the test once, at design time. You must run it again against what Layer 4
+sees.
 
-**Primary artifact: Per-Agent Design Dossier, a system card for the agent.**
+## Layer 2: Platform controls, as a ladder
 
-A human-oversight-and-escalation matrix answers what to do when something goes wrong. It does not answer how anyone knows this specific agent belongs in the tier it claims. Those two things belong in the same document, because the escalation design depends on the tier claim being true.
+**What you write: Access Control Ladder.**
 
-This layer is one document per agent, produced before it goes near production. It covers the agent's purpose and scope, the tools and data it can touch, its decision authority (what it can do without a human, and what it cannot), its escalation and override design, and the evidence and reasoning for why this agent sits at the tier claimed in Layer 1.
+Some companies write one access control standard for every agent. Security must approve it
+before anything ships. Teams then debate the scope for two quarters, and nobody deploys it.
 
-That last section carries the most weight. It answers Layer 1's diagnostic with this agent's specifics instead of in the abstract. The dossier is close in spirit to a model or system card, scoped to an agent's behavior and authority instead of a model's training data and benchmarks. The nearest counterpart in existing standards is [AIUC-1](https://aiuc-1.com/)'s accountability requirements for compliance documentation and failure planning, which sit at the level of an organization's conformance; the dossier is per-agent and carries its own tier justification. It is the document a reviewer reads to decide whether the agent is what it claims to be.
+This layer must work for one agent, in this sprint, with no company-wide dependency.
 
-#### The transition: risk acceptance and launch authorization
+### The three steps
 
-Nothing crosses from Layer 3 into Layer 4 on its own. The dossier is a claim; going live requires someone to accept it. That transition is a discrete, recorded act: the risk has been classified in Layer 1, the corresponding controls are in place in Layer 2, the agent and its residual risk are documented in Layer 3, and a named, accountable human has accepted that residual risk and authorized the agent to operate.
+A ladder does that. Each step is useful on its own.
 
-This is one person and one record, not a review board. The weight is in attribution, not in ceremony: who accepted, on what date, for what scope, against which version of the dossier. That record is itself Layer 5 evidence.
+1. **The first step, available today, for one agent.** Give the agent its own login that it
+   shares with nothing else. Limit its credentials to the tools and the data that this one
+   agent needs. Write down how to revoke the credentials by hand.
+2. **The middle step.** Tie the scope of the credentials to the agent's tier from Layer 1.
+   Policy then narrows the permissions of a higher-tier agent. An engineer no longer
+   decides this case by case.
+3. **The top step.** Add policy as code, automatic setup and revocation, and a continuous
+   check that the granted permissions still match the declared tier.
 
-The authorization is also provisional. It was granted against a specific description of how the agent behaves. When Layer 4 observes behavior that no longer matches that description, the acceptance is not merely stale, it is void until someone reconsiders it. That is what gives the runtime feedback loop consequence instead of leaving it informational.
+The top step is the full company model. The ladder makes it a destination. It is not a
+condition that you must meet before you start.
 
-### Layer 4: Runtime operations, from observation to response
+## Layer 3: The agent design document
 
-**Primary artifacts: Observability & Alerting Specification (continuous) and Incident Response Playbook (triggered).**
+**What you write: Agent Design Document. It is a system card for the agent.**
 
-This layer is two connected loops. The continuous loop defines what telemetry is captured on every run (decision traces, tool calls, inputs and outputs), what evaluations run on a schedule against known failure modes, what thresholds define normal, and what triggers an alert. The triggered loop is what happens once an alert fires: triage, review of the decision trace, remediation, and a post-incident review. Adapt that second loop to agent-specific failure modes such as cascading tool-call errors, prompt injection, and silent scope creep. Do not borrow it wholesale from traditional software incident response.
+A table of human oversight and escalation tells you what to do when something goes wrong.
+It does not tell you how anybody knows that this agent belongs in the tier it claims. Both
+things belong in one document, because the escalation design depends on a true tier.
 
-The continuous loop is also the mechanism that re-verifies Layers 1 and 3 over time. If an agent's live behavior starts touching more sensitive data or taking less reversible actions than its dossier claims, that should surface as a monitoring signal within days. Six months later, during an audit, is too late. It is also what puts the Layer 3 authorization back in play: drift of that kind is a signal that someone needs to accept the agent's risk again, on current evidence, or stop it.
+### What it contains
 
-This is also where the gap between what a framework asks for and what most organizations can currently do is widest, so the continuous loop deserves the same treatment as Layer 2: full trace capture with scheduled evaluations is the destination, not the entry price. A baseline worth having is narrower. Log every tool call and its arguments, retain inputs and outputs for a bounded window, and alert on a few coarse signals such as calls to tools outside the dossier's declared set, volume anomalies, and escalation rate. Trace-level reasoning capture, replay, and automated evaluation come later. State the level an agent is actually at, because an authorization granted on the assumption of monitoring that does not exist is worse than one granted with the limitation on the record.
+You write one document for each agent, before it goes near production. It covers:
 
-Telemetry is not neutral exhaust, either. Decision traces hold the prompts, context, and outputs of a system designed to reach into whatever data its tools expose, which regularly makes the trace store more sensitive than any system the agent reads from, because it concentrates across all of them. Minimize at capture rather than at query time, redact sensitive fields before they land, and scope access to traces at least as tightly as access to the underlying systems. An observability layer that quietly creates an unclassified copy of regulated data has broken Layer 2 from the inside.
+- the purpose and the scope of the agent;
+- the tools and the data that it can touch;
+- what it can decide alone, and what it cannot;
+- how it escalates to a person, and how a person overrides it;
+- why this agent sits in the tier that Layer 1 gave it.
 
-### Layer 5: Audit & compliance assurance
+### Why the last section matters most
 
-**Primary artifact: Audit Trail & Compliance Logging Specification.**
+That last section carries the most weight. It answers the Layer 1 test with this agent's
+own details instead of in the abstract.
 
-Layer 4's observability is scoped for debugging: decision traces and tool usage that help an operator understand what an agent did. Compliance has different requirements: immutability, defined retention periods, tamper-evidence, and mapping to existing frameworks such as SOC 2, ISO 27001, and the EU AI Act's logging obligations for higher-risk systems. [AIUC-1](https://aiuc-1.com/)'s accountability domain covers the same ground for agents specifically, and its published crosswalks to NIST AI RMF, ISO 42001, the EU AI Act, and MITRE ATLAS mean a log specification built against it inherits those mappings instead of re-deriving them. This layer keeps the debugging question separate from the question an auditor asks, which is whether you can prove what happened and why. Both draw on overlapping telemetry, but they are not the same artifact.
+The document is close to a model card or a system card. It covers the behavior and the
+authority of an agent, and not the training data and benchmarks of a model. The nearest
+match in other standards is the accountability section of
+[AIUC-1](https://aiuc-1.com/), which asks for compliance documents and failure plans at
+the level of a whole company. This document is for one agent, and it carries the proof of
+its own tier. It is the document that a reviewer reads to decide whether the agent is what
+it claims to be.
 
-Retention pulls in two directions here. Compliance obligations set a floor on how long evidence is kept, while data protection law sets a ceiling on how long personal data may be held and grants erasure rights that an immutable, tamper-evident log is structurally poor at honoring. Reconcile the two rather than picking one, usually by separating the evidentiary record — what the agent did, which decisions were taken, who authorized it — from the payload of data it touched, and retaining the first long and the second briefly. Access to the audit record is itself an auditable event.
+### The step across: approval to go live
 
-The loop closes here: this layer's findings should periodically revise Layer 1's risk tiers and thresholds. Without that feedback path, governance stays fixed on paper while the agents it is meant to govern keep changing underneath it.
+Nothing crosses from Layer 3 to Layer 4 on its own. The design document is only a claim. A
+person must accept it.
 
-## A path to deliver this incrementally
+That step is a single recorded act. By then, Layer 1 has set the tier, Layer 2 has put the
+matching controls in place, and Layer 3 has recorded the agent and the risk that is left. A
+named person then accepts that risk and approves the agent to operate.
 
-A five-layer governance system sounds like a multi-quarter enterprise program, and programs like that tend not to ship. This model has to answer that concern. The layers are designed so a narrow, end-to-end version can exist quickly, with maturity added layer by layer afterward. No layer has to be complete before any of it is real.
+This is one person and one record. It is not a review board. The weight sits in the
+attribution, not in the ceremony: who accepted, on what date, for what scope, and against
+which version of the document.
 
-A reasonable first pass: pick one or two pilot agents already in flight. Write their Layer 1 tier and diagnostic answer and their Layer 3 dossier first. Both are documentation work with no platform dependency. Apply Layer 2's baseline controls, a named identity and scoped credentials, to those same agents. Record who accepted the residual risk and authorized each one to run, which at this scale is a few lines appended to the dossier rather than a process. Stand up Layer 4's continuous loop for just those agents, even a minimal one that logs tool calls and a handful of alert thresholds. Add Layer 5's logging specification once there is real telemetry to retain.
+That record is also evidence for Layer 5.
 
-Generalizing Layer 2 toward automated, tier-linked provisioning and eventually policy-as-code comes after that narrow slice works end to end. By then the working group is scaling something proven instead of designing something that has never been deployed.
+### The approval is temporary
+
+You grant the approval against one description of how the agent behaves. Layer 4 can show
+you behavior that no longer matches that description. The approval is then not merely old.
+It is void until somebody looks at it again.
+
+That is what gives the feedback loop from Layer 4 a consequence. Without it, the loop only
+informs.
+
+## Layer 4: Live operations, from watching to response
+
+**What you write: Monitoring Plan (continuous) and Incident Playbook (when an alert
+starts).**
+
+This layer holds two connected loops.
+
+### The continuous loop
+
+The Monitoring Plan defines what you record on every run: the decision record, the tool
+calls, and the inputs and outputs. It also defines which tests you run on a schedule
+against known failure modes, which numbers count as normal, and what starts an alert.
+
+### The loop that an alert starts
+
+The Incident Playbook defines what happens after an alert starts: triage, a review of the
+decision record, a fix, and a review after the incident.
+
+Write this loop for the ways that agents fail. Examples are tool calls that fail in a
+chain, prompt injection, and quiet scope creep. Do not copy the loop from ordinary software
+incident response.
+
+### The loop also re-checks Layers 1 and 3
+
+The continuous loop is how you re-check Layer 1 and Layer 3 over time.
+
+An agent can start to touch more sensitive data, or to take actions that you cannot undo.
+If its design document does not allow this, a monitor must show you within days. An audit
+six months later is too late.
+
+The loop also puts the Layer 3 approval back in play. Drift of that kind means that
+somebody must accept the risk again, on today's evidence, or stop the agent.
+
+### Monitoring is also a ladder
+
+The distance between what a framework asks for and what most companies can do today is
+largest here. So give this loop the same treatment as Layer 2. Full decision records with
+scheduled tests are the destination, not the entry price.
+
+A useful first step is narrower:
+
+- Log every tool call and its arguments.
+- Keep the inputs and the outputs for a fixed period.
+- Alert on a few coarse signals: a call to a tool outside the declared set, an unusual
+  volume, or a high escalation rate.
+
+Reasoning records, replay and automatic tests come later. State the step that each agent is
+actually on. An approval that assumes a monitor that does not exist is worse than an
+approval with the limit on the record.
+
+### Your records can hold more risk than your systems
+
+Records are not harmless exhaust. A decision record holds the prompts, the context and the
+outputs of a system that reaches into whatever data its tools expose. That regularly makes
+your record store more sensitive than any single system that the agent reads from, because
+the store concentrates data from all of them.
+
+So reduce what you capture, at capture time and not at query time. Remove sensitive fields
+before they land. Control access to the records at least as tightly as access to the
+systems underneath.
+
+A monitor that quietly makes an unclassified copy of regulated data has broken Layer 2 from
+the inside.
+
+## Layer 5: Audit evidence
+
+**What you write: Audit Log Rules.**
+
+Layer 4 records things for debugging. The decision records and the tool calls help an
+operator understand what an agent did.
+
+Compliance asks for different things: locked records, a defined retention period, proof
+that changes are visible, and a map to the frameworks that you already follow. Those
+include SOC 2, ISO 27001, and the logging duties in the EU AI Act for higher-risk systems.
+
+### Reuse the maps that already exist
+
+The accountability section of [AIUC-1](https://aiuc-1.com/) covers the same ground for
+agents. It publishes maps to NIST AI RMF, ISO 42001, the EU AI Act and MITRE ATLAS. Log
+rules that you build against AIUC-1 inherit those maps. You do not have to derive them
+again.
+
+This layer keeps the debugging question apart from the question that an auditor asks: can
+you prove what happened, and why? Both draw on the same records. They are not the same
+document.
+
+### Retention pulls two ways
+
+Compliance sets a floor on how long you keep the evidence. Data protection law sets a
+ceiling on how long you may hold personal data. It also gives people the right to erasure,
+and a locked record is a poor structure for that right.
+
+Reconcile the two. Do not pick one. Usually you split the record in two parts:
+
+- **What happened.** What the agent did, which decisions it took, and who approved it. Keep
+  this for a long time.
+- **The data it touched.** Keep this for a short time.
+
+Access to the audit record is itself an event that you must record.
+
+### The loop closes here
+
+The findings from this layer must correct the tiers and the thresholds in Layer 1. Those
+tiers were written to satisfy exactly these audits.
+
+Without that return path, your governance stays as first written on paper, while the agents
+that it governs keep changing underneath it.
+
+## How to deliver this one piece at a time
+
+Five layers sound like a company program that runs for many quarters. Programs like that
+tend not to ship. This model must answer that concern.
+
+The layers are designed so that a narrow version can work from end to end, quickly. You
+then add maturity one layer at a time. No layer must be complete before any of it is real.
+
+A reasonable first pass:
+
+1. Pick one or two agents that you already build.
+2. Write their tier and their answer to the tier test, and their design documents. Both are
+   documents. Neither needs platform work.
+3. Apply the first step of the Layer 2 ladder to those same agents: a login of their own,
+   and narrow credentials.
+4. Record who accepted the risk and who approved each agent to run. At this size, that is a
+   few lines at the end of the design document, not a process.
+5. Start the Layer 4 continuous loop for those agents only. A minimal loop that logs tool
+   calls and holds a few alerts is enough.
+6. Add the Layer 5 log rules once you hold real records to keep.
+
+After that narrow slice works from end to end, widen Layer 2. Move toward automatic
+setup that follows the tier, and then toward policy as code. By then the working group
+scales something that works. It does not design something that nobody has deployed.
