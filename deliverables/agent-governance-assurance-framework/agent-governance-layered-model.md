@@ -30,7 +30,7 @@ The orange arrow returns audit evidence to policy.*
 | 2. Platform Controls | Access Control Ladder | Turns each tier into controls you can enforce, one step and one agent at a time. | Limits what each Layer 3 agent can do. |
 | 3. Agent Design | Agent Design Document | Records one agent: its purpose, its tools, its data, its limits, and why it is in its tier. | One named person accepts the risk that is left and approves the agent. It then goes live under Layer 4. |
 | 4. Live Operations | Monitoring Plan and Incident Playbook | Compares live behavior to the design document. Tells you what to do when an alert starts. | Its records become the evidence for Layer 5. |
-| 5. Audit Evidence | Audit Log Rules | Keeps locked proof of what the agent did, and maps it to SOC 2, ISO 27001 and the EU AI Act. | Its findings correct the tiers in Layer 1. |
+| 5. Audit Evidence | Audit Log Rules | Keeps proof of what the agent did, and maps it to SOC 2, ISO 27001 and the EU AI Act. | Its findings correct the tiers in Layer 1. |
 
 ## Layer 1: Policy and risk tiers
 

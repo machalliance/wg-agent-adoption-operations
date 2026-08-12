@@ -27,9 +27,9 @@ each other.
 |---|---|---|
 | 1. Policy | Risk Tiers and the Tier Test | Sets the risk tiers, and gives you a test that puts any agent into the correct one |
 | 2. Platform controls | Access Control Ladder | Turns each tier into controls you can enforce, one agent at a time |
-| 3. Agent design | Agent Design Document | Records one agent: its purpose, its tools, its data, its limits, and why it is in its tier. A named owner accepts the risk that is left and approves the agent before it goes live |
+| 3. Agent design | Agent Design Document | Records one agent: its purpose, its tools, its data, its limits, and why it is in its tier. A named person accepts the risk that is left and approves the agent before it goes live |
 | 4. Live operations | Monitoring Plan and Incident Playbook | Checks live behavior against the design document, and tells you what to do when an alert starts |
-| 5. Audit evidence | Audit Log Rules | Keeps locked proof, mapped to SOC 2, ISO 27001 and EU AI Act duties |
+| 5. Audit evidence | Audit Log Rules | Keeps proof, mapped to SOC 2, ISO 27001 and EU AI Act duties |
 
 Layer 5 feeds back into Layer 1. Audits correct the tiers they were built to satisfy, and
 without that return path the tiers stay as first written while the agents keep changing. The
@@ -51,7 +51,7 @@ applies.
 
 So the draft says what it means. The risk that is left, not residual risk. How far the
 damage spreads, not blast radius. An agent login, not a non-human identity. An agent design
-document, not a per-agent design and classification dossier. The README carries a table
+document, not a design dossier. The README carries a table
 that maps each plain term to the formal one other frameworks use, so you can still take
 this into a room with an auditor.
 
