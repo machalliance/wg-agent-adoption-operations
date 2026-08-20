@@ -103,7 +103,7 @@ Stage 4 is what corrects this stage. A monitor that reports a call to a tool out
 
 ### Run the evals against the platform you built
 
-Run your evals against the setup you actually stood up: this model version, these tools, this framework, this host. An eval that passed against a different configuration tells you about that configuration.
+Run your evals against the setup you stood up: this model version, these tools, this framework, this host. An eval that passed against a different configuration tells you about that configuration.
 
 Record what the evals found, and keep the record with the design document. The person signing off has to read it, and stage 4 needs a baseline to compare live behavior against.
 
@@ -178,7 +178,5 @@ A reasonable first pass, on one or two agents that you already build:
 3. Apply Level 1 platform controls: an agent login for each one, least privilege on it, on a stated model version and host. Run whatever evals you have against that setup, and record what they found. Then record who signed off. At this size that is a few lines at the end of the design document, and not a process.
 4. Start stage 4 monitoring for those agents only. Level 1, which logs tool calls and holds a few alerts, is enough, together with a schedule that reruns the evals.
 5. Add the stage 5 log rules once you hold real records to keep, and open the assurance record with the first scheduled eval run.
-
-Steps 1 and 2 are documents, and neither needs platform work.
 
 After that narrow slice works from end to end, widen stage 3. Move toward automatic setup that follows the classification, and then toward policy as code. By then the working group is scaling something that works, instead of designing something that nobody has deployed.
