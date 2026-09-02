@@ -16,13 +16,15 @@ Pick one agent you already run, or are about to. Then work down this list. The f
 | 2 | 2. Policy | [Risk Classifications](02-policy/risk-classifications.md) — just the one classification your agent belongs to | Standard |
 | 3 | 1. Agent design | Section 6 of the design document, now that you have a classification to argue for | Record |
 | 4 | 3. Platform controls | [Platform Control Levels](03-platform-controls/platform-control-levels.md) — score the platform you run on | Standard |
-| 5 | 3. Platform controls | [Platform and Sign-off Record](03-platform-controls/platform-and-sign-off-record.md), then get it signed. **This row is the gate** | Record |
-| 6 | 4. Live operations | [Monitoring Levels](04-live-operations/monitoring-levels.md) — score the same platform | Standard |
-| 7 | 4. Live operations | [Monitoring and Incident Record](04-live-operations/monitoring-and-incident-record.md) | Record |
+| 5 | 4. Live operations | [Monitoring Levels](04-live-operations/monitoring-levels.md) — score the same platform | Standard |
+| 6 | 4. Live operations | [Monitoring and Incident Record](04-live-operations/monitoring-and-incident-record.md) | Record |
+| 7 | 3. Platform controls | [Platform and Sign-off Record](03-platform-controls/platform-and-sign-off-record.md), then get it signed. **This row is the gate** | Record |
 | 8 | 5. Audit and assurance | [Audit Log Rules](05-audit-and-assurance/audit-log-rules.md) — what agents add to the records policy you already have, settled once. **Needs somebody outside your team** | Standard |
 | 9 | 5. Audit and assurance | [Audit and Assurance Record](05-audit-and-assurance/audit-and-assurance-record.md) | Record |
 
-**Row 5 is the gate.** Nothing reaches production until it is signed. Rows 1 to 4 are what the person signing it reads. Rows 6 to 9 are what keeps the agent defensible once it is live.
+**Row 7 is the gate.** Nothing reaches production until it is signed. Rows 1 to 6 are what the person signing it reads. Rows 8 and 9 are what keeps the agent defensible once it is live.
+
+The sign-off comes after the monitoring rows even though it belongs to stage 3, because section C of that record asks how the monitoring level applied compares with the one the classification requires. Nobody can answer that before the monitoring record exists.
 
 **Row 8 is the only one that needs a person who is not on your team.** Their calendar sets when it lands, not your effort, so ask for that meeting on the first day and work the rest of the list while you wait for it.
 
