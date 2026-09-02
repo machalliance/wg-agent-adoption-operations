@@ -86,6 +86,8 @@ A level describes **a platform**, not a company and not an agent.
 
 Most companies run agents in more than one place, and those places are rarely controlled equally well. A single company-wide score would be wrong everywhere. Score each platform separately.
 
+An agent usually touches more than one. The model sits behind a provider's API, the tools behind a gateway, the process on a host. Score the platform that grants the agent's access, because that is what a control level describes, and name the others in section A of the agent's record.
+
 An individual agent then records the level it actually runs at, in its Platform and Sign-off Record. That level **cannot be higher than its platform's**, and it can be lower: a platform capable of Level 3 will still hold an agent that somebody scoped by hand.
 
 So there are two numbers, and both matter:

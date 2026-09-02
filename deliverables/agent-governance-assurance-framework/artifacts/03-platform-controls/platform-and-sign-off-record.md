@@ -16,7 +16,7 @@ It records three things: what the agent actually runs on, what your evals found 
 
 For the reasoning behind each section, see [the notes on this form](platform-and-sign-off-record-notes.md). The levels themselves are defined in the [Platform Control Levels](platform-control-levels.md).
 
-The two platform control rows in section A ask different questions. The first is the strongest control the platform could enforce. The second is what was actually applied to this agent, which can be lower and cannot be higher. The monitoring levels are recorded once, in the [Monitoring and Incident Record](../04-live-operations/monitoring-and-incident-record.md), and not here.
+The two platform control rows in section A ask different questions. The first is the strongest control the platform could enforce. The second is what was actually applied to this agent, which can be lower and cannot be higher. The monitoring levels themselves are recorded once, in the [Monitoring and Incident Record](../04-live-operations/monitoring-and-incident-record.md). Section C records only whether the level applied meets what the classification requires.
 
 ---
 
@@ -40,7 +40,7 @@ What the agent actually runs on, and not what it is supposed to run on.
 | Platform control level of the platform it runs on: 1, 2 or 3 | |
 | Platform control level actually applied to this agent | |
 | When this agent's access is reviewed again, and by whom | |
-| Autonomy level, if you keep an autonomy scale | |
+| Autonomy level, on the four-level scale in the [CSA agentic profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/), or your own if you keep one | |
 | Tool servers and connectors it reaches, and who publishes each one | |
 
 **Where the grant list is enforced.** Section 3 of the design document lists the tools and the data this agent needs. Say what enforces that list here: a gateway, a policy engine, scoped credentials, or a tool wrapper. Name the component.
@@ -58,12 +58,15 @@ Evals run against the setup in section A, not against a development configuratio
 | Field | Your answer |
 |---|---|
 | Which evals you ran | |
+| Adversarial testing performed, and against which failure modes | |
 | Against which configuration, matching section A | |
 | Date of the run | |
 | What they found | |
 | What you changed because of it | |
 | What you know you did not test | |
 | Where the results are kept | |
+
+For any agent that reads content it did not author, whether it can be talked into something is what the sign-off most needs to know. Name the failure modes you tested against from [OWASP's Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), which is the same list stage 4's incident playbook works from.
 
 Fill in the last two rows carefully. What the evals found is what the person signing off is accepting. What you did not test is where stage 4's monitoring has to begin.
 

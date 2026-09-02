@@ -31,6 +31,7 @@ Filled in as a starting point. Replace with your own.
 | Reversibility required | Everything it does can be undone by the person who received it. |
 | How far the damage may spread | It stays in the system the agent acted on. |
 | What it may do with nobody watching | Nothing. A person reviews every action before it takes effect. |
+| Widest grant list allowed | Read-only tools. No writes to any system of record. |
 | Who may be on the other end | Internal staff. |
 | Platform control level required, applied to the agent | Level 1. |
 | Monitoring level required | Level 1. |
@@ -50,6 +51,7 @@ Filled in as a starting point. Replace with your own.
 | Reversibility required | Every action reversible within one working day. |
 | How far the damage may spread | Another internal system or team has to correct it. |
 | What it may do with nobody watching | Anything that would sit at Routine on its own. A person reviews the rest. |
+| Widest grant list allowed | Read and write to the systems named in the design document. No tool that moves money or reaches a customer. |
 | Who may be on the other end | Internal staff, and named customers under supervision. |
 | Platform control level required, applied to the agent | Level 1. |
 | Monitoring level required | Level 1. |
@@ -69,6 +71,7 @@ Filled in as a starting point. Replace with your own.
 | Reversibility required | Irreversible actions require a person to approve them first. |
 | How far the damage may spread | It reaches a customer, a partner, or a system you do not control. |
 | What it may do with nobody watching | It may act alone inside a scope somebody set, and a person sees the result afterwards. |
+| Widest grant list allowed | Only the tools named in the design document, with personal-data fields listed individually. Writes to customer-facing systems need approval. |
 | Who may be on the other end | Customers, who are told they are dealing with an agent. |
 | Platform control level required, applied to the agent | Level 2. |
 | Monitoring level required | Level 2. |
@@ -88,6 +91,7 @@ Filled in as a starting point. Replace with your own.
 | Reversibility required | Irreversible actions require a person to approve them, and that approval is logged. |
 | How far the damage may spread | It reaches many people at once, a public channel, or another agent that acts on it. |
 | What it may do with nobody watching | It may act alone with nobody seeing the result unless something alerts. Name what alerts. |
+| Widest grant list allowed | Only the tools named in the design document. Credentials granted per task where the platform supports it. |
 | Who may be on the other end | Anyone, including the public. |
 | Platform control level required, applied to the agent | Level 3. |
 | Monitoring level required | Level 3. |
