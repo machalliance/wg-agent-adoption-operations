@@ -29,9 +29,12 @@ The two monitoring rows in section A ask different questions. The first is the m
 | Agent name, and the design document version this serves | |
 | Version of this record | |
 | Date of this version | |
+| Monitoring level the classification requires | |
 | Monitoring level of the platform it runs on: 1, 2 or 3 | |
 | Monitoring level actually applied to this agent | |
 | Who owns this monitoring | |
+
+Where the level applied is lower than the level the classification requires, the gap is accepted in section C of the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md), not here. This form records what is true; that one records who accepted it.
 
 | What you record | Do you record it | Where it goes | How long you keep it |
 |---|---|---|---|
@@ -60,6 +63,7 @@ The two monitoring rows in section A ask different questions. The first is the m
 | How often, or what share of live traffic if they run continuously | |
 | Where the results go | |
 | Who is told when one fails | |
+| Who owns extending the eval set as the agent changes | |
 | How you would know they had stopped running | |
 
 **Which baseline the results are compared against.** Normally the eval results recorded in the Platform and Sign-off Record at sign-off. Name the version.
@@ -81,6 +85,8 @@ The two monitoring rows in section A ask different questions. The first is the m
 
 Answer the last column for what is implemented today, not for what is planned. A row with nothing behind it is a gap the sign-off has to carry.
 
+The first row needs the section 3 grant list in a form the monitor can read. It is the only machine-checkable claim in the framework, and naming where the monitor gets it is the difference between an alert you can build and one you intend to.
+
 ### D. What an alert starts
 
 | Stage | What happens | Who does it | Within what time |
@@ -90,7 +96,13 @@ Answer the last column for what is implemented today, not for what is planned. A
 | Review the run records | | | |
 | Fix | | | |
 | Tell the people affected | | | |
+| Decide whether anybody outside has to be told, and start that clock | | | |
 | Review after the incident | | | |
+| Decide whether the agent resumes, and whether the sign-off still holds | | | |
+
+For an agent inside a regulated process, notifying a regulator or a data-protection authority runs on a clock that starts well before the fix is finished. Stage 2 classifies agents on whether a mistake is reportable, so somebody has to decide here whether this one is.
+
+The stage 3 sign-off is void once live behavior stops matching what it was granted against, and an incident is that moment. Name who re-confirms it, or re-issues it, before the agent runs again.
 
 **How the agent is stopped, and by whom.** Point at section 5 of the design document rather than restating it, and say who is on call to do it.
 
@@ -115,9 +127,10 @@ Agents fail in ways ordinary software does not. Copying your existing incident p
 | Memory or retrieved context has been poisoned | ASI06 | |
 | The agent is confidently wrong and a person acts on it | ASI09 | |
 | The agent stops escalating when it should | ASI09 | |
+| The agent runs code or shell commands it composed itself | ASI05 | |
 | A supervising agent fails, or supervises wrongly | ASI07, ASI10 | |
 
-The OWASP column names the entry in the [Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) each row is drawn from, so a team already working that list can see the overlap without deriving it. One entry has no row of its own: ASI05, unexpected code execution. Add a row for it if your agent can run code or shell commands that it composed itself.
+The OWASP column names the entry in the [Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) each row is drawn from, so a team already working that list can see the overlap without deriving it. Where a row does not apply to your agent, write "the agent cannot do this" rather than leaving it blank. A blank reads as an unanswered question, and the ASI05 row in particular is the one that decides whether this playbook covers a coding agent.
 
 ### F. Revision history
 
