@@ -73,7 +73,7 @@ The triggers name which stage detects each one, so the loop back from stage 4 an
 
 1. **Are four classifications the right number to ship?** Too few forces everything into "sensitive". Too many is a matrix nobody applies.
 2. **Are the starter criteria in the right classifications?** Specifically whether "reaches personal data" belongs at sensitive, which is where most privacy functions would put it, or lower, which is where most engineering teams behave as though it sits.
-3. **Are the floor anchors set at the right places?** They are what stops two teams classifying the same agent differently, and they are also where we have guessed most. Question 4 is left for you to put numbers on.
+3. **Are the floor anchors set at the right places?** They are what stops two teams classifying the same agent differently, and they are also where we have guessed most. Question 4 judges the shape of a spending control rather than its size, deliberately, because no amount we could print would mean the same thing at a bank and at a startup. Tell us whether shape alone separates two agents you would classify differently.
 4. **Does the highest-floor rule over-classify in practice?** We think over-classifying is the right error. Tell us if it made the framework unusable for you.
 5. **Is limit 2 on the escape hatch too strict?** It rules out prompt-level controls entirely. There may be cases where a prompt-level control plus strong monitoring is genuinely equivalent.
 6. **Should the platform control level and monitoring level be requirements of a classification at all?** Putting them here means a classification can demand maturity a company does not have. The alternative is to record the gap and let the sign-off carry it.

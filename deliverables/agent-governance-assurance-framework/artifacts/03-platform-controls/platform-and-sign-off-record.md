@@ -82,6 +82,18 @@ One named person accepts the agent as a whole: what it is for, its classificatio
 | Any classification floor lowered by a compensating control, named | |
 | Conditions on the sign-off, and when it must be looked at again | |
 
+**The level gap.** The agent's classification names a platform control level and a monitoring level that an agent in it requires. Where the level applied is lower than the level required, the gap is accepted here, by name, or it is not accepted at all.
+
+| Field | Your answer |
+|---|---|
+| Platform control level the classification requires, and the level applied | |
+| Monitoring level the classification requires, and the level applied | |
+| Who accepts the gap, by name | |
+| The date by which it closes | |
+| How many consecutive sign-offs have accepted this same gap | |
+
+Answer the last row honestly. A gap accepted once is a legitimate decision made under time pressure. A gap accepted three times in a row is a decision nobody is making, and this count is the only thing on any of these forms that would show it.
+
 Two rules on this section.
 
 **The sign-off is against versions, and both are named above.** When live behavior stops matching the description it was granted against, it is void until somebody looks again.
