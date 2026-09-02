@@ -23,6 +23,7 @@ Take this list to whoever owns records, once, and fill in the rows.
 | Tool calls and their arguments | | | | |
 | Inputs and outputs, including whatever a user typed | | | | |
 | The prompt and context of a run | | | | |
+| What the agent remembers between runs | | | | |
 | Escalations to a person, and the outcome | | | | |
 | Decisions the agent took alone | | | | |
 | Sign-off records | | | | |
@@ -67,6 +68,8 @@ Log evidence usually already sits under one of the standards below. Naming them 
 **[EU AI Act](https://artificialintelligenceact.eu/).** [Article 12](https://artificialintelligenceact.eu/article/12/) concerns automatic recording of events over a system's lifetime, and [Article 11](https://artificialintelligenceact.eu/article/11/) keeping technical documentation current. Whether an agent of yours is in scope, and what those articles then require, is a question for counsel. We do not print compliance dates; several moved during 2026.
 
 **[AIUC-1](https://aiuc-1.com/).** Publishes maps to the NIST AI RMF, ISO 42001, the EU AI Act, MITRE ATLAS and OWASP. Use those instead of deriving a second set that disagrees with them.
+
+**Your privacy regime.** We do not name one, because which reaches you depends on where you operate. Whichever it is will ask whether you can find and remove one person's data, and free-text run records are where that gets hard. Section A of the [Audit and Assurance Record](audit-and-assurance-record.md) asks each agent whether it can.
 
 For what to record and in what shape, stage 4 points at the [OpenTelemetry semantic conventions for generative AI](https://opentelemetry.io/blog/2026/genai-observability/).
 

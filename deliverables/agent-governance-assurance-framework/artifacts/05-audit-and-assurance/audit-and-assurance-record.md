@@ -38,6 +38,7 @@ The log rules say what happens to each kind of record. This table says whether t
 | Tool calls and their arguments | | | | |
 | Inputs and outputs | | | | |
 | The prompt and context of a run | | | | |
+| What the agent remembers between runs | | | | |
 | Model, tool and prompt versions in play on a run | | | | |
 | Escalations and their outcomes | | | | |
 | Decisions the agent took alone | | | | |
@@ -47,6 +48,10 @@ The log rules say what happens to each kind of record. This table says whether t
 | Incident records | | | | |
 
 **Where personal data sits in the rows above, and under what basis it is kept.** Name the fields. Free-text inputs and outputs are where it turns up unplanned.
+
+> 
+
+**Whether one person's data can be found and removed from the rows above, and how long that takes.** For records in an append-only store or a trace backend the answer is often no. That is a finding the sign-off carries, not a box to leave blank.
 
 > 
 
@@ -75,6 +80,7 @@ Stage 4 section B says what starts the evals. This section is not a second copy 
 
 | Field | Your answer |
 |---|---|
+| Who is accountable for reading these results, by name | |
 | Which evals run continuously, and against what traffic | |
 | Which run on a deploy, and which on a fixed schedule | |
 | Where the results are held | |
@@ -107,9 +113,11 @@ Every arrow that runs back up the five stages is evidenced here.
 
 | Date | What was found | Which stage it corrects | What changed, and who approved it | Change confirmed live |
 |---|---|---|---|---|
-| | | 1 / 2 / 3 / 4 | | |
-| | | 1 / 2 / 3 / 4 | | |
-| | | 1 / 2 / 3 / 4 | | |
+| | | 1 / 2 / 3 / 4 / 5 | | |
+| | | 1 / 2 / 3 / 4 / 5 | | |
+| | | 1 / 2 / 3 / 4 / 5 | | |
+
+Stage 5 is in that list because section B's last row feeds findings back into the [Audit Log Rules](audit-log-rules.md). A standard short a case is a finding like any other.
 
 **Findings raised and not acted on, and why.** A finding that was considered and consciously accepted is a legitimate outcome. A finding that was quietly dropped is not, and the difference is written here.
 
