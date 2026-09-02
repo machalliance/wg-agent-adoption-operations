@@ -4,7 +4,7 @@
 
 This is the stage 5 artifact of the [Agent Governance and Assurance Framework](../../README.md). It holds two records. Most organizations already have something like the first. Very few have the second.
 
-Section A is where this agent's records actually go. Section B is where this agent departs from the [Audit Log Rules](audit-log-rules.md), which are written once for every agent. Sections C and D are the **Assurance Record**: what the evals are telling you, who read them, and what changed because of it. Section E is filled in when the agent is switched off.
+Section A is where this agent's records actually go. Section B is where this agent departs from the [Audit Log Rules](audit-log-rules.md), which are written once for every agent. Sections C and D are the **Assurance Record**: what the evals are telling you, who read them, and what changed because of it. Section E is filled in when the agent is switched off. Section F is its revision history.
 
 The first record shows what the agent did. The second shows that somebody is still checking, on a date after the sign-off. An auditor will ask for both.
 

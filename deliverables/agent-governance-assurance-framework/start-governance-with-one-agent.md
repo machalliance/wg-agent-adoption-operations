@@ -6,7 +6,7 @@ Most enterprises we have talked to have an AI governance policy. Few could pick 
 
 The usual approach guarantees that. Agent governance gets scoped as an enterprise program: one platform standard, covering every agent, agreed by every team that owns one. That agreement can take longer than the agents take to reach production. Teams ship in the meantime, on shared logins, with no record of what an agent decided or why.
 
-The MACH Alliance [Agent Adoption & Operations Working Group](https://github.com/machalliance/wg-agent-adoption-operations) has published a [draft structure](https://github.com/machalliance/wg-agent-adoption-operations/tree/main/deliverables/agent-governance-assurance-framework) built the other way round. A team can govern one agent in a sprint, without waiting for a standard that covers all of them.
+The MACH Alliance [Agent Adoption & Operations Working Group](https://github.com/machalliance/wg-agent-adoption-operations) has published a [draft structure](https://github.com/machalliance/wg-agent-adoption-operations/tree/main/deliverables/agent-governance-assurance-framework) built the other way around. A team can govern one agent in a sprint, without waiting for a standard that covers all of them.
 
 ## The stages hold each other up
 

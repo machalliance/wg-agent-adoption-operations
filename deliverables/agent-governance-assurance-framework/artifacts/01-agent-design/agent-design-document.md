@@ -118,7 +118,7 @@ Every platform we have looked at can scope at tool level, meaning this agent may
 
 **Where the control is enforced** takes one of four answers: **in the platform**, **in the tool layer**, **in the prompt**, or **nowhere**. This is not the same question as grant list granularity in section 3. That one asks how finely access can be scoped. This one asks what stops a decision being made. "In the prompt" counts, and it is the weakest of the four. Section 6 charges you for it.
 
-**If any row above says "in the prompt", say how the prompt is controlled.** Where it lives, who can change it, and whether a change is reviewed before it reaches production. A control written into a prompt that anybody can edit is not a weak control, it is a removable one, and nothing in section 7 will show you that it went.
+**If any row above says "in the prompt", say how the prompt is controlled.** Where it lives, who can change it, and whether a change is reviewed before it reaches production. A control written into a prompt that anybody can edit can be removed without anybody noticing, and nothing in section 7 will show you that it went.
 
 > 
 
