@@ -20,7 +20,7 @@ The switch-off condition is the part teams skip. Write it now, while you still w
 
 Section 3 is the only place in the framework where a machine-checkable claim is made. Every other section describes intent, and this one enumerates access. Stage 3 grants from it, stage 4 alerts on calls outside it, and stage 5 keeps it as the record of what was authorized.
 
-So write it at the granularity your platform can actually enforce. "The CRM" is not a row. "Read contact records in region X, write only to the notes field" is a row, because a permission can be shaped like that. If your platform cannot express a row, say so in the enforcement column in section 4, and take the honest answer into section 6.
+So write it at the granularity your platform can actually enforce. "The CRM" is not a row. "Read contact records in region X, write only to the notes field" is a row, because a permission can be shaped like that. If your platform cannot express a row, write "not enforceable here" in section 3's own granularity column, and take the honest answer into section 6. That column is not section 4's: section 3 asks how finely access can be scoped, section 4 asks what stops a decision being made.
 
 The reversibility column feeds question 5 of the test, and the Incident Playbook in stage 4 works from it.
 

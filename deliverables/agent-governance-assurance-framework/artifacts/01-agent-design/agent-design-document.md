@@ -72,12 +72,24 @@ For the reasoning behind each section, and where its questions come from, see [t
 
 This is the grant list. Stage 3 grants what is in this table and refuses everything else. If it is not here, the agent does not get it.
 
-| Tool or system | What the agent does with it | Read or write | Data it reaches, and how sensitive | Can the action be undone, and within what window | Where the limit is enforced |
+| Tool or system | What the agent does with it | Read or write | Data it reaches, and how sensitive | Can the action be undone, and within what window | Grant list granularity |
 |---|---|---|---|---|---|
 | | | | | | |
 | | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
+| | | | | | |
 
-The last column takes one of three answers: **tool level**, **data level**, or **not enforceable here**. Every platform we have looked at can scope access at tool level, meaning this agent may call this tool and not that one. Scoping *within* a tool, to particular records or particular fields, is not portable and on some platforms is not possible at all. Where the limit you need is a data-level one your platform cannot express, write "not enforceable here". The agent can then reach more data than you intended, which is what question 2 of section 6 asks about.
+**Grant list granularity** takes one of three answers: **tool level**, **data level**, or **not enforceable here**. This is not the same question as the enforcement column in section 4. That one asks what stops a decision being made. This one asks how finely the access itself can be scoped.
+
+Every platform we have looked at can scope at tool level, meaning this agent may call this tool and not that one. Scoping *within* a tool, to particular records or particular fields, is not portable and on some platforms is not possible at all. Where the limit you need is a data-level one your platform cannot express, write "not enforceable here". The agent can then reach more data than you intended, which is what question 2 of section 6 asks about.
+
+**What the agent remembers between runs.** Whether it carries anything from one run to the next: conversation history, retrieved documents, learned preferences, or a store it writes to itself. Say who that memory is scoped to — one user, one account, or everybody — and how long it is kept. Write "nothing" if every run starts clean.
+
+> 
 
 **Other agents.** An agent that this one calls is a row in the table above, named as the agent and not as the tools behind it. Then say which agents call this one, whose authority those calls run under, and what this agent does when it cannot tell. A call arriving from another agent is not the same as a call from the person who started the chain, and a grant list is worth little if the agent cannot tell the two apart.
 
@@ -93,13 +105,22 @@ The last column takes one of three answers: **tool level**, **data level**, or *
 
 ### 4. What it decides alone
 
-| Action or decision | Alone, never, or needs a person to approve | Where that is enforced |
+| Action or decision | Alone, never, or needs a person to approve | Where the control is enforced |
 |---|---|---|
 | | | |
 | | | |
 | | | |
+| | | |
+| | | |
+| | | |
+| | | |
+| | | |
 
-Enforcement is one of four answers: in the prompt, in the tool layer, in the platform, or nowhere. "In the prompt" counts, and it is the weakest of the four. Section 6 charges you for it.
+**Where the control is enforced** takes one of four answers: **in the platform**, **in the tool layer**, **in the prompt**, or **nowhere**. This is not the same question as grant list granularity in section 3. That one asks how finely access can be scoped. This one asks what stops a decision being made. "In the prompt" counts, and it is the weakest of the four. Section 6 charges you for it.
+
+**If any row above says "in the prompt", say how the prompt is controlled.** Where it lives, who can change it, and whether a change is reviewed before it reaches production. A control written into a prompt that anybody can edit is not a weak control, it is a removable one, and nothing in section 7 will show you that it went.
+
+> 
 
 ### 5. Escalation and override
 
@@ -121,11 +142,9 @@ Enforcement is one of four answers: in the prompt, in the tool layer, in the pla
 
 ### 6. Classification, and the Classification Test
 
-**The classification you are claiming for this agent:**
+**Answer the eight questions first, then read the classification off the highest floor.** Claiming a classification before you run the test invites you to find eight answers that support the one you already wrote. The field for it is below the table, not above.
 
-> 
-
-Then answer the test. Every row asks one question, and every answer sets a floor: the lowest classification this agent can be in given that answer alone.
+Every row asks one question, and every answer sets a floor: the lowest classification this agent can be in given that answer alone.
 
 The questions and the rules below are reproduced from your [Risk Classifications](../02-policy/risk-classifications.md), so that this form stands on its own. That document is the authoritative one. If your copy of the test has been revised and this form has not, use theirs. The anchors that say what each answer has to reach to set each floor are in part 2 of that document, and are not reproduced here: read them before you fill in the floor column.
 
@@ -149,6 +168,10 @@ The classifications below are placeholders. If you already keep your own risk cl
 
 **The rule.** The classification is the highest floor that any single row sets. One critical row makes the agent critical, however routine the other seven are.
 
+**The classification for this agent, read off the highest floor above:**
+
+> 
+
 **If you are placing this agent lower than its highest floor**, name the control that lowers it, where it is enforced, and who confirmed it holds. A control that exists in a plan does not lower a floor.
 
 > 
@@ -171,7 +194,9 @@ Three limits on lowering a floor:
 |---|---|---|---|---|
 | | | | | |
 
-Stage 4 and stage 5 findings land here. An eval that catches drift, an audit finding against your classification criteria, or a monitor reporting a tool call outside section 3 all produce a row.
+One more tool, a widened scope, or a new audience all produce a row. So do stage 4 and stage 5 findings: an eval that catches drift, an audit finding against your classification criteria, or a monitor reporting a tool call outside section 3.
+
+A new model version does not. That changes the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md) instead, and leaves this document alone.
 
 Retiring the agent produces the last row. Set the status in section 0 to retired, date it, and go to section E of the [Audit and Assurance Record](../05-audit-and-assurance/audit-and-assurance-record.md): this document, the sign-off and the eval results all outlive the agent, and somebody has to say where they went.
 
