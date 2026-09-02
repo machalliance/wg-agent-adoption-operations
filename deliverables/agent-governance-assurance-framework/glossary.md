@@ -8,6 +8,7 @@ Where the formal term is already the clearest one, we keep it. Those rows say so
 
 | We say | It means | Other frameworks say |
 |---|---|---|
+| agent | A system where an AI model evaluates context and makes decisions that shape what the system does. A model generating or transforming content inside a flow somebody else authored sits below that line and is not an agent. Everything above it is, and the governance this framework asks for rises with how much the agent decides alone. | agentic system, AI agent |
 | agent design document | One document that records what one agent does and what it can touch. | system card, model card, design dossier |
 | agent login | An account that belongs to one agent and to nothing else, reaching only the tools and the data that this one agent needs. | service identity, non-human identity, workload identity |
 | assurance | The record that your checks keep running: where the eval results come from, who read them, when, and what changed because of it. It is separate from the records themselves. | continuous assurance, ongoing monitoring, control testing |
@@ -26,6 +27,7 @@ Where the formal term is already the clearest one, we keep it. Those rows say so
 | level, of an agent | What was actually applied to one agent. Recorded in that agent's record. It can be lower than its platform's level and can never be higher. | effective control, applied baseline |
 | monitoring plan | The first half of the Monitoring and Incident Record: what you record on every run, what counts as normal, and what starts an alert. | post-market monitoring plan, observability plan |
 | outcome | What the agent is for, stated as something you can measure, with one person who owns the number. | business outcome, success metric, KPI |
+| platform | Where an agent runs and where its access comes from: the host, whatever issues its login, and whatever grants or refuses its tool calls. Most companies have several, controlled to different degrees, so each is scored on its own. Two agents whose credentials and tool access come from different places are on different platforms. | runtime environment, execution environment, control plane |
 | policy as code | Permissions written as rules a machine grants and revokes from, instead of settings a person clicks. It is what separates platform control Level 3 from Level 2. | policy as code, attribute-based access control |
 | prompt injection | Content the agent reads talking it into something its instructions did not intend. We keep this term; there is no plainer one that means the same thing. | prompt injection, indirect prompt injection, goal hijack |
 | record | A document about one agent. You keep one per agent and revise it when that agent changes. Everything except the four standards is a record. | artifact, per-system documentation |

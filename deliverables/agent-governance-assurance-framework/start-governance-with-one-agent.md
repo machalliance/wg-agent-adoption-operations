@@ -2,7 +2,7 @@
 
 *A draft five-stage framework from the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft.*
 
-Most enterprises with an AI governance policy could not pick one agent in production and show that its behavior matches it.
+Most enterprises we have talked to have an AI governance policy. Few could pick one agent in production and show that its behavior matches it.
 
 The usual approach guarantees that. Agent governance gets scoped as an enterprise program: one platform standard, covering every agent, agreed by every team that owns one. That agreement can take longer than the agents take to reach production. Teams ship in the meantime, on shared logins, with no record of what an agent decided or why.
 
@@ -19,6 +19,8 @@ A rule in your policy is true only if some agent's design applies it, the platfo
 | 3. Platform controls | Platform Control Levels, and a Platform and Sign-off Record per agent | Stands the agent up on a platform that holds it to the limits its design declares, and runs your evals against that setup. A named person then signs off before it goes live |
 | 4. Live operations | Monitoring Levels, and a Monitoring and Incident Record per agent | Keeps those evals running against the live agent, and says what happens when one fails |
 | 5. Audit and assurance | Audit Log Rules, and an Audit and Assurance Record per agent | Says what agents add to the records policy you already have, keeps proof of what the agent did, and proves that somebody is still reading the evals |
+
+The table names four standards, and none of them is a policy you sit down and write. Two are assessments: score the platform your agent runs on against three short definitions, once, on each ladder. One is a conversation with whoever already owns your records policy, about what an agent adds to it. Only the risk classifications ask you to author anything, and the first pass is one row, for the one classification your agent belongs to. The set grows later, as you build agents it does not describe.
 
 None of the five documents is finished when it is written. Each keeps reporting that something earlier needs work, which is the part most governance programs leave out. The full reasoning is in [the five stages](https://github.com/machalliance/wg-agent-adoption-operations/blob/main/deliverables/agent-governance-assurance-framework/artifacts/five-stages.md). [What we reference and cite](https://github.com/machalliance/wg-agent-adoption-operations/blob/main/deliverables/agent-governance-assurance-framework/references.md) sets out where the draft leans on existing work instead of restating it, including [AI TRiSM](https://www.gartner.com/en/articles/ai-governance-trism), [AIUC-1](https://aiuc-1.com/), the [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) and the Cloud Security Alliance's [agentic profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/), ISO/IEC 42001, and [FIDO's agentic authentication work](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/).
 

@@ -10,6 +10,14 @@ This document says what each stage does and what it hands to the next. The [READ
 
 We do our best to use plain words throughout. The [glossary](../glossary.md) gives our word, what it means, and the word that other frameworks use for the same thing. [What we reference and cite](../references.md) lists the works this framework builds on and which stage each one matches.
 
+## Where to start
+
+Pick one agent you already run, or are about to. [The forms](README.md) list themselves in the order to fill them in.
+
+Aim low on the first pass. One classification, the one your agent belongs to. Level 1 on both ladders, recorded honestly. Whatever evals you already have, run against the real setup, with the results and the gaps written down and signed. A narrow version working end to end beats a maturity program nobody has deployed. Widen stage 3 once it works.
+
+The rest of this document is the reasoning: what each stage does, what it hands to the next, and why none of it is ever finished.
+
 ## The five stages at a glance
 
 You work the stages in order. Each one hands something to the next, and the last one sends findings back to the first.
@@ -24,11 +32,13 @@ You work the stages in order. Each one hands something to the next, and the last
 
 The last column is the part most governance programs leave out. Stage 5's findings correct the classifications in stage 2 and the designs in stage 1, so the sequence is a loop and not a pipeline.
 
+One finding, traced. A monitor alerts on a call to a tool the design document does not list. That is stage 4 telling you a stage 3 control is not holding, so the sign-off granted under it is void until somebody looks again. The team either revokes the access or adds the tool to the grant list, which is a new version of a stage 1 record. If that tool reaches data the old answers did not cover, the data sensitivity question in the stage 2 test has a new answer, the classification may move, and the levels stages 3 and 4 have to hold the agent to move with it. The stage 5 assurance record holds what was found, what it changed, and whether the change is live. One alert, five stages.
+
 ## Standards and records
 
 Two kinds of document run through the five stages, and they behave differently.
 
-A **standard** describes your whole company. You write it once and it grows as you build agents it does not yet describe. There are four: the [Risk Classifications](02-policy/risk-classifications.md), the [Platform Control Levels](03-platform-controls/platform-control-levels.md), the [Monitoring Levels](04-live-operations/monitoring-levels.md), and the [Audit Log Rules](05-audit-and-assurance/audit-log-rules.md). A **record** describes one agent. You fill in one per agent and revise it whenever that agent changes. Everything else is a record.
+A **standard** describes your whole company. You write it once and it grows as you build agents it does not yet describe. There are four, and only four: the [Risk Classifications](02-policy/risk-classifications.md), the [Platform Control Levels](03-platform-controls/platform-control-levels.md), the [Monitoring Levels](04-live-operations/monitoring-levels.md), and the [Audit Log Rules](05-audit-and-assurance/audit-log-rules.md). Everything else is a **record**. A record describes one agent: you fill in one per agent, and revise it whenever that agent changes.
 
 The two are versioned against different things. A record is signed off against a version of itself. A standard is not signed off at all; it is the thing records are judged against. Keeping both in one file means a change to either invalidates both, which is why the stage 3 sign-off lives in its own record and not inside the design document.
 
@@ -68,7 +78,7 @@ Some companies write one platform standard for every agent, and security must ap
 
 It covers the whole setup the agent runs on: the model and its version, the tools it can call, the framework it is built on, where it is hosted, and an agent login. Framework here means the software the agent itself is built on, and not this governance framework. The design document lists the tools and the data that the agent needs, so this stage grants that list and refuses the rest.
 
-Every level requires least privilege. What changes between them is who decides the permissions and what stops them drifting: at Level 1 a person scopes the agent's own login by hand, at Level 2 the classification sets a ceiling that granting cannot pass, at Level 3 policy as code grants from the declared design and keeps comparing the two. Level 3 is the full company model, and the point of the ladder is to make it a destination instead of an entry requirement. Plenty of teams will sit at Level 1 for a long time.
+Every level requires least privilege. What changes between them is who decides the permissions and what stops them drifting. The three definitions, and the yes/no questions you score yourself against, are in the [standard](03-platform-controls/platform-control-levels.md); read them there rather than from a summary. Level 3 is the full company model, and the point of the ladder is to make it a destination instead of an entry requirement. Plenty of teams will sit at Level 1 for a long time.
 
 Score each platform you run agents on, and state the level actually applied to each agent. Answer honestly. Somebody accepts residual risk on the understanding that a control exists, and a level claimed but not held turns that acceptance into something they did not agree to.
 
@@ -86,7 +96,7 @@ The Monitoring Plan defines what you record on every run: the tool calls and the
 
 The Incident Playbook defines what happens after an alert: triage, a review of the run record, a fix, and a review after the incident. Write it for the ways that agents fail, and name those ways: tool calls that fail in a chain, prompt injection, quiet scope creep. Ordinary software incident response does not cover any of them.
 
-Monitoring gets its own ladder, because these levels measure what you can see and not what the agent can reach. Level 1 is the tool call log with a few coarse alerts: you know what the agent did, after the fact, if you go looking. Level 2 stores whole run records and compares live behavior against the design document, so drift alerts as well as errors and you find out because something checked. Level 3 replays a past run against a maintained set of known failure modes, and the operating team cannot silently alter the records. An agent can sit at platform control Level 3 and monitoring Level 1. State the level each agent is actually on: a sign-off that assumes a monitor which does not exist is worse than one with the limit written on the record.
+Monitoring gets its own ladder, because these levels measure what you can see and not what the agent can reach. What changes between them is how much of a run you keep, and whether anything checks it without being asked. The three definitions and their questions are in the [standard](04-live-operations/monitoring-levels.md); read them there rather than from a summary. An agent can sit at platform control Level 3 and monitoring Level 1. State the level each agent is actually on: a sign-off that assumes a monitor which does not exist is worse than one with the limit written on the record.
 
 Stage 4 also corrects stage 3. A monitor reporting a call to a tool outside the declared set has told you that a control you believed you had is not holding.
 
@@ -105,9 +115,3 @@ The rules govern the first of two records: what the agent did, which decisions i
 Evals that run continuously make that second record harder rather than easier. A monthly schedule fails by stopping, which is visible; a continuous one fails quietly, with green results nobody reads and an eval set that stops growing while the agent changes. So the record holds the reviews rather than the runs, and asks when the eval set was last extended.
 
 The [standard](05-audit-and-assurance/audit-log-rules-notes.md) and [record](05-audit-and-assurance/audit-and-assurance-record-notes.md) notes say when to fold these rules into your existing records-management policy and stop maintaining them separately.
-
-## Where to start
-
-Pick one agent you already run, or are about to. [The forms](README.md) list themselves in the order to fill them in.
-
-Aim low on the first pass. One classification, the one your agent belongs to. Level 1 on both ladders, recorded honestly. Whatever evals you already have, run against the real setup, with the results and the gaps written down and signed. A narrow version working end to end beats a maturity program nobody has deployed. Widen stage 3 once it works.
