@@ -28,7 +28,7 @@ Asking it moves the gap into the sign-off, where a named person either accepts i
 
 Most teams already have an incident process, and it is built for software that fails deterministically: a service is down, a query is slow, a deploy broke a page. Agents fail differently. They succeed at every individual step and produce a wrong outcome. They are talked into things by content they read. They quietly get used for work nobody designed them for.
 
-The list is a checklist, because we are after coverage rather than narrative. Ten rows with six honest "not covered" answers tell you more than ten rows of untested prose.
+The list is a checklist, because we are after coverage rather than narrative. Eleven rows with six honest "not covered" answers tell you more than eleven rows of untested prose.
 
 The list is drawn from [OWASP's Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), which is the closest thing to an agreed taxonomy of how these systems fail. If you want a threat model instead of a playbook, start there.
 

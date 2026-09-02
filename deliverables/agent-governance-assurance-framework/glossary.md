@@ -23,6 +23,7 @@ Where the formal term is already the clearest one, we keep it. Those rows say so
 | incident playbook | The second half of the Monitoring and Incident Record: what happens once an alert fires, and who does it. | runbook, incident response plan |
 | least privilege | An agent gets the tools and the data its design document lists, and nothing else. We keep this term, because the people who scope permissions already use it. | least privilege, minimum necessary access |
 | level | One of three degrees of maturity for a single part of the framework. Level 1 is small and quick. Level 3 is the full model. | maturity model, maturity level |
+| level gap | The distance between the level an agent's classification requires and the level actually applied to it. It is accepted by name, with a closing date, in section C of that agent's Platform and Sign-off Record, or it is not accepted at all. | accepted risk, control deficiency, exception |
 | level, of a platform | The strongest control, or the most visibility, a platform can provide. Scored once per platform, in a standard. | platform capability, control baseline |
 | level, of an agent | What was actually applied to one agent. Recorded in that agent's record. It can be lower than its platform's level and can never be higher. | effective control, applied baseline |
 | monitoring plan | The first half of the Monitoring and Incident Record: what you record on every run, what counts as normal, and what starts an alert. | post-market monitoring plan, observability plan |

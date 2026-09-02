@@ -4,7 +4,9 @@
 
 This is a stage 3 artifact of the [Agent Governance and Assurance Framework](../../README.md). You keep one for each agent, alongside its [Agent Design Document](../01-agent-design/agent-design-document.md).
 
-It records three things: what the agent actually runs on, what your evals found when you ran them against that setup, and who signed off on the result. Together they are the gate between stage 3 and stage 4. Nothing goes live without this record completed and section C signed.
+It records three things: what the agent actually runs on, what your evals found when you ran them against that setup, and who signed off on the result. Together they are the gate between standing the agent up and letting it run. Nothing goes live without this record completed and section C signed.
+
+This record is completed last, after stage 4's [Monitoring and Incident Record](../04-live-operations/monitoring-and-incident-record.md), even though it belongs to stage 3. Section C states what monitoring the agent actually has, and nobody can answer that before the monitoring record exists.
 
 **Why this is a separate document.** A sign-off is granted against a version. If the platform record lived inside the design document, a model upgrade would bump that document's version and, by the framework's own rule, void a sign-off on a design that had not changed. Separating them means a platform change re-opens the platform record and its sign-off, and leaves the design document alone. Expect this record to turn over several times faster than the design it serves.
 
@@ -68,7 +70,7 @@ Evals run against the setup in section A, not against a development configuratio
 
 For any agent that reads content it did not author, whether it can be talked into something is what the sign-off most needs to know. Name the failure modes you tested against from [OWASP's Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), which is the same list stage 4's incident playbook works from.
 
-Fill in the last two rows carefully. What the evals found is what the person signing off is accepting. What you did not test is where stage 4's monitoring has to begin.
+Two rows carry more weight than the rest. "What they found" is what the person signing off is accepting. "What you know you did not test" is where stage 4's monitoring has to begin.
 
 ### C. Sign-off
 

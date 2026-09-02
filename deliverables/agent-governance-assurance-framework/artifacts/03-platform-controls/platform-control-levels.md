@@ -32,7 +32,7 @@ Level 1 is a legitimate place to stand while you learn. Most teams shipping thei
 The agent's risk classification decides the most access it can be granted. An engineer works inside that ceiling and cannot exceed it.
 
 - Everything in Level 1.
-- Each classification has a defined maximum scope.
+- Each classification names a widest grant list allowed, in your [Risk Classifications](../02-policy/risk-classifications.md).
 - Granting past that maximum is blocked, not merely discouraged.
 - Credentials are short-lived and reissued, not long-lived and rotated occasionally.
 - Somebody reviews each agent's access on a stated schedule.
@@ -64,7 +64,7 @@ Answer for one platform. Any "no" means you are not yet at that level, whatever 
 
 **Level 2**
 
-- Does each risk classification have a defined maximum scope?
+- Does each risk classification name a widest grant list allowed?
 - Would an attempt to exceed that maximum be blocked rather than logged?
 - Do credentials expire in hours rather than months?
 - Is each agent's access reviewed on a schedule somebody owns?
