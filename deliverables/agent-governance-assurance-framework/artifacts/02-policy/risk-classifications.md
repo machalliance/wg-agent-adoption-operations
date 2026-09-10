@@ -2,15 +2,11 @@
 
 *A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
 
-This is the stage 2 artifact of the [Agent Governance and Assurance Framework](../../README.md). It is a **standard**: you write it once for your company, and it grows as you build agents it does not yet describe. The framework has four standards: this one, the [Platform Control Levels](../03-platform-controls/platform-control-levels.md), the [Monitoring Levels](../04-live-operations/monitoring-levels.md) and the [Audit Log Rules](../05-audit-and-assurance/audit-log-rules.md). Everything else is a **record**, filled in once per agent.
+This is the stage 2 artifact of the [Agent Governance and Assurance Framework](../../README.md). It is a **standard**: you write it once for your company, and it grows as you build agents it does not yet describe.
 
-Stage 2 is the only stage that is not about a single agent. This document says which kinds of agent you build, what risk each kind carries, and which controls come with it. The argument that a *particular* agent belongs in a particular classification stays with that agent, in section 6 of its [Agent Design Document](../01-agent-design/agent-design-document.md).
+It says which kinds of agent you build, what risk each kind carries, and which controls come with each. The argument that a *particular* agent belongs in a particular classification stays with that agent, in section 6 of its [Agent Design Document](../01-agent-design/agent-design-document.md).
 
-**You do not need the whole set before you ship.** You need the one classification your first agent belongs to. Fill in that row, leave the others, and come back when an agent arrives that the set does not describe.
-
-**The four classifications below are a starting point, not a recommendation.** They are filled in so that you have something to argue with. Rename them, merge them, split them, or replace them. What matters is that the criteria are yours and that somebody can tell which classification an agent belongs to without asking you.
-
-For the reasoning behind the criteria and the test, see [the notes on this standard](risk-classifications-notes.md).
+[The notes on this standard](risk-classifications-notes.md) carry the guidance for using it and the reasoning behind the criteria and the test.
 
 ---
 

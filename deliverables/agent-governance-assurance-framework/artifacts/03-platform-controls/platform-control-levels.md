@@ -4,11 +4,9 @@
 
 This is the stage 3 standard of the [Agent Governance and Assurance Framework](../../README.md). You write it once for your company. Its companion is the [Platform and Sign-off Record](platform-and-sign-off-record.md), which you fill in once per agent.
 
-It answers one question: **how tightly is an agent's access actually controlled, and who decides?**
+It answers one question: **how tightly is an agent's access actually controlled, and who decides?** These are capability levels rather than maturity levels. Stage 2 sets the level a classification requires, and stage 3 records the level each agent is really on.
 
-Stage 2 uses the answer to set requirements, because a classification says an agent needs a given level. Stage 3 records which level each agent is really on. Without this document those levels mean whatever the reader assumes.
-
-**This is a starting ladder, not a complete model.** It exists so a team with nothing can work out where they stand and what to do next, in an afternoon. Part 4 says where to go when you need more than that, and part 5 tells you when that point has arrived.
+[The notes on this standard](platform-control-levels-notes.md) carry where the ladder comes from and what it deliberately leaves out.
 
 ---
 

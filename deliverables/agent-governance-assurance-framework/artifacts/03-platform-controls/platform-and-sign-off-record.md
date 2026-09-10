@@ -2,23 +2,11 @@
 
 *A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
 
-This is a stage 3 artifact of the [Agent Governance and Assurance Framework](../../README.md). You keep one for each agent, alongside its [Agent Design Document](../01-agent-design/agent-design-document.md).
+This is a stage 3 artifact of the [Agent Governance and Assurance Framework](../../README.md): one per agent, alongside its [Agent Design Document](../01-agent-design/agent-design-document.md). It records what the agent actually runs on, what your evals found when you ran them against that setup, and who signed off on the result. Nothing goes live without this record completed and section C signed.
 
-It records three things: what the agent actually runs on, what your evals found when you ran them against that setup, and who signed off on the result. Together they are the gate between standing the agent up and letting it run. Nothing goes live without this record completed and section C signed.
+Whoever stood the agent up fills it in, with the person who will sign it off reading over their shoulder. It is completed last, after stage 4's [Monitoring and Incident Preparedness Record](../04-live-operations/monitoring-and-incident-preparedness-record.md), because section C compares the monitoring the agent actually has against what its classification requires.
 
-This record is completed last, after stage 4's [Monitoring and Incident Preparedness Record](../04-live-operations/monitoring-and-incident-preparedness-record.md), even though it belongs to stage 3. Section C states what monitoring the agent actually has, and nobody can answer that before the monitoring record exists.
-
-**Why this is a separate document.** A sign-off is granted against a version. If the platform record lived inside the design document, a model upgrade would bump that document's version and, by the framework's own rule, void a sign-off on a design that had not changed. Separating them means a platform change re-opens the platform record and its sign-off, and leaves the design document alone. Expect this record to turn over several times faster than the design it serves.
-
-**Who fills it in.** Whoever stood the agent up, with the person who will sign it off reading over their shoulder. Section A is a description of a running system, so fill it in after the agent exists and not before.
-
-**If the platform is somebody else's.** For an agent you bought rather than built, section A describes a platform you do not operate. Record what the vendor publishes, name the rows they will not answer, and say where you asked. A model version you cannot see is not the same as one you have not looked up, and only the second is a gap you can close. The rows you cannot fill are the ones section C has to accept by name.
-
-**This is not the [Platform Control Levels](platform-control-levels.md).** That one describes your whole company: the three levels, and what each requires. This record is the per-agent entry that names which level a given agent is on.
-
-For the reasoning behind each section, see [the notes on this form](platform-and-sign-off-record-notes.md). The levels themselves are defined in the [Platform Control Levels](platform-control-levels.md).
-
-The two platform control rows in section A ask different questions. The first is the strongest control the platform could enforce. The second is what was actually applied to this agent, which can be lower and cannot be higher. The monitoring levels themselves are recorded once, in the [Monitoring and Incident Preparedness Record](../04-live-operations/monitoring-and-incident-preparedness-record.md). Section C records only whether the level applied meets what the classification requires.
+[The notes on this form](platform-and-sign-off-record-notes.md) carry the guidance for filling it in and the reasoning behind each section. The levels themselves are defined in the [Platform Control Levels](platform-control-levels.md).
 
 ---
 
@@ -27,6 +15,8 @@ The two platform control rows in section A ask different questions. The first is
 ### A. The platform it runs on
 
 What the agent actually runs on, and not what it is supposed to run on.
+
+The two platform control rows ask different questions. The first is the strongest control the platform could enforce. The second is what was actually applied to this agent, which can be lower and cannot be higher. The monitoring levels are recorded once, in the [Monitoring and Incident Preparedness Record](../04-live-operations/monitoring-and-incident-preparedness-record.md); section C here records only whether the level applied meets what the classification requires.
 
 | Field | Your answer |
 |---|---|

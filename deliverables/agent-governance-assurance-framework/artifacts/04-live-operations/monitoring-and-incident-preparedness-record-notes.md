@@ -6,6 +6,22 @@ This document explains the [Monitoring and Incident Preparedness Record](monitor
 
 ---
 
+## Before you fill it in
+
+### Why it is filled in before the agent goes live
+
+The sign-off in stage 3 is granted against a described set of behaviors. This document is how anybody finds out whether the live agent is still inside them, which is a question you want answered before the first incident rather than during it.
+
+### If you bought the agent rather than built it
+
+Section A describes what the vendor's platform records and what it will hand you. Name the rows they will not answer, and say where you asked. A signal you cannot get is a monitoring gap like any other, and section C is where it shows up as an alert you cannot implement.
+
+### Section B is the hard part
+
+Everything else in the form describes intent. Section B is what makes the evals run without a person remembering to start them, which is the difference between assurance and a good intention.
+
+---
+
 ## The three monitoring levels
 
 They are defined in the [Monitoring Levels](monitoring-levels.md), which also explains why they climb separately from the platform control levels and why the level describes a platform rather than an agent.
@@ -57,13 +73,19 @@ Whether you buy one or build it, this stage is where it sits. This form is what 
 | E. What goes wrong | [OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/): goal hijack, tool misuse, identity and privilege abuse, supply chain, unexpected code execution, memory and context poisoning, insecure inter-agent communication, cascading failures, human-agent trust exploitation, and rogue agents. |
 | The three levels | OWASP's [State of Agentic AI Security and Governance v2.01](https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/) pairs an adoption tier with a governance maturity level, which is the same two-axis idea as our platform control levels and monitoring levels. |
 
-## What this record is not
+## What this record does not cover
 
-**It is not your observability stack.** The tools are yours: OpenTelemetry, whatever backend you already run, a guardian agent, or a vendor platform. This is the document that says what you decided to watch and what you decided to do about it. It should be readable by somebody who cannot log into any of those tools.
+### Your observability stack
 
-**It is not a substitute for the design document.** Section D points at section 5 of the design document for how the agent is stopped, instead of restating it. Two documents describing the same kill switch will disagree within a quarter.
+The tools are yours: OpenTelemetry, whatever backend you already run, a guardian agent, or a vendor platform. This is the document that says what you decided to watch and what you decided to do about it, and somebody who cannot log into any of those tools should still be able to read it.
 
-**It is not stage 5.** The records this section produces are for operators: debugging, triage, understanding what happened. Turning them into evidence an auditor accepts is a separate job with different requirements, and it is in the [Audit and Assurance Record](../05-audit-and-assurance/audit-and-assurance-record.md).
+### How the agent is stopped
+
+Section D points at section 5 of the design document rather than restating it. Two documents describing the same kill switch will disagree within a quarter.
+
+### Evidence for an auditor
+
+The records this stage produces are for operators: debugging, triage, understanding what happened. Turning them into evidence an auditor accepts is a separate job with different requirements, and it is in the [Audit and Assurance Record](../05-audit-and-assurance/audit-and-assurance-record.md).
 
 ## What we want feedback on
 

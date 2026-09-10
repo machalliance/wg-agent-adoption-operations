@@ -2,21 +2,11 @@
 
 *A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
 
-This is the stage 5 artifact of the [Agent Governance and Assurance Framework](../../README.md). It holds two records. Most organizations already have something like the first. Very few have the second.
+This is the stage 5 artifact of the [Agent Governance and Assurance Framework](../../README.md), one per agent. Section A is where this agent's records actually go, and section B is where it departs from the [Audit Log Rules](audit-log-rules.md). Sections C and D are the Assurance Record: what the evals are telling you, who read them, and what changed because of it. Section E is filled in when the agent is switched off, and section F is its revision history.
 
-Section A is where this agent's records actually go. Section B is where this agent departs from the [Audit Log Rules](audit-log-rules.md), which are written once for every agent. Sections C and D are the **Assurance Record**: what the evals are telling you, who read them, and what changed because of it. Section E is filled in when the agent is switched off. Section F is its revision history.
+The team that runs the agent fills in sections A, B and E. Section C belongs to whoever reads the eval results, who may not be the same people, and section D to whoever acted on a finding.
 
-The first record shows what the agent did. The second shows that somebody is still checking, on a date after the sign-off. An auditor will ask for both.
-
-For the reasoning behind each section, see [the notes on this form](audit-and-assurance-record-notes.md).
-
-**Who fills it in.** The team that runs the agent, for sections A, B and E. Section C belongs to whoever reads the eval results, who may not be the same people. Section D belongs to whoever acted on a finding.
-
-**If you bought the agent rather than built it.** The records still have to exist and you still have to be able to produce them. Where the vendor holds them, name the vendor, say how you obtain a copy and how long they keep it. "We would have to ask" is a gap the sign-off carries.
-
-**This is not the same as stage 4.** Stage 4 records things so an operator can understand what an agent did. This one asks whether you can prove what happened, and why, to somebody who does not trust you: records held for a period somebody chose on purpose, and alterable only in ways that get noticed.
-
-**Section D is the one that carries the framework.** Every arrow that runs back up the five stages is evidenced there, or it did not happen.
+[The notes on this form](audit-and-assurance-record-notes.md) carry the guidance for filling it in and the reasoning behind each section.
 
 ---
 

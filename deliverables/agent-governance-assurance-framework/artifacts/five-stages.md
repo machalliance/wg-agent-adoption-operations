@@ -16,8 +16,6 @@ Pick one agent you already run, or are about to. [The forms](README.md) list the
 
 Aim low on the first pass. One classification, the one your agent belongs to. Level 1 on both ladders, recorded honestly. Whatever evals you already have, run against the real setup, with the results and the gaps written down and signed. A narrow version working end to end beats a maturity program nobody has deployed. Widen stage 3 once it works.
 
-The rest of this document is the reasoning: what each stage does, what it hands to the next, and why none of it is ever finished.
-
 ## The five stages at a glance
 
 You work the stages in order. Each one hands something to the next, and the last one sends findings back to the first.
@@ -30,9 +28,9 @@ You work the stages in order. Each one hands something to the next, and the last
 | 4. Live operations | Keeps the evals running, and says what happens when one fails. | The records stage 5 keeps. |
 | 5. Audit and assurance | Keeps proof of what the agent did, and proof that somebody is still reading the evals. | Corrections to the classifications and the designs. |
 
-The last column is the part most governance programs leave out. Stage 5's findings correct the classifications in stage 2 and the designs in stage 1, so the sequence is a loop and not a pipeline.
+The last column is the part most governance programs leave out. Stage 5's findings correct the classifications in stage 2 and the designs in stage 1, which closes the loop.
 
-One finding, traced. A monitor alerts on a call to a tool the design document does not list. That is stage 4 telling you a stage 3 control is not holding, so the sign-off granted under it is void until somebody looks again. The team either revokes the access or adds the tool to the grant list, which is a new version of a stage 1 record. If that tool reaches data the old answers did not cover, the data sensitivity question in the stage 2 test has a new answer, the classification may move, and the levels stages 3 and 4 have to hold the agent to move with it. The stage 5 assurance record holds what was found, what it changed, and whether the change is live. One alert, five stages.
+Here is one finding traced through it. A monitor alerts on a call to a tool the design document does not list. That is stage 4 telling you a stage 3 control is not holding, so the sign-off granted under it is void until somebody looks again. The team either revokes the access or adds the tool to the grant list, which is a new version of a stage 1 record. If that tool reaches data the old answers did not cover, the data sensitivity question in the stage 2 test has a new answer, the classification may move, and the levels stages 3 and 4 have to hold the agent to move with it. The stage 5 assurance record holds what was found, what it changed, and whether the change is live. That is one alert reaching all five stages.
 
 ## Standards and records
 
@@ -84,7 +82,7 @@ Score each platform you run agents on, and state the level actually applied to e
 
 Run your evals against the setup you stood up: this model version, these tools, this framework, this host. An eval that passed against a different configuration tells you about that configuration. Record what they found, what you changed because of it, and what you know you did not test. The person signing off is accepting the first two. The third is where stage 4's monitoring has to begin.
 
-**The step across.** A gate sits between standing the agent up and letting it run. It is not a gate between two stages: by the time somebody signs, stage 4's monitoring record has to exist too, because the sign-off states what monitoring the agent actually has. [The forms](README.md) list the order to complete them in, which is not the order the stages are numbered in. One named person signs off on the agent as a whole: what it is for, its classification, the platform it runs on, what the evals found, and the risk that is left. Record the name, the date, and the versions of both the design document and this record. What they sign off is what the platform enforces, and not a description of it. When live behavior stops matching the description it was granted against, the sign-off is void until somebody looks again.
+**The step across.** A gate sits between standing the agent up and letting it run. It interrupts the stage order rather than sitting between two stages: by the time somebody signs, stage 4's monitoring record has to exist too, because the sign-off states what monitoring the agent actually has. [The forms](README.md) list the order to complete them in, which is not the order the stages are numbered in. One named person signs off on the agent as a whole: what it is for, its classification, the platform it runs on, what the evals found, and the risk that is left. Record the name, the date, and the versions of both the design document and this record. What they sign off is what the platform enforces, and not a description of it. When live behavior stops matching the description it was granted against, the sign-off is void until somebody looks again.
 
 The [standard](03-platform-controls/platform-control-levels-notes.md) and [record](03-platform-controls/platform-and-sign-off-record-notes.md) notes say where this ladder ends and when to move to the [Cloud Security Alliance's Agentic AI Identity and Access Management](https://cloudsecurityalliance.org/artifacts/agentic-ai-identity-and-access-management-a-new-approach).
 

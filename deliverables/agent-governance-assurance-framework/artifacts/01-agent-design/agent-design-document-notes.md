@@ -6,6 +6,32 @@ This document explains the [Agent Design Document](agent-design-document.md): wh
 
 ---
 
+## Before you fill it in
+
+### Who reads it
+
+Three people. The person who signs the agent off, to decide whether the risk is acceptable. Whoever configures the platform, who needs section 3 to know what to grant. An auditor, later, to find out what was authorized and by whom.
+
+Each downstream stage uses it directly: stage 3 grants exactly the access section 3 lists, stage 4 checks live behavior against what the document claims, and stage 5 keeps it as evidence.
+
+### If you bought the agent rather than built it
+
+Most of what a vendor ships is a product decision you cannot change, and none of that moves the accountability. Inside your company, this agent is yours.
+
+Fill in sections 1, 2, 4 and 5 as normal, from the configuration you chose and the work you pointed it at. Write section 3 from what you actually connected it to. Where the vendor will not say what the agent reaches or what runs underneath, write "not disclosed by the vendor" rather than guessing. That answer is a finding the person signing off in stage 3 has to see.
+
+### Fill it in badly rather than not at all
+
+A document with five honest gaps and a named owner is worth more than a complete one written to pass a review. Write "not known" where that is the answer, and the gap becomes work rather than a false claim.
+
+Two columns ask a technical question before the technical decision is made. Grant list granularity in section 3 and where the control is enforced in section 4 both describe a platform you may not have picked yet. Write what you intend and mark it "not decided". Both have to be true rather than intended before the stage 3 sign-off, because that is what the sign-off grants against.
+
+### When it goes out of date
+
+One more tool, a widened scope or a new audience all change the answers, so record the date you last revised it in section 7.
+
+---
+
 ## Notes on the hard parts
 
 ### The outcome, and why it comes first
@@ -60,19 +86,31 @@ Every section of this form answers a question that at least one other credible f
 | 6. Classification and the test | The [CSA Agentic AI profile for the NIST AI RMF](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/) supplies autonomy tiers and requires that authority held, tools reached, and revocation timing be tracked per agent. [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) GV.1.6 requires an inventory of AI systems resourced according to risk priority. [AIUC-1](https://aiuc-1.com/) certifies against 51 requirements over data and privacy, security, safety, reliability, accountability and society. OWASP's maturity model pairs an adoption tier with a governance-maturity level, which is the same move as pairing a classification with your platform control level. |
 | 7. Revision history | AWS [AGENTOPS05](https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentops05.html) (tracing, anomaly detection) and Annex IV §9 (the post-market monitoring plan) are what produce the rows. AIUC-1 refreshes the standard quarterly, on the same reasoning. |
 
-## What this document is not
+## What this document does not cover
 
-**It is not an A2A Agent Card.** The [A2A specification](https://a2a-protocol.org/latest/specification/) v1.0.0 defines an `AgentCard` with `id`, `name`, `description`, `provider`, `capabilities`, `skills`, `interfaces`, `securitySchemes`, `extensions` and `signature`. It is a discovery and interoperability manifest: it tells another agent what this one can do and how to authenticate to it. It has no field for the accountable person, the risk classification, the approval, the sensitivity of the data reached, or the escalation path. [Google Cloud's Agent Registry schemas](https://docs.cloud.google.com/agent-registry/json-schemas) follow the Agent Card shape and inherit the same omissions.
+### An A2A Agent Card
+
+The [A2A specification](https://a2a-protocol.org/latest/specification/) v1.0.0 defines an `AgentCard` with `id`, `name`, `description`, `provider`, `capabilities`, `skills`, `interfaces`, `securitySchemes`, `extensions` and `signature`. It is a discovery and interoperability manifest: it tells another agent what this one can do and how to authenticate to it. It has no field for the accountable person, the risk classification, the approval, the sensitivity of the data reached, or the escalation path. [Google Cloud's Agent Registry schemas](https://docs.cloud.google.com/agent-registry/json-schemas) follow the Agent Card shape and inherit the same omissions.
 
 A2A is solving a different problem, so those omissions are deliberate. They are also why this document exists. Sections 0, 6 and 7 here, and the sign-off in the platform record, are the governance metadata the machine-readable manifests leave out. Sections 2 and 3 overlap with them enough that you should generate one from the other instead of maintaining both by hand.
 
-**It is not a model card or a system card.** Those describe a model: its training data, its benchmarks, its known limitations. Anthropic's [system cards](https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents) and the equivalents from other labs cover the model you build on. This document covers the behavior and the authority of one agent you built, and the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md) is where it points at the model card of the model underneath.
+### The platform, the evals and the sign-off
 
-**It is not the first proposal of its kind.** It is the first with a standards body behind it. Two prior efforts reached a similar conclusion, and neither has institutional backing. [Agent Cards: A Documentation Standard for Operational AI Agents](https://link.springer.com/chapter/10.1007/978-3-032-17933-3_25) (MICAI 2025 workshops, Springer) is a peer-reviewed workshop proposal covering roles, memory, tools, protocols, monitoring hooks, governance scope and evaluation metrics. [Agent Manifest](https://agent-manifest-spec.org/) is a single-author specification, published across five repositories with one contributor and no adopters at the time of writing.
+Those live in the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md), one per agent, versioned separately. A sign-off is granted against a version, so if a model upgrade bumped this document's version it would void a sign-off on a design that had not changed.
+
+### A model card or a system card
+
+Those describe a model: its training data, its benchmarks, its known limitations. Anthropic's [system cards](https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents) and the equivalents from other labs cover the model you build on. This document covers the behavior and the authority of one agent you built, and the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md) is where it points at the model card of the model underneath.
+
+### The first proposal of its kind
+
+It is the first with a standards body behind it. Two prior efforts reached a similar conclusion, and neither has institutional backing. [Agent Cards: A Documentation Standard for Operational AI Agents](https://link.springer.com/chapter/10.1007/978-3-032-17933-3_25) (MICAI 2025 workshops, Springer) is a peer-reviewed workshop proposal covering roles, memory, tools, protocols, monitoring hooks, governance scope and evaluation metrics. [Agent Manifest](https://agent-manifest-spec.org/) is a single-author specification, published across five repositories with one contributor and no adopters at the time of writing.
 
 We record them because they show the gap is real and independently felt. Neither constrains this work. Neither carries a classification argument, and neither has a governing body that could maintain it. That is the difference this framework is trying to make: a document of this kind is only useful if somebody is still revising it in three years.
 
-**It is not an agent registry entry.** A registry entry is the index: one row per agent, held centrally, for discovery and inventory. This is the document the row points at. The commercial platforms are converging on requiring the former before production, which is a good pattern to copy: no registry entry, no deployment.
+### An agent registry entry
+
+A registry entry is the index: one row per agent, held centrally, for discovery and inventory. This is the document the row points at. The commercial platforms are converging on requiring the former before production, which is a good pattern to copy: no registry entry, no deployment.
 
 ## If you have EU AI Act duties
 

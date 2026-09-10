@@ -6,6 +6,18 @@ This document explains the [Platform Control Levels](platform-control-levels.md)
 
 ---
 
+## Before you use it
+
+### A starting ladder, not a complete model
+
+It exists so that a team with nothing can work out where they stand and what to do next, in an afternoon. Part 4 of the standard says where to go when you need more than that, and part 5 says when that point has arrived.
+
+### Why write the levels down at all
+
+Without a written definition, a level means whatever the reader assumes it means, and a sign-off that rests on the number is resting on nothing.
+
+---
+
 ## Notes on the hard parts
 
 ### This ladder is not original, and says so
@@ -51,13 +63,19 @@ It matters because an agent's permissions are granted once and then survive ever
 
 ---
 
-## What this standard is not
+## What this standard does not cover
 
-**It is not a security architecture.** It says how tightly access is controlled. It does not tell you how to build the controls, and CSA's work does.
+### How to build the controls
 
-**It is not a certification.** [AIUC-1](https://aiuc-1.com/) and [ISO/IEC 42001](https://www.iso.org/standard/81230.html) are things you can certify against. This is a self-assessment that nobody audits, which makes it useful for planning and worthless as evidence.
+It says how tightly access is controlled. CSA's work is where the architecture lives.
 
-**It is not a schedule.** Nothing here says you should reach Level 3, or by when. Stage 2 decides which level a given classification of agent requires, and that is a decision about risk, not about maturity for its own sake.
+### Certification
+
+[AIUC-1](https://aiuc-1.com/) and [ISO/IEC 42001](https://www.iso.org/standard/81230.html) are things you can certify against. This is a self-assessment that nobody audits, which makes it useful for planning and worthless as evidence.
+
+### When you should reach Level 3
+
+Nothing here says you should, or by when. Stage 2 decides which level a given classification of agent requires, which is a decision about risk.
 
 ## What we want feedback on
 

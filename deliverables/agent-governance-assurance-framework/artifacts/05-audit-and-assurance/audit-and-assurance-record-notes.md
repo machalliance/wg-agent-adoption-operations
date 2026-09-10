@@ -6,6 +6,26 @@ This document explains the [Audit and Assurance Record](audit-and-assurance-reco
 
 ---
 
+## Before you fill it in
+
+### The two records it holds
+
+The first shows what the agent did. The second shows that somebody is still checking, on a date after the sign-off. Most organizations already have something like the first. An auditor will ask for both.
+
+### How this differs from stage 4
+
+Stage 4 records things so that an operator can understand what an agent did. This one asks whether you can prove what happened, and why, to somebody who does not trust you: records held for a period somebody chose on purpose, and alterable only in ways that get noticed.
+
+### If you bought the agent rather than built it
+
+The records still have to exist and you still have to be able to produce them. Where the vendor holds them, name the vendor, say how you obtain a copy, and say how long they keep it. "We would have to ask" is a gap the sign-off carries.
+
+### Section D carries the framework
+
+Every arrow that runs back up the five stages is evidenced there, or it did not happen.
+
+---
+
 ## Notes on the hard parts
 
 ### Why this is separate from stage 4
@@ -79,11 +99,15 @@ A finding that produced a document change and no behavior change is still open, 
 | C. Assurance: the evals, and who reads them | [AIUC-1](https://aiuc-1.com/) pairs a governance audit with recurring adversarial testing, not one annual review, and refreshes the standard quarterly. The [Cloud Security Alliance's agentic profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/) for the NIST AI RMF asks that the authority an agent holds be reviewed, and names when it should be revoked. |
 | D. Findings, and what they changed | [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) is built as four functions that feed each other rather than a sequence, and MANAGE is where findings return to GOVERN and MAP. OWASP's [State of Agentic AI Security and Governance v2.01](https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/) puts telemetry and red-team findings automatically tuning guardrails at its highest maturity level. |
 
-## What this record is not
+## What this record does not cover
 
-**It is not a certification.** [ISO/IEC 42001](https://www.iso.org/standard/81230.html) and AIUC-1 have audit processes behind them and this framework does not. What this form produces is evidence a certifier would have asked for anyway, in a shape you can hand over.
+### Certification
 
-**It is not your log store.** Section A describes where records go, not a schema. If it and your actual configuration disagree, the configuration wins, and this document is wrong rather than aspirational.
+[ISO/IEC 42001](https://www.iso.org/standard/81230.html) and AIUC-1 have audit processes behind them, and this framework does not. What this form produces is evidence a certifier would have asked for anyway, in a shape you can hand over.
+
+### Your log store
+
+Section A describes where records go, rather than a schema. If it and your actual configuration disagree, the configuration wins, and this document is wrong rather than aspirational.
 
 ## What we want feedback on
 

@@ -4,11 +4,9 @@
 
 This is the stage 5 standard of the [Agent Governance and Assurance Framework](../../README.md). You write it once for your company. Its companion is the [Audit and Assurance Record](audit-and-assurance-record.md), which you fill in once per agent.
 
-It answers one question: **what does an agent produce that your records policy has never seen, and who decides what happens to it?**
+It answers one question: **what does an agent produce that your records policy has never seen, and who decides what happens to it?** It lists what agents add, says what is different about it, and leaves the columns for the people who own retention, legal holds and control mappings.
 
-You have a records policy already, and at least one audit you pass. Retention periods, legal holds and control mappings belong to whoever owns those, and this document does not set them. It lists what agents add for them to decide, says what is different about it, and leaves the columns for the people who own the answer.
-
-Part 4 says when to fold this into the policy you already have and stop maintaining it separately.
+[The notes on this standard](audit-log-rules-notes.md) carry the guidance for using it and the reasoning behind each part.
 
 ---
 

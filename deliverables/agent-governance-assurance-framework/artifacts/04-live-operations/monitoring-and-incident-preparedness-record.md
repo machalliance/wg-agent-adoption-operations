@@ -2,27 +2,19 @@
 
 *A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
 
-This is the stage 4 artifact of the [Agent Governance and Assurance Framework](../../README.md). It is a **record**: one per agent, alongside its [Agent Design Document](../01-agent-design/agent-design-document.md) and its [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md).
+This is the stage 4 artifact of the [Agent Governance and Assurance Framework](../../README.md): one per agent, alongside its [Agent Design Document](../01-agent-design/agent-design-document.md) and its [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md). Sections A to C are the Monitoring Plan: what you record on every run, what counts as normal, and what starts an alert. Sections D and E are the Incident Playbook: what happens once an alert starts, and who does it.
 
-It holds two connected things. Sections A to C are the Monitoring Plan: what you record on every run, what counts as normal, and what starts an alert. Sections D and E are the Incident Playbook: what happens once an alert starts, and who does it.
+The team that operates the agent fills it in, before the agent goes live rather than after the first incident. Section B needs whoever owns the pipeline the agent is deployed through, and section D needs whoever is on call.
 
-For the reasoning behind each section, see [the notes on this form](monitoring-and-incident-preparedness-record-notes.md). The levels themselves are defined in the [Monitoring Levels](monitoring-levels.md).
-
-**Who fills it in.** The team that operates the agent, with whoever owns the alerting it will use. Section B needs whoever owns the pipeline the agent is deployed through, because what starts an eval is a property of that pipeline and not of this document. Section D needs whoever is on call.
-
-**If you bought the agent rather than built it.** Section A describes what the vendor's platform records and what it will hand you. Name the rows they will not answer, and say where you asked. A signal you cannot get is a monitoring gap like any other, and section C is where it shows up as an alert you cannot implement.
-
-**Fill this in before the agent goes live, not after the first incident.** The sign-off in stage 3 is granted against a described set of behaviors. This document is how anybody finds out whether the live agent is still inside them.
-
-**The hard part is section B.** Everything else describes intent. Section B is what makes the evals run without a person remembering to start them, and it is the difference between assurance and a good intention.
-
-The two monitoring rows in section A ask different questions. The first is the most this platform can see. The second is what is actually collected and checked for this agent, which can be lower and cannot be higher.
+[The notes on this form](monitoring-and-incident-preparedness-record-notes.md) carry the guidance for filling it in and the reasoning behind each section. The levels themselves are defined in the [Monitoring Levels](monitoring-levels.md).
 
 ---
 
 ## The form
 
 ### A. What you record on every run
+
+The two monitoring rows ask different questions. The first is the most this platform can see. The second is what is actually collected and checked for this agent, which can be lower and cannot be higher.
 
 | Field | Your answer |
 |---|---|

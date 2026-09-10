@@ -2,25 +2,11 @@
 
 *A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
 
-This is the stage 1 artifact of the [Agent Governance and Assurance Framework](../../README.md). It is one document for one agent, and it is the document a team touches first.
+This is the stage 1 artifact of the [Agent Governance and Assurance Framework](../../README.md): one document for one agent, written before the agent goes near production. It records what the agent is for, what it can touch, what it decides alone, and which risk classification it belongs to.
 
-You write it before the agent goes near production. It records what the agent is for, what it can touch, what it decides alone, and which risk classification it belongs to. Stage 3 grants exactly the access this document lists. Stage 4 checks live behavior against what this document claims. Stage 5 keeps it as evidence.
+The team that builds the agent fills it in, not a risk function. Section 6 is answered last, because nobody can classify an agent until somebody has written down what it does.
 
-Three people read it. The person who signs the agent off, to decide whether the risk is acceptable. Whoever configures the platform, who needs section 3 to know what to grant. An auditor, later, to find out what was authorized and by whom.
-
-The sections run description first and classification last, because nobody can classify an agent until somebody has written down what it does. Expect the answers to go out of date: one more tool, a widened scope or a new audience all change them, so record the date you last revised it in section 7.
-
-For the reasoning behind each section, and where its questions come from, see [the notes on this form](agent-design-document-notes.md).
-
-**Who fills it in.** The team that builds the agent, not a risk function.
-
-**If you bought the agent rather than built it.** Most of what a vendor ships is a product decision you cannot change, and none of that moves the accountability: inside your company, this agent is yours. Fill in sections 1, 2, 4 and 5 as normal, from the configuration you chose and the work you pointed it at. Write section 3 from what you actually connected it to, and where the vendor will not say what it reaches or what runs underneath, write "not disclosed by the vendor" instead of guessing. That answer is a finding, not a gap in the form, and the person signing off in stage 3 has to see it.
-
-**Fill it in badly rather than not at all.** A document with five honest gaps and a named owner is worth more than a complete one written to pass a review. Write "not known" where that is the answer, and the gap becomes work instead of a false claim.
-
-**Two columns ask a technical question before the technical decision is made.** Grant list granularity in section 3 and where the control is enforced in section 4 both describe a platform you may not have picked yet. Write what you intend and mark it "not decided", rather than leaving the row empty or inventing an answer. Both have to be true rather than intended before the stage 3 sign-off, because that is what the sign-off grants against.
-
-**The platform, the evals and the sign-off are not in here.** They live in the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md), one per agent, versioned separately. They have to be, because a sign-off is granted against a version: if a model upgrade bumped this document's version, it would void a sign-off on a design that had not changed.
+[The notes on this form](agent-design-document-notes.md) carry the guidance for filling it in, the reasoning behind each section, and where its questions come from.
 
 ---
 
@@ -85,7 +71,7 @@ This is the grant list. Stage 3 grants what is in this table and refuses everyth
 | | | | | | |
 | | | | | | |
 
-**Grant list granularity** takes one of three answers: **tool level**, **data level**, or **not enforceable here**. This is not the same question as the enforcement column in section 4. That one asks what stops a decision being made. This one asks how finely the access itself can be scoped.
+**Grant list granularity** takes one of three answers: **tool level**, **data level**, or **not enforceable here**. It asks how finely the access itself can be scoped, which is a different question from the enforcement column in section 4, where the subject is what stops a decision being made.
 
 Every platform we have looked at can scope at tool level, meaning this agent may call this tool and not that one. Scoping *within* a tool, to particular records or particular fields, is not portable and on some platforms is not possible at all. Where the limit you need is a data-level one your platform cannot express, write "not enforceable here". The agent can then reach more data than you intended, which is what question 2 of section 6 asks about.
 
@@ -93,7 +79,7 @@ Every platform we have looked at can scope at tool level, meaning this agent may
 
 > 
 
-**Other agents.** An agent that this one calls is a row in the table above, named as the agent and not as the tools behind it. Then say which agents call this one, whose authority those calls run under, and what this agent does when it cannot tell. A call arriving from another agent is not the same as a call from the person who started the chain, and a grant list is worth little if the agent cannot tell the two apart.
+**Other agents.** An agent that this one calls is a row in the table above, named as the agent rather than as the tools behind it. Then say which agents call this one, whose authority those calls run under, and what this agent does when it cannot tell. A grant list is worth little if the agent cannot distinguish a call from another agent from a call from the person who started the chain.
 
 > 
 
@@ -118,7 +104,7 @@ Every platform we have looked at can scope at tool level, meaning this agent may
 | | | |
 | | | |
 
-**Where the control is enforced** takes one of four answers: **in the platform**, **in the tool layer**, **in the prompt**, or **nowhere**. This is not the same question as grant list granularity in section 3. That one asks how finely access can be scoped. This one asks what stops a decision being made. "In the prompt" counts, and it is the weakest of the four. Section 6 charges you for it.
+**Where the control is enforced** takes one of four answers: **in the platform**, **in the tool layer**, **in the prompt**, or **nowhere**. It asks what stops a decision being made, which is a different question from grant list granularity in section 3. "In the prompt" counts as an answer, and it is the weakest of the four. Section 6 charges you for it.
 
 **If any row above says "in the prompt", say how the prompt is controlled.** Where it lives, who can change it, and whether a change is reviewed before it reaches production. A control written into a prompt that anybody can edit can be removed without anybody noticing, and nothing in section 7 will show you that it went.
 
@@ -184,7 +170,7 @@ Three limits on lowering a floor:
 2. A control enforced only in the prompt cannot lower a floor. If section 4 says "in the prompt", the floor stands.
 3. A lowered floor must also be named in the sign-off, in the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md), by the person accepting it.
 
-**A blank row is not a low answer.** An unanswered row means the classification is not yet established, and the agent is not ready for sign-off.
+**An unanswered row.** It leaves the classification unestablished, and the agent is not ready for sign-off.
 
 **What would change this classification?** The change to the agent, its tools, its data, or its model that would make you run this test again.
 

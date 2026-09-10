@@ -6,17 +6,33 @@ This document explains the [Risk Classifications and the Classification Test](ri
 
 ---
 
+## Before you use it
+
+### You do not need the whole set before you ship
+
+You need the one classification your first agent belongs to. Fill in that row, leave the others, and come back when an agent arrives that the set does not describe.
+
+### The four classifications below are a starting point
+
+They are filled in so that you have something to argue with. Rename them, merge them, split them, or replace them. What matters is that the criteria are yours, and that somebody can tell which classification an agent belongs to without asking you.
+
+### Where this sits among the standards
+
+Stage 2 is the only stage that is not about a single agent. The framework has four standards: this one, the [Platform Control Levels](../03-platform-controls/platform-control-levels.md), the [Monitoring Levels](../04-live-operations/monitoring-levels.md) and the [Audit Log Rules](../05-audit-and-assurance/audit-log-rules.md). Everything else is a record, filled in once per agent.
+
+---
+
 ## Notes on the hard parts
 
 ### Why the starter classifications are filled in
 
 An empty template gets adopted and never completed. A filled-in one gets argued with, and the argument is what we want: a team that renames "sensitive" or moves a control between classifications has understood the criteria well enough to disagree with them.
 
-The four we ship are consequence classifications. They are deliberately coarse. Most companies will end up with four to six classifications, and the ones that end up with twelve have usually built a matrix, not a policy.
+The four we ship are consequence classifications. They are deliberately coarse. Most companies will end up with four to six classifications. Twelve usually means somebody has built a matrix rather than a policy.
 
 ### Why classifications describe types, not agents
 
-Every other artifact in this framework is one document per agent. This one is not, and the reason is that controls are expensive to design and cheap to reuse. If each agent carried its own bespoke control set, nothing would ever get enforced in a platform, because a platform enforces rules that apply to a class of things.
+Every other artifact in this framework is one document per agent. This one describes types instead, because controls are expensive to design and cheap to reuse. If each agent carried its own bespoke control set, nothing would ever get enforced in a platform, because a platform enforces rules that apply to a class of things.
 
 So the classification is the unit a platform can act on. Stage 3 Level 2 exists precisely because a classification can set a ceiling that an engineer cannot grant past, and that only works if the classification is a durable type and not a per-agent judgment.
 
@@ -44,7 +60,7 @@ With a wide hatch, the rule is decorative: every team names its system prompt an
 
 ### Why the reclassification triggers are a table
 
-Because the most common failure of a governance program is not a wrong classification. It is a correct classification that nobody revisited after the model changed.
+Because the most common failure of a governance program is a correct classification that nobody revisited after the model changed.
 
 The triggers name which stage detects each one, so the loop back from stage 4 and stage 5 has somewhere specific to land.
 
@@ -61,13 +77,19 @@ The triggers name which stage detects each one, so the loop back from stage 4 an
 | Classification setting a platform ceiling | [Amazon Bedrock AgentCore Gateway](https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-tool-access-with-amazon-bedrock-agentcore-gateway/) governs tool access on a Connect, Control, Catalog, Harden progression, and AgentCore Policy expresses the ceiling in [Cedar](https://aws.amazon.com/blogs/machine-learning/control-agent-behaviors-and-cost-beyond-a-single-action-new-capabilities-in-amazon-bedrock-agentcore/). [Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/id-governance/agent-id-governance-overview) applies directory governance to agent identities the same way. |
 | Reclassification triggers | The CSA profile's runtime records and autonomy checks are what feed stage 4 back into this stage. AIUC-1 refreshes quarterly, not annually, on the same reasoning. |
 
-## What this standard is not
+## What this standard does not cover
 
-**It is not a risk register.** A risk register lists things that might go wrong and who owns them. This lists kinds of agent and the controls that follow. If you keep a register, an agent's classification is an input to it.
+### A risk register
 
-**It is not a maturity model.** The platform control levels and monitoring levels in stage 3 and stage 4 are maturity: they describe how good your enforcement is. Classifications describe how much enforcement an agent needs. A company at platform control Level 1 can still classify an agent as critical, and the honest result is an agent it should not yet be running.
+A risk register lists things that might go wrong and who owns them. This lists kinds of agent and the controls that follow. If you keep a register, an agent's classification is an input to it.
 
-**It is not a substitute for a legal assessment.** Question 3 asks which regulations reach the process. It does not tell you the answer, and this document is not the place to find it.
+### How much enforcement you have
+
+Classifications describe how much enforcement an agent needs. The ladders in stages 3 and 4 describe how much your platforms can deliver. A company at platform control Level 1 can still classify an agent as critical, and the honest result is an agent it should not yet be running.
+
+### A legal assessment
+
+Question 3 asks which regulations reach the process. Finding the answer is work for whoever advises you on regulation.
 
 ## What we want feedback on
 

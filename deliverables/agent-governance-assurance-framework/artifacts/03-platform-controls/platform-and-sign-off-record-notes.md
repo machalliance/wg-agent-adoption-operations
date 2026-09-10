@@ -6,6 +6,22 @@ This document explains the [Platform and Sign-off Record](platform-and-sign-off-
 
 ---
 
+## Before you fill it in
+
+### Why this is a separate document
+
+A sign-off is granted against a version. If the platform record lived inside the design document, a model upgrade would bump that document's version and, by the framework's own rule, void a sign-off on a design that had not changed. Keeping them apart means a platform change re-opens this record and its sign-off, and leaves the design document alone. Expect this record to turn over several times faster than the design it serves.
+
+### If the platform is somebody else's
+
+For an agent you bought rather than built, section A describes a platform you do not operate. Record what the vendor publishes, name the rows they will not answer, and say where you asked. A model version you cannot see and one you have not looked up are different answers, and only the second is a gap you can close. The rows you cannot fill are the ones section C has to accept by name.
+
+### How this differs from the Platform Control Levels
+
+The [Platform Control Levels](platform-control-levels.md) describe your whole company: the three levels, and what each requires. This record is the per-agent entry that names which level a given agent is on.
+
+---
+
 ## Notes on the hard parts
 
 ### State the levels you are on, not the levels you intend to reach

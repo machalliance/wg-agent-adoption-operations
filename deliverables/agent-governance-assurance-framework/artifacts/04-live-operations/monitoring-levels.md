@@ -4,15 +4,9 @@
 
 This is the stage 4 standard of the [Agent Governance and Assurance Framework](../../README.md). You write it once for your company. Its companion is the [Monitoring and Incident Preparedness Record](monitoring-and-incident-preparedness-record.md), which you fill in once per agent.
 
-It answers one question: **how much can you actually see of what an agent did, and can you check it without a person remembering to?**
+It answers one question: **how much can you actually see of what an agent did, and can you check it without a person remembering to?** These are capability levels rather than maturity levels. The level an agent needs comes from its stage 2 classification, not from this ladder, so Level 1 is enough for an agent classified for Level 1 and a gap for one classified higher.
 
-Stage 2 uses the answer to set requirements, because a classification says an agent needs a given level. Stage 4 records which level each agent is really on, and stage 3's sign-off rests on that number being true.
-
-These levels climb **separately** from the [Platform Control Levels](../03-platform-controls/platform-control-levels.md). Those measure what an agent can reach. These measure what you can see. An agent can sit at platform control Level 3 and monitoring Level 1: permissions enforced in code, behavior watched by a log nobody reads.
-
-**These are not maturity levels.** They measure how much of a run a platform keeps and how much of it is checked without being asked. They do not measure how good the team is, and a higher number is not automatically the right one. The level an agent needs comes from its stage 2 classification, not from this ladder: Level 1 is enough for an agent classified for Level 1, and Level 2 is a gap for an agent classified for Level 3, however long it has run without trouble.
-
-**This is a starting ladder, not a complete model.** It exists so a team with nothing can work out where they stand and what to do next. Part 4 says where to go when you need more, and part 5 says when that point has arrived.
+[The notes on this standard](monitoring-levels-notes.md) carry the guidance for using it and the reasoning behind the levels.
 
 ---
 
@@ -29,7 +23,7 @@ You know what the agent did, after the fact, if you go looking.
 - Alerts fire on a few coarse signals: a call to a tool outside the declared set, unusual volume, a high escalation rate.
 - Somebody is named to receive those alerts.
 
-Most teams running their first agent are here. That is the right place to be for an agent whose classification asks for Level 1, and not for one that asks for more. What Level 1 cannot tell you is why the agent did something, or whether a run that looked fine was correct.
+Most teams running their first agent are here. That is the right place to be for an agent whose classification asks for Level 1, rather than for one that asks for more. What Level 1 cannot tell you is why the agent did something, or whether a run that looked fine was correct.
 
 ### Level 2 — run records
 

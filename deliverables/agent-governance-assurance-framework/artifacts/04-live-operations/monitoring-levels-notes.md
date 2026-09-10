@@ -6,6 +6,22 @@ This document explains the [Monitoring Levels](monitoring-levels.md): why the le
 
 ---
 
+## Before you use it
+
+### A starting ladder, not a complete model
+
+It exists so that a team with nothing can work out where they stand and what to do next. Part 4 of the standard says where to go when you need more, and part 5 says when that point has arrived.
+
+### Why they are not a maturity model
+
+They measure how much of a run a platform keeps and how much of it is checked without being asked. They do not measure how good the team is, and a higher number is not automatically the right one. An agent classified for Level 3 and monitored at Level 2 has a gap, however long it has run without trouble.
+
+### Why they climb separately from the platform control levels
+
+The [Platform Control Levels](../03-platform-controls/platform-control-levels.md) measure what an agent can reach. These measure what you can see. An agent can sit at platform control Level 3 and monitoring Level 1: permissions enforced in code, behavior watched by a log nobody reads.
+
+---
+
 ## Notes on the hard parts
 
 ### Why monitoring gets its own ladder
@@ -61,11 +77,15 @@ It also showed that nothing in the framework asked who owns a standard. A standa
 | Maturity as two axes | OWASP's [State of Agentic AI Security and Governance v2.01](https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/) pairs an adoption tier with a governance maturity level. |
 | Products that do this for you | [Gartner's guardian agents](https://www.gartner.com/en/newsroom/press-releases/2026-04-28-gartner-identifies-six-steps-to-manage-artificial-intelligence-agent-sprawl) are agents that supervise other agents, for visibility, continuous assurance and runtime enforcement. |
 
-## What this standard is not
+## What this standard does not cover
 
-**It is not an observability strategy.** It says nothing about which tools to buy or how to instrument them. It says what has to be true, so that the level on a sign-off means something.
+### An observability strategy
 
-**It is not stage 5.** Level 3 requires records the operating team cannot alter, which is the one stage 5 concern borrowed early because it is the same investment as replay. Retention and legal hold are set by your records policy, and the [Audit Log Rules](../05-audit-and-assurance/audit-log-rules.md) say what agents add to it.
+It says nothing about which tools to buy or how to instrument them. It says what has to be true, so that the level on a sign-off means something.
+
+### Retention and legal hold
+
+Those are set by your records policy, and the [Audit Log Rules](../05-audit-and-assurance/audit-log-rules.md) say what agents add to it. Level 3 borrows one stage 5 concern early, records the operating team cannot alter, because it is the same investment as replay.
 
 ## What we want feedback on
 

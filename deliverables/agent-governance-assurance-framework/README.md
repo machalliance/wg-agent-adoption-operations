@@ -40,7 +40,7 @@ Several organizations already build similar structures for agent governance. Whe
 
 NIST's four functions give the shape of the loop. Scoring each dimension on a ladder of its own, instead of collapsing everything into a single number, comes from CISA's Zero Trust Maturity Model, and the content of our two ladders compresses work from the Cloud Security Alliance, CISA and Gartner. What none of them gives you is a way to start. Everything here works for one agent, governed by one team, in one sprint: no company program, no standard every team has to agree first. Each stage checks the one before it, so what you end up holding is evidence.
 
-The [A2A Agent Card](https://a2a-protocol.org/latest/specification/), which the platform agent registries follow, declares what an agent can do and how to reach it. It carries no field for the accountable person, the classification, the sign-off, or the escalation path. Discovery got standardized first.
+The [A2A Agent Card](https://a2a-protocol.org/latest/specification/), which the platform agent registries follow, declares what an agent can do and how to reach it. It carries no field for the accountable person, the classification, the sign-off, or the escalation path, because discovery is the problem the industry standardized first.
 
 [What we reference and cite](references.md) lists the works this framework builds on, what each one covers, and which stage it matches. Read it if you already run a program against one of them, because it tells you how much of that program you can keep.
 
@@ -50,7 +50,7 @@ For each stage we publish the form on its own, and the reasoning behind it separ
 
 [The forms](artifacts/README.md) opens with the whole set laid out by stage, which is the quickest way to see how the documents fit together, and then gives the order to fill them in for your first agent.
 
-The per-agent records are also available as a single spreadsheet, [agent-governance-forms.xlsx](artifacts/agent-governance-forms.xlsx), for teams who would rather fill them in there. The four standards are not in it. They are policies you write once for the whole company, and they stay in this repository as markdown.
+The per-agent records are also available as a single spreadsheet, [agent-governance-forms.xlsx](artifacts/agent-governance-forms.xlsx), for teams who would rather fill them in there. The four standards stay in this repository as markdown, because a policy you write once for the whole company is not a spreadsheet.
 
 ## License
 

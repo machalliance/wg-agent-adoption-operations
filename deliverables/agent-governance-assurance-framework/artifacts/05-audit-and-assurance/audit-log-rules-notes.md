@@ -6,6 +6,14 @@ This document explains the [Audit Log Rules](audit-log-rules.md): why stage 5 ne
 
 ---
 
+## Before you use it
+
+### It does not set your retention periods
+
+You have a records policy already, and at least one audit you pass. Retention periods, legal holds and control mappings belong to whoever owns those, and this document does not set them. Part 4 says when to fold this into the policy you already have and stop maintaining it separately.
+
+---
+
 ## Notes on the hard parts
 
 ### Why this is a standard and not part of the per-agent record
@@ -41,11 +49,15 @@ This standard is a bridge. Its job is to get agent records in front of a policy 
 | Reusing maps rather than deriving them | [AIUC-1](https://aiuc-1.com/) publishes maps to the NIST AI RMF, ISO 42001, the EU AI Act, MITRE ATLAS and OWASP, and pairs a governance audit with recurring adversarial testing. Log rules built against it inherit those maps. |
 | What to record, and in what shape | The [OpenTelemetry semantic conventions for generative AI](https://opentelemetry.io/blog/2026/genai-observability/) define the spans, attributes and events for model calls, tool executions and agent runs. The agent spans are still experimental, so check their status before building against them. |
 
-## What this standard is not
+## What this standard does not cover
 
-**It is not a records-management policy, and it is not legal advice.** It is a list of what agents add to a policy you already have, and the questions to put to the people who own it. Part 4 says when to fold it in and stop maintaining it separately.
+### A records-management policy, or legal advice
 
-**It is not your log configuration.** If these rules and your actual retention settings disagree, the settings win and this document is wrong rather than aspirational.
+It lists what agents add to a policy you already have, and the questions to put to the people who own it. Part 4 says when to fold it in and stop maintaining it separately.
+
+### Your log configuration
+
+If these rules and your actual retention settings disagree, the settings win and this document is wrong rather than aspirational.
 
 ## What we want feedback on
 
