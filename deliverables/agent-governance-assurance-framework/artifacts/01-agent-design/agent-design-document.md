@@ -126,6 +126,10 @@ Every platform we have looked at can scope at tool level, meaning this agent may
 
 > 
 
+**How the person on the other end challenges what it did.** For any agent whose audience is not internal staff. Who they raise it with, how a person looks at the decision again, and where that gets recorded.
+
+> 
+
 **Who is told when it fails.** The person, the channel, and the time within which they are told.
 
 > 

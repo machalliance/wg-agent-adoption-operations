@@ -101,7 +101,7 @@ The stage 3 sign-off is void once live behavior stops matching what it was grant
 
 > 
 
-**What you tell a customer, and who decides.** For any agent where the person on the other end is not internal staff.
+**What you tell a customer, and who decides.** For any agent where the person on the other end is not internal staff. Say also how that person challenges the outcome, pointing at section 5 of the design document rather than restating it.
 
 > 
 
