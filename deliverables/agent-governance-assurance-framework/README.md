@@ -30,6 +30,16 @@ A gate sits between stages 3 and 4. One named person signs off on the agent as a
 
 [The five stages in full](artifacts/five-stages.md) is the rest of the framework: what each stage hands to the next, the reason for each one, and why none of these documents is ever finished.
 
+## If the agent is already live
+
+Most readers are. Work the same order, with two changes.
+
+Fill in stage 1 from what the agent does today rather than what it was meant to do, and write "not known" where you would otherwise guess. Then run the classification test before you look at what your platform can hold the agent to, so the answer isn't shaped by what you can currently enforce.
+
+If the test comes back higher than your platform can meet, you have the same three choices a new agent has: turn it off, raise the platform before it runs again, or record the gap in the [Platform and Sign-off Record](artifacts/03-platform-controls/platform-and-sign-off-record.md) and have the accountable person accept it by name with a date it closes. The difference is that yours is running while you decide, so decide quickly and write down who did.
+
+A retrospective sign-off carries the date it was granted, not the date the agent went live, and the revision history says the agent ran before it.
+
 ## Words we use
 
 Risk and compliance work has a large vocabulary. We use plain words instead, so that the people who have to apply a control can understand it. The [glossary](glossary.md) gives our word, what it means, and the word that other frameworks use for the same thing.
