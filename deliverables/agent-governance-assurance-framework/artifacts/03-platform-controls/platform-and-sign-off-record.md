@@ -39,6 +39,18 @@ The two platform control rows ask different questions. The first is the stronges
 
 > 
 
+**What was actually granted, row by row.** Take each row of section 3 and write the permission that was really created for it, using the exact name your platform uses. This is the list your monitor compares live tool calls against.
+
+| Row in section 3 | The permission actually granted, as the platform names it | Wider, narrower, or the same |
+|---|---|---|
+| | | |
+| | | |
+| | | |
+
+**Anything narrower than the design document asks for.** Say what the agent cannot do as a result, and whether anybody has worked around it.
+
+> 
+
 **What is granted that the design document does not list.** Anything the agent can reach that section 3 does not name. This should be empty. Where it is not, write down what you found and carry it into section C as remaining risk. Do not fix it quietly and leave this row blank.
 
 > 

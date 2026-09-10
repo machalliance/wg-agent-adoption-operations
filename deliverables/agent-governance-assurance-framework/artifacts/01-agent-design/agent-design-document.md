@@ -71,6 +71,8 @@ This is the grant list. Stage 3 grants what is in this table and refuses everyth
 | | | | | | |
 | | | | | | |
 
+Write each row in your own words, at the finest level you would want enforced. "Read contact records, write only to the notes field" is a row. "The CRM" is not. Your platform's names for these permissions get recorded later, when somebody creates them.
+
 **Grant list granularity** takes one of three answers: **tool level**, **data level**, or **not enforceable here**. It asks how finely the access itself can be scoped, which is a different question from the enforcement column in section 4, where the subject is what stops a decision being made.
 
 Every platform we have looked at can scope at tool level, meaning this agent may call this tool and not that one. Scoping *within* a tool, to particular records or particular fields, is not portable and on some platforms is not possible at all. Where the limit you need is a data-level one your platform cannot express, write "not enforceable here". The agent can then reach more data than you intended, which is what question 2 of section 6 asks about.

@@ -44,7 +44,7 @@ The switch-off condition is the part teams skip. Write it now, while you still w
 
 ### The grant list
 
-Section 3 is the only place in the framework where a machine-checkable claim is made. Every other section describes intent, and this one enumerates access. Stage 3 grants from it, stage 4 alerts on calls outside it, and stage 5 keeps it as the record of what was authorized.
+Every other section of this form describes intent. This one enumerates access. Stage 3 grants from it, stage 4 alerts on calls outside it, and stage 5 keeps it as the record of what was authorized.
 
 So write it at the granularity your platform can actually enforce. "The CRM" is not a row. "Read contact records in region X, write only to the notes field" is a row, because a permission can be shaped like that. If your platform cannot express a row, write "not enforceable here" in section 3's own granularity column, and take the honest answer into section 6. That column is not section 4's: section 3 asks how finely access can be scoped, section 4 asks what stops a decision being made.
 
@@ -92,7 +92,7 @@ Every section of this form answers a question that at least one other credible f
 
 The [A2A specification](https://a2a-protocol.org/latest/specification/) v1.0.0 defines an `AgentCard` with `id`, `name`, `description`, `provider`, `capabilities`, `skills`, `interfaces`, `securitySchemes`, `extensions` and `signature`. It is a discovery and interoperability manifest: it tells another agent what this one can do and how to authenticate to it. It has no field for the accountable person, the risk classification, the approval, the sensitivity of the data reached, or the escalation path. [Google Cloud's Agent Registry schemas](https://docs.cloud.google.com/agent-registry/json-schemas) follow the Agent Card shape and inherit the same omissions.
 
-A2A is solving a different problem, so those omissions are deliberate. They are also why this document exists. Sections 0, 6 and 7 here, and the sign-off in the platform record, are the governance metadata the machine-readable manifests leave out. Sections 2 and 3 overlap with them enough that you should generate one from the other instead of maintaining both by hand.
+A2A is solving a different problem, so those omissions are deliberate. They are also why this document exists. Sections 0, 6 and 7 here, and the sign-off in the platform record, are the governance metadata the machine-readable manifests leave out. Section 2 overlaps with them enough that you should generate one from the other instead of maintaining both by hand. Section 3 does not: an Agent Card says what an agent offers other agents, not which tools it calls.
 
 ### The platform, the evals and the sign-off
 
@@ -139,6 +139,6 @@ Small and medium enterprises may supply the Annex IV elements in a simplified fo
 2. **Is the highest-floor rule usable, or will teams route around it?** The escape hatch is the naming of a compensating control, and we are not sure it is tight enough.
 3. **Does section 3 survive contact with your platform?** Specifically, whether you can write rows at a granularity your permission system can actually enforce.
 4. **Is splitting the platform record out the right call?** It is separate so that a model upgrade does not void a design sign-off. The cost is two files per agent at Level 1, which is friction the framework elsewhere tries to avoid.
-5. **Would you generate this from an Agent Card, or the Agent Card from this?** If the machine-readable manifest is the source of truth in your stack, the overlap in sections 2 and 3 should be generated and not typed.
+5. **Would you generate this from an Agent Card, or the Agent Card from this?** If the manifest is the source of truth in your stack, the overlap in section 2 should be generated and not typed.
 
 This is the form most teams will meet first, so it is the one we most want broken. [Open an issue](https://github.com/machalliance/wg-agent-adoption-operations/issues).

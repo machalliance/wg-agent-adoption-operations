@@ -78,7 +78,7 @@ Where the level applied is lower than the level the classification requires, the
 
 Answer the last column for what is implemented today, not for what is planned. A row with nothing behind it is a gap the sign-off has to carry.
 
-The first row needs the section 3 grant list in a form the monitor can read. It is the only machine-checkable claim in the framework, and naming where the monitor gets it is the difference between an alert you can build and one you intend to.
+The first row needs the granted permissions from section A of the Platform and Sign-off Record. Naming where the monitor gets that list is the difference between an alert you can build and one you intend to.
 
 ### D. What an alert starts
 
