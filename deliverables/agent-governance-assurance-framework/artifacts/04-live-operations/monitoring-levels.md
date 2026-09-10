@@ -2,13 +2,15 @@
 
 *A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
 
-This is the stage 4 standard of the [Agent Governance and Assurance Framework](../../README.md). You write it once for your company. Its companion is the [Monitoring and Incident Record](monitoring-and-incident-record.md), which you fill in once per agent.
+This is the stage 4 standard of the [Agent Governance and Assurance Framework](../../README.md). You write it once for your company. Its companion is the [Monitoring and Incident Preparedness Record](monitoring-and-incident-preparedness-record.md), which you fill in once per agent.
 
 It answers one question: **how much can you actually see of what an agent did, and can you check it without a person remembering to?**
 
 Stage 2 uses the answer to set requirements, because a classification says an agent needs a given level. Stage 4 records which level each agent is really on, and stage 3's sign-off rests on that number being true.
 
 These levels climb **separately** from the [Platform Control Levels](../03-platform-controls/platform-control-levels.md). Those measure what an agent can reach. These measure what you can see. An agent can sit at platform control Level 3 and monitoring Level 1: permissions enforced in code, behavior watched by a log nobody reads.
+
+**These are not maturity levels.** They measure how much of a run a platform keeps and how much of it is checked without being asked. They do not measure how good the team is, and a higher number is not automatically the right one. The level an agent needs comes from its stage 2 classification, not from this ladder: Level 1 is enough for an agent classified for Level 1, and Level 2 is a gap for an agent classified for Level 3, however long it has run without trouble.
 
 **This is a starting ladder, not a complete model.** It exists so a team with nothing can work out where they stand and what to do next. Part 4 says where to go when you need more, and part 5 says when that point has arrived.
 
@@ -27,7 +29,7 @@ You know what the agent did, after the fact, if you go looking.
 - Alerts fire on a few coarse signals: a call to a tool outside the declared set, unusual volume, a high escalation rate.
 - Somebody is named to receive those alerts.
 
-Most teams running their first agent are here, and there is nothing wrong with that. What Level 1 cannot tell you is why the agent did something, or whether a run that looked fine was correct.
+Most teams running their first agent are here. That is the right place to be for an agent whose classification asks for Level 1, and not for one that asks for more. What Level 1 cannot tell you is why the agent did something, or whether a run that looked fine was correct.
 
 ### Level 2 — run records
 
@@ -35,6 +37,7 @@ You can reconstruct a run and compare it to what the agent was supposed to do.
 
 - Everything in Level 1.
 - The prompt, the context and the outputs of a run are stored, not just the tool calls.
+- The steps between them are stored too: what was retrieved, what the model produced before each tool call, and what came back. This is the run's trace, and without it a run can be read but not explained.
 - Live behavior is compared against the agent's design document, and drift raises an alert as well as errors.
 - Evals run against the live agent without a person starting them, whether on a schedule, on each deployment, or continuously.
 - Their results are compared against the baseline recorded at sign-off.
@@ -48,7 +51,7 @@ You can re-run the past and test against it.
 
 - Everything in Level 2.
 - A specific past run can be replayed.
-- Runs are tested against a maintained set of known failure modes.
+- Runs are tested against a maintained set of the ways this kind of agent goes wrong.
 - Failures found in production become permanent test cases.
 - Records are held in a form an auditor accepts, which is stage 5's requirement, and the operating team cannot silently alter them.
 
@@ -68,6 +71,7 @@ Answer for one platform. Any "no" means you are not yet at that level, whatever 
 **Level 2**
 
 - Can you retrieve the prompt and context of a specific run from last week?
+- Can you follow that run step by step, from the request to the answer?
 - Does anything compare live behavior to the agent's design document?
 - Do evals run with no person starting them?
 - Are their results measured against the baseline recorded at sign-off?
@@ -76,7 +80,7 @@ Answer for one platform. Any "no" means you are not yet at that level, whatever 
 **Level 3**
 
 - Can you replay a specific past run?
-- Do you maintain a set of known failure modes that runs are tested against?
+- Do you keep a set of the ways this agent has gone wrong, and test new runs against it?
 - Does a production failure reliably become a permanent test case?
 - Are the records beyond the reach of the team that operates the agent?
 
@@ -88,12 +92,12 @@ Answer honestly, for the same reason the platform control levels give: a sign-of
 
 A level describes **a platform**, in the same way the platform control levels do. What your observability stack collects and retains is a property of the stack, not of one agent.
 
-An individual agent then records the level actually applied to it, in its Monitoring and Incident Record. That level cannot be higher than its platform's, and it can be lower: a platform that stores full run records will still hold an agent nobody wired the alerting up for.
+An individual agent then records the level actually applied to it, in its Monitoring and Incident Preparedness Record. That level cannot be higher than its platform's, and it can be lower: a platform that stores full run records will still hold an agent nobody wired the alerting up for.
 
 | | What it describes | Where it is recorded |
 |---|---|---|
 | Platform level | The most this platform can see and check | This document, one row per platform |
-| Agent level | What is actually collected and checked for this agent | The agent's Monitoring and Incident Record |
+| Agent level | What is actually collected and checked for this agent | The agent's Monitoring and Incident Preparedness Record |
 
 ### Your platforms
 

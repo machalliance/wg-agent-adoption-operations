@@ -18,6 +18,8 @@ For the reasoning behind each section, and where its questions come from, see [t
 
 **Fill it in badly rather than not at all.** A document with five honest gaps and a named owner is worth more than a complete one written to pass a review. Write "not known" where that is the answer, and the gap becomes work instead of a false claim.
 
+**Two columns ask a technical question before the technical decision is made.** Grant list granularity in section 3 and where the control is enforced in section 4 both describe a platform you may not have picked yet. Write what you intend and mark it "not decided", rather than leaving the row empty or inventing an answer. Both have to be true rather than intended before the stage 3 sign-off, because that is what the sign-off grants against.
+
 **The platform, the evals and the sign-off are not in here.** They live in the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md), one per agent, versioned separately. They have to be, because a sign-off is granted against a version: if a model upgrade bumped this document's version, it would void a sign-off on a design that had not changed.
 
 ---

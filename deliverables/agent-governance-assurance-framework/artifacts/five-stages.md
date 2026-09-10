@@ -90,7 +90,7 @@ The [standard](03-platform-controls/platform-control-levels-notes.md) and [recor
 
 ## Stage 4: Live operations, from watching to response
 
-**What you write: [Monitoring Levels](04-live-operations/monitoring-levels.md), a standard, and a [Monitoring and Incident Record](04-live-operations/monitoring-and-incident-record.md) for each agent. The first half of that record is the Monitoring Plan, which runs continuously. The second half is the Incident Playbook, which starts when an alert does.**
+**What you write: [Monitoring Levels](04-live-operations/monitoring-levels.md), a standard, and a [Monitoring and Incident Preparedness Record](04-live-operations/monitoring-and-incident-preparedness-record.md) for each agent. The first half of that record is the Monitoring Plan, which runs continuously. The second half is the Incident Playbook, which starts when an alert does.**
 
 The Monitoring Plan defines what you record on every run: the tool calls and their arguments, the inputs and the outputs, and enough of the run to replay it. It runs the stage 3 evals without anybody remembering to start them, compares their results against the baseline recorded at sign-off, and says which numbers count as normal and what starts an alert. A failing eval is one of them.
 
@@ -100,7 +100,7 @@ Monitoring gets its own ladder, because these levels measure what you can see an
 
 Stage 4 also corrects stage 3. A monitor reporting a call to a tool outside the declared set has told you that a control you believed you had is not holding.
 
-The [standard](04-live-operations/monitoring-levels-notes.md) and [record](04-live-operations/monitoring-and-incident-record-notes.md) notes cover guardian agents and the two destinations this stage exits to: the [OpenTelemetry semantic conventions for generative AI](https://opentelemetry.io/blog/2026/genai-observability/) for what to record and in what shape, and [OWASP's Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) for what can go wrong.
+The [standard](04-live-operations/monitoring-levels-notes.md) and [record](04-live-operations/monitoring-and-incident-preparedness-record-notes.md) notes cover guardian agents and the two destinations this stage exits to: the [OpenTelemetry semantic conventions for generative AI](https://opentelemetry.io/blog/2026/genai-observability/) for what to record and in what shape, and [OWASP's Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) for what can go wrong.
 
 ## Stage 5: Audit and assurance
 

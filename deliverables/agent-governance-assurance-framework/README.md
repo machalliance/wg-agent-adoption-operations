@@ -48,6 +48,8 @@ The [A2A Agent Card](https://a2a-protocol.org/latest/specification/), which the 
 
 For each stage we publish the form on its own, and the reasoning behind it separately, so that you can fill one in without reading the other. A **standard** describes your whole company and you write it once; a **record** describes one agent and you keep one per agent.
 
+[The forms](artifacts/README.md) opens with the whole set laid out by stage, which is the quickest way to see how the documents fit together, and then gives the order to fill them in for your first agent.
+
 The per-agent records are also available as a single spreadsheet, [agent-governance-forms.xlsx](artifacts/agent-governance-forms.xlsx), for teams who would rather fill them in there. The four standards are not in it. They are policies you write once for the whole company, and they stay in this repository as markdown.
 
 ## License

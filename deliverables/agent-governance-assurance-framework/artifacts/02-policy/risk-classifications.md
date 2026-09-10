@@ -170,7 +170,7 @@ Question 7 does not measure consequence. It is the one row where the anchors des
 
 Every answer sets a **floor**: the lowest classification the agent can be in given that answer alone. The agent's classification is the **highest floor any single answer sets**.
 
-Averaging is the failure mode this rule exists to stop. An agent that reads only public data, moves no money, and does one thing you cannot undo is not a medium-risk agent with one bad property.
+Averaging is what this rule exists to stop. An agent that reads only public data, moves no money, and does one thing you cannot undo is not a medium-risk agent with one bad property.
 
 ### Lowering a floor
 

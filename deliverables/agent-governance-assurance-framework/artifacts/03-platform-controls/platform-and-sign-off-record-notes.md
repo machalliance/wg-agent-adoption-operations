@@ -12,7 +12,7 @@ This document explains the [Platform and Sign-off Record](platform-and-sign-off-
 
 The gap between what a framework asks for and what most companies can do today is widest in monitoring. A record that says "monitoring Level 1" is a working document. One that implies Level 3 is a liability.
 
-An agent can sit at platform control Level 3 and monitoring Level 1, and that combination is common: permissions enforced in code, behavior watched by a log nobody reads. The platform control levels are recorded here and the monitoring levels in the [Monitoring and Incident Record](../04-live-operations/monitoring-and-incident-record.md). Record all four, and let the sign-off carry the gap.
+An agent can sit at platform control Level 3 and monitoring Level 1, and that combination is common: permissions enforced in code, behavior watched by a log nobody reads. The platform control levels are recorded here and the monitoring levels in the [Monitoring and Incident Preparedness Record](../04-live-operations/monitoring-and-incident-preparedness-record.md). Record all four, and let the sign-off carry the gap.
 
 OWASP's governance maturity model, in [State of Agentic AI Security and Governance v2.01](https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/), puts named accountability and mandatory human review of high-impact decisions at its Level 2, and real-time anomaly detection with working kill switches at Level 3. Most organizations that have written an AI policy are at Level 1.
 

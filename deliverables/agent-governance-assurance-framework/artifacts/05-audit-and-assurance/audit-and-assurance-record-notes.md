@@ -56,7 +56,7 @@ One row per run works for evals that fire monthly and breaks for everything else
 
 So the runs stay where they are produced, and section C holds three things a run log does not: where the signal comes from, whether it is still arriving, and what a person concluded from it.
 
-Continuous evals also move the failure mode. A monthly schedule fails visibly, by stopping. A continuous one fails quietly: results stay green, nobody reads them, and the suite stops being extended while the agent keeps changing. Green against a stale eval set is the harder failure to see, which is why the section asks when the set was last extended and what prompted it.
+Continuous evals also change how the failure looks. A monthly schedule fails visibly, by stopping. A continuous one fails quietly: results stay green, nobody reads them, and the suite stops being extended while the agent keeps changing. Green against a stale eval set is the harder failure to see, which is why the section asks when the set was last extended and what prompted it.
 
 ### Why section D separates "accepted" from "dropped"
 

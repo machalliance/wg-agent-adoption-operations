@@ -1,8 +1,8 @@
-# Notes on the Monitoring and Incident Record
+# Notes on the Monitoring and Incident Preparedness Record
 
 *A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
 
-This document explains the [Monitoring and Incident Record](monitoring-and-incident-record.md): the three monitoring levels, why the sections are ordered as they are, and what we would like your feedback on. You do not need to read it to fill the form in.
+This document explains the [Monitoring and Incident Preparedness Record](monitoring-and-incident-preparedness-record.md): the three monitoring levels, why the sections are ordered as they are, and what we would like your feedback on. You do not need to read it to fill the form in.
 
 ---
 
@@ -18,13 +18,15 @@ An eval that a person has to remember to run is not assurance, because the remem
 
 This is why section B asks what starts the evals, and then asks how you would find out if they stopped. Whatever runs them, a scheduler that died and a continuous job that quietly stopped both look the same from outside: everything is green because nothing is running.
 
+It is also the section the person filling this form in is least likely to be able to answer alone. What starts an eval is a property of the pipeline the agent is deployed through, so answer it with whoever owns that pipeline rather than guessing on their behalf. If nobody can say what starts them, you have found the gap the section exists to find.
+
 ### Why section C asks which alerts are actually implemented
 
 Because the answer is usually "two of the seven", and a document that does not ask will happily record all seven.
 
 Asking it moves the gap into the sign-off, where a named person either accepts it or funds it.
 
-### Why section E lists failure modes explicitly
+### Why section E lists the ways agents go wrong
 
 Most teams already have an incident process, and it is built for software that fails deterministically: a service is down, a query is slow, a deploy broke a page. Agents fail differently. They succeed at every individual step and produce a wrong outcome. They are talked into things by content they read. They quietly get used for work nobody designed them for.
 
@@ -40,7 +42,7 @@ Stage 5 needs records that an auditor will accept, and a log the operating team 
 
 A group of products is emerging to do parts of this work: agents that supervise other agents, for visibility, continuous assurance and runtime enforcement. [Gartner calls them guardian agents](https://www.gartner.com/en/newsroom/press-releases/2026-04-28-gartner-identifies-six-steps-to-manage-artificial-intelligence-agent-sprawl).
 
-Whether you buy one or build it, this stage is where it sits. This form is what tells you whether it covers what you need, and its last row in section E is there because a supervising agent is another agent, with its own failure modes and its own need for a record like this one.
+Whether you buy one or build it, this stage is where it sits. This form is what tells you whether it covers what you need, and its last row in section E is there because a supervising agent is another agent, with its own ways of going wrong and its own need for a record like this one.
 
 ---
 
@@ -52,7 +54,7 @@ Whether you buy one or build it, this stage is where it sits. This form is what 
 | B. Evals that run without a person | AWS [AGENTOPS06](https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentops06.html) establishes testing and evaluation frameworks because agent behavior is stochastic. [LangSmith](https://www.langchain.com/resources/agent-observability) turns production traces into regression datasets, which is the mechanism this section is asking you to schedule. [AIUC-1](https://aiuc-1.com/) pairs a governance audit with recurring adversarial testing, not one annual review. |
 | C. Normal, and what alerts | OWASP's governance maturity model puts real-time anomaly detection and working kill switches at its Level 3. AWS [AGENTSEC07](https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentsec07.html) is about protecting human oversight and detecting rogue agents. |
 | D. What an alert starts | AWS [AGENTSEC04](https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentsec04.html) pairs guardrails with human-in-the-loop for critical decisions. [Anthropic's framework](https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents) puts keeping humans in control first, and treats the ability to stop and redirect an agent as part of that. |
-| E. Failure modes | [OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/): goal hijack, tool misuse, identity and privilege abuse, supply chain, unexpected code execution, memory and context poisoning, insecure inter-agent communication, cascading failures, human-agent trust exploitation, and rogue agents. |
+| E. What goes wrong | [OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/): goal hijack, tool misuse, identity and privilege abuse, supply chain, unexpected code execution, memory and context poisoning, insecure inter-agent communication, cascading failures, human-agent trust exploitation, and rogue agents. |
 | The three levels | OWASP's [State of Agentic AI Security and Governance v2.01](https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/) pairs an adoption tier with a governance maturity level, which is the same two-axis idea as our platform control levels and monitoring levels. |
 
 ## What this record is not
@@ -67,8 +69,8 @@ Whether you buy one or build it, this stage is where it sits. This form is what 
 
 1. **Is section E the right list?** It is OWASP's taxonomy turned into a playbook checklist. Tell us which rows are missing, and which are unanswerable in practice.
 2. **Is "which alerts are actually implemented" a question teams will answer honestly?** It is the most useful question in the form and the easiest to fudge.
-3. **Should monitoring level be a requirement of a classification, or a recorded fact?** Stage 2 currently makes it a requirement, which means a classification can demand maturity a company does not have.
-4. **Where should cost belong?** We put runaway cost in section E as a failure mode and cost signals in section C. It may be a financial control rather than a governance one.
+3. **Should monitoring level be a requirement of a classification, or a recorded fact?** Stage 2 currently makes it a requirement, which means a classification can demand a level no platform in the company has reached.
+4. **Where should cost belong?** We put runaway cost in section E and cost signals in section C. It may be a financial control rather than a governance one.
 5. **Does the split between this and stage 5 hold?** The line we drew is operator versus auditor. It may be the wrong line, or one nobody can maintain in a single logging pipeline.
 
 Section E in particular is a list we expect to be wrong within a year. [Open an issue](https://github.com/machalliance/wg-agent-adoption-operations/issues).

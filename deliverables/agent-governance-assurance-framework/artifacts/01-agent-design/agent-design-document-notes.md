@@ -40,7 +40,7 @@ The full argument is in [the notes on the Risk Classifications](../02-policy/ris
 
 Skip the test and every team declares its own agent low risk.
 
-The highest-floor rule exists because averaging is the failure mode. Take an agent that reads only public data, moves no money, and does one thing you cannot undo. Average the answers and it looks medium risk. The thing you cannot undo is still there.
+The highest-floor rule exists because averaging hides the answer that matters. Take an agent that reads only public data, moves no money, and does one thing you cannot undo. Average the answers and it looks medium risk. The thing you cannot undo is still there.
 
 Questions 1 to 6 test properties of the systems the agent touches. Question 8 tests a property of the audience, and it is there because in practice it changes the answer: the same summarization agent is routine for internal staff and sensitive the moment a customer reads its output as your company's position. Question 7 is not a criterion of its own. It asks how much of the above happens with nobody watching, which is what turns any of it into a risk.
 

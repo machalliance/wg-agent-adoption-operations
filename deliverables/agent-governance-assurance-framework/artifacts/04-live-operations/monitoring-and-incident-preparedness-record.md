@@ -1,4 +1,4 @@
-# The Monitoring and Incident Record
+# The Monitoring and Incident Preparedness Record
 
 *A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
 
@@ -6,9 +6,9 @@ This is the stage 4 artifact of the [Agent Governance and Assurance Framework](.
 
 It holds two connected things. Sections A to C are the Monitoring Plan: what you record on every run, what counts as normal, and what starts an alert. Sections D and E are the Incident Playbook: what happens once an alert starts, and who does it.
 
-For the reasoning behind each section, see [the notes on this form](monitoring-and-incident-record-notes.md). The levels themselves are defined in the [Monitoring Levels](monitoring-levels.md).
+For the reasoning behind each section, see [the notes on this form](monitoring-and-incident-preparedness-record-notes.md). The levels themselves are defined in the [Monitoring Levels](monitoring-levels.md).
 
-**Who fills it in.** The team that operates the agent, with whoever owns the alerting it will use. Section D needs whoever is on call.
+**Who fills it in.** The team that operates the agent, with whoever owns the alerting it will use. Section B needs whoever owns the pipeline the agent is deployed through, because what starts an eval is a property of that pipeline and not of this document. Section D needs whoever is on call.
 
 **If you bought the agent rather than built it.** Section A describes what the vendor's platform records and what it will hand you. Name the rows they will not answer, and say where you asked. A signal you cannot get is a monitoring gap like any other, and section C is where it shows up as an alert you cannot implement.
 
@@ -42,6 +42,7 @@ Where the level applied is lower than the level the classification requires, the
 | Inputs to the run | | | |
 | Outputs of the run | | | |
 | The prompt and context as sent | | | |
+| The agent's steps between the request and the answer | | | |
 | Escalations to a person, and the outcome | | | |
 | Enough of the run to replay it | | | |
 | Cost and token use per run | | | |
@@ -112,11 +113,11 @@ The stage 3 sign-off is void once live behavior stops matching what it was grant
 
 > 
 
-### E. The failure modes this playbook covers
+### E. What goes wrong, and what you do about it
 
 Agents fail in ways ordinary software does not. Copying your existing incident process will not cover these. For each one, say what you would do, or write "not covered" and let the sign-off carry it.
 
-| Failure mode | OWASP | What you do |
+| What goes wrong | OWASP | What you do |
 |---|---|---|
 | The agent calls a tool outside its declared set | ASI02, ASI03 | |
 | A chain of tool calls each succeeds but the outcome is wrong | ASI08 | |
@@ -138,4 +139,4 @@ The OWASP column names the entry in the [Top 10 for Agentic Applications](https:
 |---|---|---|---|---|
 | | | | | |
 
-A new alert, a threshold you had to move, or a failure mode you learned the hard way all produce a row. So does an incident that this playbook did not cover.
+A new alert, a threshold you had to move, or a way of going wrong you learned the hard way all produce a row. So does an incident that this playbook did not cover.

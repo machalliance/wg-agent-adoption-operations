@@ -6,7 +6,7 @@ This is a stage 3 artifact of the [Agent Governance and Assurance Framework](../
 
 It records three things: what the agent actually runs on, what your evals found when you ran them against that setup, and who signed off on the result. Together they are the gate between standing the agent up and letting it run. Nothing goes live without this record completed and section C signed.
 
-This record is completed last, after stage 4's [Monitoring and Incident Record](../04-live-operations/monitoring-and-incident-record.md), even though it belongs to stage 3. Section C states what monitoring the agent actually has, and nobody can answer that before the monitoring record exists.
+This record is completed last, after stage 4's [Monitoring and Incident Preparedness Record](../04-live-operations/monitoring-and-incident-preparedness-record.md), even though it belongs to stage 3. Section C states what monitoring the agent actually has, and nobody can answer that before the monitoring record exists.
 
 **Why this is a separate document.** A sign-off is granted against a version. If the platform record lived inside the design document, a model upgrade would bump that document's version and, by the framework's own rule, void a sign-off on a design that had not changed. Separating them means a platform change re-opens the platform record and its sign-off, and leaves the design document alone. Expect this record to turn over several times faster than the design it serves.
 
@@ -18,7 +18,7 @@ This record is completed last, after stage 4's [Monitoring and Incident Record](
 
 For the reasoning behind each section, see [the notes on this form](platform-and-sign-off-record-notes.md). The levels themselves are defined in the [Platform Control Levels](platform-control-levels.md).
 
-The two platform control rows in section A ask different questions. The first is the strongest control the platform could enforce. The second is what was actually applied to this agent, which can be lower and cannot be higher. The monitoring levels themselves are recorded once, in the [Monitoring and Incident Record](../04-live-operations/monitoring-and-incident-record.md). Section C records only whether the level applied meets what the classification requires.
+The two platform control rows in section A ask different questions. The first is the strongest control the platform could enforce. The second is what was actually applied to this agent, which can be lower and cannot be higher. The monitoring levels themselves are recorded once, in the [Monitoring and Incident Preparedness Record](../04-live-operations/monitoring-and-incident-preparedness-record.md). Section C records only whether the level applied meets what the classification requires.
 
 ---
 
@@ -60,7 +60,7 @@ Evals run against the setup in section A, not against a development configuratio
 | Field | Your answer |
 |---|---|
 | Which evals you ran | |
-| Adversarial testing performed, and against which failure modes | |
+| Adversarial testing performed, and what it was tested against | |
 | Against which configuration, matching section A | |
 | Date of the run | |
 | What they found | |
@@ -68,7 +68,7 @@ Evals run against the setup in section A, not against a development configuratio
 | What you know you did not test | |
 | Where the results are kept | |
 
-For any agent that reads content it did not author, whether it can be talked into something is what the sign-off most needs to know. Name the failure modes you tested against from [OWASP's Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), which is the same list stage 4's incident playbook works from.
+For any agent that reads content it did not author, whether it can be talked into something is what the sign-off most needs to know. Name what you tested against from [OWASP's Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), which is the same list stage 4's incident playbook works from.
 
 Two rows carry more weight than the rest. "What they found" is what the person signing off is accepting. "What you know you did not test" is where stage 4's monitoring has to begin.
 

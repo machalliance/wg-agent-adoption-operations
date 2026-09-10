@@ -89,7 +89,7 @@ Stage 4 section B says what starts the evals. This section is not a second copy 
 | How you would know the evals had stopped running | |
 | When the eval set was last extended, and what prompted it | |
 
-Running continuously shows the suite still works. It does not show the suite still covers the agent, which is what the last row is for: new tools, new failure modes and new scope need new evals, and an unchanged eval set against a changed agent goes green for the wrong reason.
+Running continuously shows the suite still works. It does not show the suite still covers the agent, which is what the last row is for: new tools, new scope and new ways of going wrong need new evals, and an unchanged eval set against a changed agent goes green for the wrong reason.
 
 **The review.** One row per occasion somebody read the results and reached a conclusion. This is the record that shows somebody is still checking.
 

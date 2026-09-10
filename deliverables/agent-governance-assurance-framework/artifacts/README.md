@@ -6,6 +6,16 @@ These are the fill-in documents for the [Agent Governance and Assurance Framewor
 
 Each form is either a **standard**, which describes your whole company and is written once, or a **record**, which describes one agent. [The five stages](five-stages.md) explains why they are kept apart, and the reasoning behind each stage.
 
+## How the documents fit together
+
+| Stage | Standard | Record | Notes |
+|---|---|---|---|
+| 1. Agent design | — | [Agent Design Document](01-agent-design/agent-design-document.md) | [Notes](01-agent-design/agent-design-document-notes.md) |
+| 2. Policy | [Risk Classifications](02-policy/risk-classifications.md) | Section 6 of the design document | [Notes](02-policy/risk-classifications-notes.md) |
+| 3. Platform controls | [Platform Control Levels](03-platform-controls/platform-control-levels.md) | [Platform and Sign-off Record](03-platform-controls/platform-and-sign-off-record.md) | [Standard](03-platform-controls/platform-control-levels-notes.md) · [Record](03-platform-controls/platform-and-sign-off-record-notes.md) |
+| 4. Live operations | [Monitoring Levels](04-live-operations/monitoring-levels.md) | [Monitoring and Incident Preparedness Record](04-live-operations/monitoring-and-incident-preparedness-record.md) | [Standard](04-live-operations/monitoring-levels-notes.md) · [Record](04-live-operations/monitoring-and-incident-preparedness-record-notes.md) |
+| 5. Audit and assurance | [Audit Log Rules](05-audit-and-assurance/audit-log-rules.md) | [Audit and Assurance Record](05-audit-and-assurance/audit-and-assurance-record.md) | [Standard](05-audit-and-assurance/audit-log-rules-notes.md) · [Record](05-audit-and-assurance/audit-and-assurance-record-notes.md) |
+
 ## Start here
 
 Pick one agent you already run, or are about to. Then work down this list. The first pass does not need to be perfect.
@@ -17,7 +27,7 @@ Pick one agent you already run, or are about to. Then work down this list. The f
 | 3 | 1. Agent design | Section 6 of the design document, now that you have a classification to argue for | Record |
 | 4 | 3. Platform controls | [Platform Control Levels](03-platform-controls/platform-control-levels.md) — score the platform you run on | Standard |
 | 5 | 4. Live operations | [Monitoring Levels](04-live-operations/monitoring-levels.md) — score the same platform | Standard |
-| 6 | 4. Live operations | [Monitoring and Incident Record](04-live-operations/monitoring-and-incident-record.md) | Record |
+| 6 | 4. Live operations | [Monitoring and Incident Preparedness Record](04-live-operations/monitoring-and-incident-preparedness-record.md) | Record |
 | 7 | 3. Platform controls | [Platform and Sign-off Record](03-platform-controls/platform-and-sign-off-record.md), then get it signed. **This row is the gate** | Record |
 | 8 | 5. Audit and assurance | [Audit Log Rules](05-audit-and-assurance/audit-log-rules.md) — what agents add to the records policy you already have, settled once. **Needs somebody outside your team** | Standard |
 | 9 | 5. Audit and assurance | [Audit and Assurance Record](05-audit-and-assurance/audit-and-assurance-record.md) | Record |
@@ -31,13 +41,3 @@ The sign-off comes after the monitoring rows even though it belongs to stage 3, 
 The per-agent records are also a single workbook, [agent-governance-forms.xlsx](agent-governance-forms.xlsx), for teams who would rather fill them in there. The standards are not in it, because a policy you write once for the whole company is not a spreadsheet.
 
 Stage 1 comes before stage 2 in practice even though the classification is stage 2's, because you cannot classify an agent until somebody has written down what it does. Expect to go back to section 6 once.
-
-## Everything here
-
-| Stage | Standard | Record | Notes |
-|---|---|---|---|
-| 1. Agent design | — | [Agent Design Document](01-agent-design/agent-design-document.md) | [Notes](01-agent-design/agent-design-document-notes.md) |
-| 2. Policy | [Risk Classifications](02-policy/risk-classifications.md) | Section 6 of the design document | [Notes](02-policy/risk-classifications-notes.md) |
-| 3. Platform controls | [Platform Control Levels](03-platform-controls/platform-control-levels.md) | [Platform and Sign-off Record](03-platform-controls/platform-and-sign-off-record.md) | [Standard](03-platform-controls/platform-control-levels-notes.md) · [Record](03-platform-controls/platform-and-sign-off-record-notes.md) |
-| 4. Live operations | [Monitoring Levels](04-live-operations/monitoring-levels.md) | [Monitoring and Incident Record](04-live-operations/monitoring-and-incident-record.md) | [Standard](04-live-operations/monitoring-levels-notes.md) · [Record](04-live-operations/monitoring-and-incident-record-notes.md) |
-| 5. Audit and assurance | [Audit Log Rules](05-audit-and-assurance/audit-log-rules.md) | [Audit and Assurance Record](05-audit-and-assurance/audit-and-assurance-record.md) | [Standard](05-audit-and-assurance/audit-log-rules-notes.md) · [Record](05-audit-and-assurance/audit-and-assurance-record-notes.md) |
