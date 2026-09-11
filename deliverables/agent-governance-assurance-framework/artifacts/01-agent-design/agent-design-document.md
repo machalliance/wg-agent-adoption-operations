@@ -142,6 +142,12 @@ Every row asks one question, and every answer sets a floor: the lowest classific
 
 The questions and the rules below are reproduced from your [Risk Classifications](../02-policy/risk-classifications.md), so that this form stands on its own. That document is the authoritative one. If your copy of the test has been revised and this form has not, use theirs. The anchors that say what each answer has to reach to set each floor are in part 2 of that document, and are not reproduced here: read them before you fill in the floor column.
 
+Record which version of that standard you used. When it is revised, this is how anyone finds the agents still classified under the old one.
+
+| Field | Your answer |
+|---|---|
+| Version of the Risk Classifications this agent was classified against | |
+
 The classifications below are placeholders. If you already keep your own risk classifications, put those names in the floor column instead. Do not use an autonomy scale here; the notes explain why.
 
 - **Routine.** A mistake is annoying. Somebody notices within a day and fixes it in an hour.

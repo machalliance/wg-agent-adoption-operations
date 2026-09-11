@@ -24,6 +24,7 @@ The two monitoring rows ask different questions. The first is the most this plat
 | Monitoring level the classification requires | |
 | Monitoring level of the platform it runs on: 1, 2 or 3 | |
 | Monitoring level actually applied to this agent | |
+| Version of the Monitoring Levels this score was made against | |
 | Who owns this monitoring | |
 
 Where the level applied is lower than the level the classification requires, the gap is accepted in section C of the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md), not here. This form records what is true; that one records who accepted it.

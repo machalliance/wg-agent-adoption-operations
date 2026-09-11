@@ -31,6 +31,7 @@ The two platform control rows ask different questions. The first is the stronges
 | How the credentials are revoked, by whom, and how long that takes | |
 | Platform control level of the platform it runs on: 1, 2 or 3 | |
 | Platform control level actually applied to this agent | |
+| Version of the Platform Control Levels this score was made against | |
 | When this agent's access is reviewed again, and by whom | |
 | Autonomy level, on the four-level scale in the [CSA agentic profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/), or your own if you keep one | |
 | Tool servers and connectors it reaches, and who publishes each one | |

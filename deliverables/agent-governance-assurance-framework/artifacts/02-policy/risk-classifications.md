@@ -124,7 +124,7 @@ The classifications need a test beside them, or every team declares its own agen
 
 This is the authoritative definition of the test. The **answers** for a given agent go in section 6 of that agent's design document, not here.
 
-Section 6 of the design document reproduces the questions so that a team can fill the form in without opening this one. When you revise the test here, those copies go stale. Say in your revision history that you have changed it, so that agents classified under the old version can be found.
+Section 6 of the design document reproduces the questions so that a team can fill the form in without opening this one. When you revise the test here, those copies go stale. Say in your revision history that you have changed it. Section 6 of each design document records the version it was classified against, which is how you find the agents still sitting on the old one.
 
 ### The eight questions
 
