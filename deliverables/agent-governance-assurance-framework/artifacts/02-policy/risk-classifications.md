@@ -29,8 +29,8 @@ Filled in as a starting point. Replace with your own.
 | What it may do with nobody watching | Nothing. A person reviews every action before it takes effect. |
 | Widest grant list allowed | Read-only tools. No writes to any system of record. |
 | Who may be on the other end | Internal staff. |
-| Platform control level required, applied to the agent | Level 1. |
-| Monitoring level required | Level 1. |
+| Platform control level required, applied to the agent | Level 1 — Hand-scoped. |
+| Monitoring level required | Level 1 — Tool call log. |
 | Who signs off | The team's own manager. |
 | Leaves this classification when | It reaches data the reader could not already see, or it starts writing to a system of record. |
 
@@ -49,8 +49,8 @@ Filled in as a starting point. Replace with your own.
 | What it may do with nobody watching | Anything that would sit at Routine on its own. A person reviews the rest. |
 | Widest grant list allowed | Read and write to the systems named in the design document. No tool that moves money or reaches a customer. |
 | Who may be on the other end | Internal staff, and named customers under supervision. |
-| Platform control level required, applied to the agent | Level 1. |
-| Monitoring level required | Level 1. |
+| Platform control level required, applied to the agent | Level 1 — Hand-scoped. |
+| Monitoring level required | Level 1 — Tool call log. |
 | Who signs off | The owner of the process being automated. |
 | Leaves this classification when | It reaches personal data, or an action becomes hard to reverse. |
 
@@ -69,8 +69,8 @@ Filled in as a starting point. Replace with your own.
 | What it may do with nobody watching | It may act alone inside a scope somebody set, and a person sees the result afterwards. |
 | Widest grant list allowed | Only the tools named in the design document, with personal-data fields listed individually. Writes to customer-facing systems need approval. |
 | Who may be on the other end | Customers, who are told they are dealing with an agent. |
-| Platform control level required, applied to the agent | Level 2. |
-| Monitoring level required | Level 2. |
+| Platform control level required, applied to the agent | Level 2 — Classification ceiling. |
+| Monitoring level required | Level 2 — Run records. |
 | Who signs off | A named accountable executive, with your privacy or compliance function consulted. |
 | Leaves this classification when | It can move money without a ceiling, or a mistake would be reportable. |
 
@@ -89,8 +89,8 @@ Filled in as a starting point. Replace with your own.
 | What it may do with nobody watching | It may act alone with nobody seeing the result unless something alerts. Name what alerts. |
 | Widest grant list allowed | Only the tools named in the design document. Credentials granted per task where the platform supports it. |
 | Who may be on the other end | Anyone, including the public. |
-| Platform control level required, applied to the agent | Level 3. |
-| Monitoring level required | Level 3. |
+| Platform control level required, applied to the agent | Level 3 — Policy as code. |
+| Monitoring level required | Level 3 — Replay and test. |
 | Who signs off | A named accountable executive. Consider a second signature. |
 | Leaves this classification when | Nothing moves an agent up from here. It leaves only when its scope narrows: the test is re-run, and the reduction is signed by the person who accepted the original risk. |
 
