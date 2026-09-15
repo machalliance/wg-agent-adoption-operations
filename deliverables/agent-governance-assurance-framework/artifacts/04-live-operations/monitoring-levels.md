@@ -14,7 +14,9 @@ It answers one question: **how much can you actually see of what an agent did, a
 
 Every level requires that something is recorded on every run and that somebody is told when it looks wrong. What changes between levels is **how much of the run you keep** and **whether anything checks it without being asked**.
 
-### Level 1 — the tool call log
+The three are **Tool call log**, **Run records** and **Replay and test**. Use the number and the name together wherever a level is recorded.
+
+### Level 1 — Tool call log
 
 You know what the agent did, after the fact, if you go looking.
 
@@ -25,7 +27,7 @@ You know what the agent did, after the fact, if you go looking.
 
 Most teams running their first agent are here. That is the right place to be for an agent whose classification asks for Level 1, rather than for one that asks for more. What Level 1 cannot tell you is why the agent did something, or whether a run that looked fine was correct.
 
-### Level 2 — run records
+### Level 2 — Run records
 
 You can reconstruct a run and compare it to what the agent was supposed to do.
 
@@ -39,7 +41,7 @@ You can reconstruct a run and compare it to what the agent was supposed to do.
 
 The difference from Level 1 is that you find out about a problem because something checked, not because somebody complained.
 
-### Level 3 — tested and replayable
+### Level 3 — Replay and test
 
 You can re-run the past and test against it.
 
@@ -55,14 +57,14 @@ You can re-run the past and test against it.
 
 Answer for one platform. Any "no" means you are not yet at that level, whatever else is true.
 
-**Level 1**
+**Level 1 — Tool call log**
 
 - Is every tool call logged, with its arguments?
 - Are inputs and outputs kept for a period somebody has stated in writing?
 - Would a call to a tool outside the declared set raise an alert?
 - Is there a named person who receives that alert and is expected to act?
 
-**Level 2**
+**Level 2 — Run records**
 
 - Can you retrieve the prompt and context of a specific run from last week?
 - Can you follow that run step by step, from the request to the answer?
@@ -71,7 +73,7 @@ Answer for one platform. Any "no" means you are not yet at that level, whatever 
 - Are their results measured against the baseline recorded at sign-off?
 - Would you find out within a day if they stopped running?
 
-**Level 3**
+**Level 3 — Replay and test**
 
 - Can you replay a specific past run?
 - Do you keep a set of the ways this agent has gone wrong, and test new runs against it?

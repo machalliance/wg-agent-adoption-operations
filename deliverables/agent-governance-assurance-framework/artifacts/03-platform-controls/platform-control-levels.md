@@ -14,7 +14,9 @@ It answers one question: **how tightly is an agent's access actually controlled,
 
 Every level requires least privilege: an agent gets the tools and data its design document lists, and nothing else. What changes between levels is **who decides the permissions** and **what stops them drifting**.
 
-### Level 1 — a person sets the scope
+The three are **Hand-scoped**, **Classification ceiling** and **Policy as code**. Use the number and the name together wherever a level is recorded.
+
+### Level 1 — Hand-scoped
 
 An engineer creates a login for the agent, scoped by hand to what its design document lists.
 
@@ -25,7 +27,7 @@ An engineer creates a login for the agent, scoped by hand to what its design doc
 
 Level 1 is a legitimate place to stand while you learn. Most teams shipping their first agent are here, and the record should say so.
 
-### Level 2 — the classification sets the ceiling
+### Level 2 — Classification ceiling
 
 The agent's risk classification decides the most access it can be granted. An engineer works inside that ceiling and cannot exceed it.
 
@@ -37,7 +39,7 @@ The agent's risk classification decides the most access it can be granted. An en
 
 The difference from Level 1 is that a mistake by one engineer can no longer produce an over-permissioned agent.
 
-### Level 3 — code grants it and keeps checking
+### Level 3 — Policy as code
 
 Access is granted and removed by policy expressed as code, and something continuously checks that what is granted still matches what the classification allows.
 
@@ -53,21 +55,21 @@ Access is granted and removed by policy expressed as code, and something continu
 
 Answer for one platform. Any "no" means you are not yet at that level, whatever else is true.
 
-**Level 1**
+**Level 1 — Hand-scoped**
 
 - Does each agent have a login used by nothing else?
 - Was its scope set from its design document rather than copied from an existing role?
 - Can a named person revoke it, using a written procedure?
 - Are its credentials absent from readable code and configuration?
 
-**Level 2**
+**Level 2 — Classification ceiling**
 
 - Does each risk classification name a widest grant list allowed?
 - Would an attempt to exceed that maximum be blocked rather than logged?
 - Do credentials expire in hours rather than months?
 - Is each agent's access reviewed on a schedule somebody owns?
 
-**Level 3**
+**Level 3 — Policy as code**
 
 - Are permissions granted and revoked by code from a declared source, with no manual step?
 - Does something continuously compare granted access against declared access?
