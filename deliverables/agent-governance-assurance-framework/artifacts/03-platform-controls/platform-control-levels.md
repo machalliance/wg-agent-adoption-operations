@@ -46,7 +46,8 @@ Access is granted and removed by policy expressed as code, and something continu
 - Everything in Level 2.
 - Permissions are granted and revoked automatically, from the agent's declared design.
 - A continuous check compares granted access against declared access and reports the difference.
-- Revocation takes effect in seconds, across every system the agent reaches.
+- Revocation takes effect in seconds rather than hours, across every system the agent reaches, measured from the moment a named person triggers it to the moment the agent's existing credentials stop working — not the moment new ones stop being issued.
+- The platform records that time, measured rather than assumed. Its floor is the longest-lived credential and the longest cache in the path, not how fast the revoke button responds.
 - Access review is automatic and its results are recorded.
 
 ---
@@ -73,7 +74,7 @@ Answer for one platform. Any "no" means you are not yet at that level, whatever 
 
 - Are permissions granted and revoked by code from a declared source, with no manual step?
 - Does something continuously compare granted access against declared access?
-- Can you revoke an agent everywhere within seconds?
+- Have you measured how long revocation takes to reach an agent's existing credentials, everywhere it reaches, and was the answer in seconds rather than hours?
 - Are access reviews automatic, with recorded results?
 
 Answer honestly. A level you claim and do not have is worse than a lower level recorded accurately, because the sign-off in stage 3 rests on it.
@@ -99,10 +100,12 @@ So there are two numbers, and both matter:
 
 ### Your platforms
 
-| Platform | Level | Assessed on | Who assessed it | What is needed to reach the next level |
-|---|---|---|---|---|
-| | | | | |
-| | | | | |
+| Platform | Level | Measured revocation time | Assessed on | Who assessed it | What is needed to reach the next level |
+|---|---|---|---|---|---|
+| | | | | | |
+| | | | | | |
+
+Revocation time is the measured one described in Level 3, and it is worth recording at every level: a Level 1 platform with a written revocation procedure nobody has timed does not know what that procedure is worth.
 
 ---
 

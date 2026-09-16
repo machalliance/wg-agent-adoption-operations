@@ -28,7 +28,7 @@ The two platform control rows ask different questions. The first is the stronges
 | Agent framework, and its version | |
 | Where it is hosted | |
 | Agent login: the identity it uses, and what else uses that identity | |
-| How the credentials are revoked, by whom, and how long that takes | |
+| How the credentials are revoked, by whom, and how long that takes, measured to the point the existing credentials stop working | |
 | Platform control level of the platform it runs on: Level 1 Hand-scoped, Level 2 Classification ceiling or Level 3 Policy as code | |
 | Platform control level actually applied to this agent | |
 | Version of the Platform Control Levels this score was made against | |

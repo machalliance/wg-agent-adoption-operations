@@ -49,6 +49,12 @@ Scoring each agent instead would be worse in the other direction. Twenty agents 
 
 So the platform carries the score, and the agent records what was actually applied to it within that ceiling. That gives two numbers, which is one more than we wanted and one fewer than the truth requires.
 
+### Why revocation has a stated endpoint
+
+"Revocation takes effect in seconds" is a claim almost every platform will make and few can support, because the three things it can mean are minutes apart: new calls refused, the agent's already-issued token dead, in-flight work stopped. A platform can be honest about the first and an hour away from the second, which is the one an incident depends on.
+
+So the level names the endpoint and asks for a measured number instead of naming a smaller unit. A hard figure would be the wrong instrument here: the floor is the longest-lived credential and the longest cache in the path, so a number most Level 3 platforms cannot beat would only be claimed rather than met. This is the same move question 4 of the classification test makes with money — judge the shape of the control, record the size per platform.
+
 ### Why "no" beats a claimed level
 
 The self-assessment in part 2 is a list of yes/no questions, because a description invites generous reading.
