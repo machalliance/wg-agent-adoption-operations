@@ -44,6 +44,12 @@ The argument for keeping them apart is in [the notes on the Risk Classifications
 
 Write it down anyway. Recorded now, it is a scoping decision that somebody accepts or refuses at sign-off, and the same discovery after go-live is handled as an incident instead.
 
+### Why the enforcement column is per row
+
+The form used to ask where the grant list is enforced once, for the whole agent, and the answer was always one component. Real agents are held by several: a gateway in front of the tools, a scoped credential on one system, a wrapper somebody wrote for the one API that has no scopes, and one row held by nothing at all.
+
+That last case is the reason for the column. A grant that nothing enforces looks identical, on a form with a single enforcement field, to a grant behind a policy engine. Per row, it has to be written down, and "nowhere" is what carries it into the remaining risk at sign-off.
+
 ---
 
 ## Where each section comes from

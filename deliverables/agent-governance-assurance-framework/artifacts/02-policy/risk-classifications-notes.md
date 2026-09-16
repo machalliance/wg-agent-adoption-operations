@@ -44,6 +44,10 @@ That is deliberate, and it is where we differ from the autonomy scales in circul
 
 Record the autonomy level too, in the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md), beside the platform control level. It is useful for deciding how closely to watch an agent, which is a different question from how much control it needs.
 
+### Why question 4 asks which way the money goes
+
+"Moves money" reads as spending, and teams answer it that way. An agent that takes a payment it should not have taken has the same exposure and a different remedy, and an agent that accepts a contract has an obligation that reversing a transaction does not unwind. Naming the three kinds also stops an agent that commits spend without ever touching a payment rail from answering that it moves no money.
+
 ### Why the highest floor wins
 
 The alternative is a weighted score, and a weighted score is how a critical property gets averaged away by seven reassuring ones.
@@ -87,9 +91,11 @@ A risk register lists things that might go wrong and who owns them. This lists k
 
 Classifications describe how much enforcement an agent needs. The ladders in stages 3 and 4 describe how much your platforms can deliver. A company at platform control Level 1 can still classify an agent as critical, and the honest result is an agent it should not yet be running.
 
-### A legal assessment
+### Which regulations apply to you
 
-Question 3 asks which regulations reach the process. Finding the answer is work for whoever advises you on regulation.
+Question 3 asks which regulations reach the process, and this standard does not answer it for you. Which law reaches a given process depends on where you operate and what that process does, so the determination belongs to whoever advises your company on regulation — legal, compliance, or privacy.
+
+What the standard does is make that answer a recorded one: written into the agent's design document, with the adviser named beside it, and with "none that we have identified" available as an answer only when a named adviser is the one who looked.
 
 ## What we want feedback on
 
