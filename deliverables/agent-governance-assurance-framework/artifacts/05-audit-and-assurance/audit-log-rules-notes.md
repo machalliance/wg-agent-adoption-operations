@@ -1,6 +1,6 @@
 # Notes on the Audit Log Rules
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This document explains the [Audit Log Rules](audit-log-rules.md): why stage 5 needs a company-level standard at all, what the group is asserting in it, and what we would like your feedback on. You do not need to read it to use the standard.
 

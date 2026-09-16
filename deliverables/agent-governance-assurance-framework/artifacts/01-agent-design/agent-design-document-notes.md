@@ -1,6 +1,6 @@
 # Notes on the Agent Design Document
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This document explains the [Agent Design Document](agent-design-document.md): why each section is there, where its questions come from, what it is not, and what we would like your feedback on. You do not need to read it to fill the form in.
 

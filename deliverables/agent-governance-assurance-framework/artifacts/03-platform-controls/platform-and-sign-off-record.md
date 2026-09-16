@@ -1,6 +1,6 @@
 # The Platform and Sign-off Record
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is a stage 3 artifact of the [Agent Governance and Assurance Framework](../../README.md): one per agent, alongside its [Agent Design Document](../01-agent-design/agent-design-document.md). It records what the agent actually runs on, what your evals found when you ran them against that setup, and who signed off on the result. Nothing goes live without this record completed and section C signed.
 
@@ -18,41 +18,57 @@ What the agent actually runs on, and not what it is supposed to run on.
 
 The two platform control rows ask different questions. The first is the strongest control the platform could enforce. The second is what was actually applied to this agent, which can be lower and cannot be higher. The monitoring levels are recorded once, in the [Monitoring and Incident Preparedness Record](../04-live-operations/monitoring-and-incident-preparedness-record.md); section C here records only whether the level applied meets what the classification requires.
 
+A model version that floats changes underneath this record. Nothing produces a row in section D, nothing re-runs the classification test that a new model version is supposed to trigger, and the record still reads as accurate. Answer the row that asks, and carry a floating answer into section C as remaining risk.
+
 | Field | Your answer |
 |---|---|
 | Agent name, and the version of its design document this record serves | |
 | Version of this record | |
 | Date of this version | |
 | Model, and its exact version | |
+| Is that model version pinned, or does it float | |
 | Model provider, and where inference happens | |
 | Agent framework, and its version | |
 | Where it is hosted | |
 | Agent login: the identity it uses, and what else uses that identity | |
-| How the credentials are revoked, by whom, and how long that takes | |
-| Platform control level of the platform it runs on: 1, 2 or 3 | |
+| How the credentials are revoked, by whom, and how long that takes, measured to the point the existing credentials stop working | |
+| Platform control level of the platform it runs on: Level 1 Hand-scoped, Level 2 Classification ceiling or Level 3 Policy as code | |
 | Platform control level actually applied to this agent | |
 | Version of the Platform Control Levels this score was made against | |
 | When this agent's access is reviewed again, and by whom | |
 | Autonomy level, on the four-level scale in the [CSA agentic profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/), or your own if you keep one | |
 | Tool servers and connectors it reaches, and who publishes each one | |
 
-**Where the grant list is enforced.** Section 3 of the design document lists the tools and the data this agent needs. Say what enforces that list here: a gateway, a policy engine, scoped credentials, or a tool wrapper. Name the component.
+**Where the grant list is enforced.** Section 3 of the design document lists the tools and the data this agent needs. Name the component that enforces most of it here: a gateway, a policy engine, scoped credentials, or a tool wrapper. It is rarely all one thing, which is what the last column of the table below is for.
 
 > 
 
 **What was actually granted, row by row.** Take each row of section 3 and write the permission that was really created for it, using the exact name your platform uses. This is the list your monitor compares live tool calls against.
 
-| Row in section 3 | The permission actually granted, as the platform names it | Wider, narrower, or the same |
-|---|---|---|
-| | | |
-| | | |
-| | | |
+| Row in section 3 | The permission actually granted, as the platform names it | Wider, narrower, or the same | Where it is enforced |
+|---|---|---|---|
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+
+Add rows until every row of section 3 has one here. A summary of thirty grants is not this table.
+
+**Wider, narrower, or the same** takes one of those three answers, and nothing else. **Where it is enforced** takes one of five: gateway, policy engine, scoped credential, tool wrapper, or nowhere. "Nowhere" is an honest answer, and it means the row is a sentence in a document rather than a control. Carry those rows into section C as remaining risk.
 
 **Anything narrower than the design document asks for.** Say what the agent cannot do as a result, and whether anybody has worked around it.
 
 > 
 
 **What is granted that the design document does not list.** Anything the agent can reach that section 3 does not name. This should be empty. Where it is not, write down what you found and carry it into section C as remaining risk. Do not fix it quietly and leave this row blank.
+
+> 
+
+**Limits the platform cannot express.** Every row of section 3 whose granularity is "not enforceable here": a boundary that was declared in stage 1 and that nothing here can hold. Say what the agent can reach as a result, and carry these into section C as remaining risk too. This is the mirror of the row above. That one is access nobody meant to grant; this one is a limit nobody can enforce, and it is the one that disappears quietly, because the design document has already described it as a decision.
 
 > 
 
@@ -68,12 +84,15 @@ Evals run against the setup in section A, not against a development configuratio
 | Date of the run | |
 | What they found | |
 | What you changed because of it | |
+| Which rows of section 3 and section 4 the evals exercised, and which they did not | |
 | What you know you did not test | |
 | Where the results are kept | |
 
 For any agent that reads content it did not author, whether it can be talked into something is what the sign-off most needs to know. Name what you tested against from [OWASP's Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), which is the same list stage 4's incident playbook works from.
 
-Two rows carry more weight than the rest. "What they found" is what the person signing off is accepting. "What you know you did not test" is where stage 4's monitoring has to begin.
+**Which rows the evals exercised.** Name them the way sections 3 and 4 name them. An agent with twelve grants and four decisions it makes alone can pass this section on evals that reached two grants and no decisions, and nothing else here would show the difference.
+
+Two rows carry more weight than the rest. "What they found" is what the person signing off is accepting. "What you know you did not test" is where stage 4's monitoring has to begin, and the row above it is where most of that answer comes from.
 
 ### C. Sign-off
 
@@ -89,6 +108,12 @@ One named person accepts the agent as a whole: what it is for, its classificatio
 | The risk that is left, stated in their words | |
 | Any classification floor lowered by a compensating control, named | |
 | Conditions on the sign-off, and when it must be looked at again | |
+| Who can change this configuration after sign-off, and what review that change gets | |
+| What prevents deployment without this signature: a pipeline check, a registry gate, a named person, or nothing | |
+
+**Who can change this configuration after sign-off** is the other half of section D. That table records a change once it has happened, and only when whoever made it writes the row. This one says who was permitted to make it. Without it, a grant list widened between reviews leaves a record describing a configuration nobody is holding in place.
+
+**What prevents deployment without this signature** takes one of the four answers named in the row. This record opens by saying nothing goes live without it, and until one of the first three is true that is a control written into a document, which carries the weakness section 4 of the design document names in a control that lives only in the prompt. "Nothing" is the honest answer for most teams, and it belongs in the risk that is left.
 
 **The level gap.** The agent's classification names a platform control level and a monitoring level that an agent in it requires. Where the level applied is lower than the level required, the gap is accepted here, by name, or it is not accepted at all.
 

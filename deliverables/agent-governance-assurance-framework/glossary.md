@@ -1,6 +1,6 @@
 # Glossary
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 Risk and compliance work has a large vocabulary. We use plain words instead, so that the people who have to apply a control can understand it. This table gives our word, what it means, and the word that other frameworks use for the same thing.
 
@@ -22,18 +22,21 @@ Where the formal term is already the clearest one, we keep it. Those rows say so
 | how far the damage spreads | How far a mistake travels beyond the system the agent acted on. | blast radius |
 | incident playbook | The second half of the Monitoring and Incident Preparedness Record: what happens once an alert fires, and who does it. | runbook, incident response plan |
 | least privilege | An agent gets the tools and the data its design document lists, and nothing else. We keep this term, because the people who scope permissions already use it. | least privilege, minimum necessary access |
-| level | One of three degrees of maturity for a single part of the framework. Level 1 is small and quick. Level 3 is the full model. | maturity model, maturity level |
+| level | One of three degrees of capability for a single part of the framework: how much control, or how much visibility, is actually there. Level 1 is small and quick. Level 3 is the full model. A level is not a maturity score, and a higher number is not automatically the right one. | maturity model, maturity level |
 | level gap | The distance between the level an agent's classification requires and the level actually applied to it. It is accepted by name, with a closing date, in section C of that agent's Platform and Sign-off Record, or it is not accepted at all. | accepted risk, control deficiency, exception |
 | level, of a platform | The strongest control, or the most visibility, a platform can provide. Scored once per platform, in a standard. | platform capability, control baseline |
 | level, of an agent | What was actually applied to one agent. Recorded in that agent's record. It can be lower than its platform's level and can never be higher. | effective control, applied baseline |
+| monitoring level | How much of a run you can see and check, on the ladder in the Monitoring Levels. The three are Level 1 Tool call log, Level 2 Run records and Level 3 Replay and test. Record the number and the name together. | observability maturity, telemetry level |
 | monitoring plan | The first half of the Monitoring and Incident Preparedness Record: what you record on every run, what counts as normal, and what starts an alert. | post-market monitoring plan, observability plan |
 | outcome | What the agent is for, stated as something you can measure, with one person who owns the number. | business outcome, success metric, KPI |
 | platform | Where an agent runs and where its access comes from: the host, whatever issues its login, and whatever grants or refuses its tool calls. Most companies have several, controlled to different degrees, so each is scored on its own. Two agents whose credentials and tool access come from different places are on different platforms. | runtime environment, execution environment, control plane |
-| policy as code | Permissions written as rules a machine grants and revokes from, instead of settings a person clicks. It is what separates platform control Level 3 from Level 2. | policy as code, attribute-based access control |
+| platform control level | How tightly an agent's access is controlled, and who decides, on the ladder in the Platform Control Levels. The three are Level 1 Hand-scoped, Level 2 Classification ceiling and Level 3 Policy as code. Record the number and the name together. | access control maturity, entitlement baseline |
+| policy as code | Permissions written as rules a machine grants and revokes from, instead of settings a person clicks. It is what separates platform control Level 3 from Level 2, which is why it is also the name of that level. | policy as code, attribute-based access control |
 | prompt injection | Content the agent reads talking it into something its instructions did not intend. We keep this term; there is no plainer one that means the same thing. | prompt injection, indirect prompt injection, goal hijack |
 | record | A document about one agent. You keep one per agent and revise it when that agent changes. Everything except the four standards is a record. | artifact, per-system documentation |
 | replay | Re-running a stored run from its own record to see what happened. Re-running the *agent* is a different thing, and produces a different run. | trace replay, session reconstruction |
 | risk classification | A type of agent and the level of risk that it carries, from low to high. Each classification gets stronger controls. Your classifications describe the whole company, not one agent. | risk tier, autonomy level |
+| run record | What was kept of one run of one agent: the prompt, the context, the outputs and the steps between them. Monitoring Level 2 is named for it. Not to be confused with a record, which is a document about an agent rather than a trace of it doing something. | trace, session record |
 | sign-off | A record of who accepted the risk, on what date, and against which version of the design document. | risk acceptance, authorization to operate |
 | standard | A document about your whole company. You write it once and it grows. There are four: the Risk Classifications, the Platform Control Levels, the Monitoring Levels and the Audit Log Rules. | policy, control standard |
 | the risk that is left | The risk that stays after you add your controls. | residual risk |

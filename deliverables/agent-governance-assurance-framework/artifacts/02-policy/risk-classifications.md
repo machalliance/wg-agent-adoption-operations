@@ -1,6 +1,6 @@
 # Risk Classifications and the Classification Test
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 2 artifact of the [Agent Governance and Assurance Framework](../../README.md). It is a **standard**: you write it once for your company, and it grows as you build agents it does not yet describe.
 
@@ -29,8 +29,8 @@ Filled in as a starting point. Replace with your own.
 | What it may do with nobody watching | Nothing. A person reviews every action before it takes effect. |
 | Widest grant list allowed | Read-only tools. No writes to any system of record. |
 | Who may be on the other end | Internal staff. |
-| Platform control level required, applied to the agent | Level 1. |
-| Monitoring level required | Level 1. |
+| Platform control level required, applied to the agent | Level 1 — Hand-scoped. |
+| Monitoring level required | Level 1 — Tool call log. |
 | Who signs off | The team's own manager. |
 | Leaves this classification when | It reaches data the reader could not already see, or it starts writing to a system of record. |
 
@@ -49,8 +49,8 @@ Filled in as a starting point. Replace with your own.
 | What it may do with nobody watching | Anything that would sit at Routine on its own. A person reviews the rest. |
 | Widest grant list allowed | Read and write to the systems named in the design document. No tool that moves money or reaches a customer. |
 | Who may be on the other end | Internal staff, and named customers under supervision. |
-| Platform control level required, applied to the agent | Level 1. |
-| Monitoring level required | Level 1. |
+| Platform control level required, applied to the agent | Level 1 — Hand-scoped. |
+| Monitoring level required | Level 1 — Tool call log. |
 | Who signs off | The owner of the process being automated. |
 | Leaves this classification when | It reaches personal data, or an action becomes hard to reverse. |
 
@@ -69,8 +69,8 @@ Filled in as a starting point. Replace with your own.
 | What it may do with nobody watching | It may act alone inside a scope somebody set, and a person sees the result afterwards. |
 | Widest grant list allowed | Only the tools named in the design document, with personal-data fields listed individually. Writes to customer-facing systems need approval. |
 | Who may be on the other end | Customers, who are told they are dealing with an agent. |
-| Platform control level required, applied to the agent | Level 2. |
-| Monitoring level required | Level 2. |
+| Platform control level required, applied to the agent | Level 2 — Classification ceiling. |
+| Monitoring level required | Level 2 — Run records. |
 | Who signs off | A named accountable executive, with your privacy or compliance function consulted. |
 | Leaves this classification when | It can move money without a ceiling, or a mistake would be reportable. |
 
@@ -89,8 +89,8 @@ Filled in as a starting point. Replace with your own.
 | What it may do with nobody watching | It may act alone with nobody seeing the result unless something alerts. Name what alerts. |
 | Widest grant list allowed | Only the tools named in the design document. Credentials granted per task where the platform supports it. |
 | Who may be on the other end | Anyone, including the public. |
-| Platform control level required, applied to the agent | Level 3. |
-| Monitoring level required | Level 3. |
+| Platform control level required, applied to the agent | Level 3 — Policy as code. |
+| Monitoring level required | Level 3 — Replay and test. |
 | Who signs off | A named accountable executive. Consider a second signature. |
 | Leaves this classification when | Nothing moves an agent up from here. It leaves only when its scope narrows: the test is re-run, and the reduction is signed by the person who accepted the original risk. |
 
@@ -132,9 +132,9 @@ Section 6 of the design document reproduces the questions so that a team can fil
 |---|---|---|
 | 1 | How critical is the process it automates? If the agent stopped for a day, what stops with it? | Process criticality |
 | 2 | How sensitive is the data it can read? Name the most sensitive item, not the average. | Data sensitivity |
-| 3 | Which regulations reach this process? Name them, or write "none that we have identified" and say who looked. | Regulatory reach |
-| 4 | How much money or value can it move, in one action and in one day? | Financial exposure |
-| 5 | Can you undo what it does? Name the action that is hardest to undo, and how long you have. | Reversibility |
+| 3 | Which regulations reach this process? Name them, or write "none that we have identified". Either way, name the legal, compliance or privacy adviser who determined it. | Regulatory reach |
+| 4 | How much money or value can it move, in one action and in one day? Answer for each kind of movement it can make: money out, money in, and commitments that become money later. | Financial exposure |
+| 5 | Can you undo what it does? Name the action that is hardest to undo, and how long you have from the moment it takes effect. | Reversibility |
 | 6 | How far does the damage spread beyond the system it acted on? | Spread |
 | 7 | What can it do with no person in the loop at all? | Autonomy |
 | 8 | Who is on the other end: internal staff, your customers, or the public? | Audience |
@@ -152,11 +152,25 @@ These anchors describe the four starter classifications. If you rename, merge or
 | 1. Process criticality | Nothing stops. A person does the work by hand instead. | Work queues up and somebody has to catch up afterwards. | A customer-facing or regulated process stalls. | A process the business cannot go a day without stops. |
 | 2. Data sensitivity | Only data the person on the other end could already read. | Internal commercial data. Names and work contact details. | Personal data, or data held under a confidentiality obligation. | Special category personal data, payment or credential data, or material non-public information. |
 | 3. Regulatory reach | None identified, and a named person looked. | Internal policy or contractual obligations only. | A named regulation reaches the process. | The process is supervised, or a mistake in it is reportable to a regulator. |
-| 4. Financial exposure | It moves no money or value. | It moves money or value within a ceiling that covers both one action and one day, recorded in its design document. | The ceiling covers one action but not one day, or nothing approves the actions that reach it. | No ceiling, or a ceiling the agent observes itself rather than one the platform enforces. |
-| 5. Reversibility | The person who received it can undo it themselves. | Reversible by the team within one working day. | Reversible only with another party's help, or beyond one working day. | Not reversible, or reversible only by telling somebody it happened. |
+| 4. Financial exposure | It moves no money or value: none out, none in, and it commits none. | Every kind of movement it makes is within a ceiling that covers both one action and one day, recorded in its design document. | A ceiling covers one action but not one day, or nothing approves the actions that reach it. | A kind of movement it can make has no ceiling, or has one the agent observes itself rather than one the platform enforces. |
+| 5. Reversibility | The person who received it can undo it themselves. | Reversible by the team within one working day of the action taking effect. | Reversible only with another party's help, or beyond one working day of the action taking effect. | Not reversible, or reversible only by telling somebody it happened. |
 | 6. Spread | It stays in the system the agent acted on. | Another internal system or team has to correct it. | It reaches a customer, a partner, or a system you do not control. | It reaches many people at once, a public channel, or another agent that acts on it. |
 | 7. Autonomy | A person reviews every action before it takes effect. | A person reviews the actions that set a floor above Routine. | It acts alone inside a scope somebody set, and a person sees the result afterwards. | It acts alone, and nobody sees the result unless something alerts. |
 | 8. Audience | Internal staff. | Internal staff, and named customers under supervision. | Customers, who are told they are dealing with an agent. | The public, or anybody who reads the output as your company's position. |
+
+Question 3 is not a question this standard answers, and it is not one the agent's team answers on its own. Which regulations reach a process depends on where you operate and what the process does, so the determination belongs to whoever advises your company on regulation — legal, compliance, or privacy. The team records their answer and names them. A team's own reading of its process is not a determination, and "none that we have identified" with no named adviser behind it is an unanswered question.
+
+The clock in question 5 starts when the action takes effect, not when somebody notices it. A refund window that closes a day after the refund is a one-day window whether or not anyone looked, and an agent whose mistakes surface on the third day has already spent it.
+
+Question 4 covers three kinds of movement, and most agents that reach it do more than one:
+
+| Kind | What it is |
+|---|---|
+| Money out | Paying, refunding, crediting, discounting, releasing funds or goods. |
+| Money in | Charging a card, taking a payment, raising an invoice, chasing a debt. Money taken that should not have been taken is exposure too, and it is the kind most likely to reach a regulator. |
+| Committed | Placing an order, accepting or signing a contract, provisioning something billable, spending against an ad or cloud budget. Nothing moves when the agent acts, and the company owes it anyway. |
+
+Value that is not currency counts on the same footing: inventory, store credit, loyalty points, gift cards, licences, entitlements. Answer for every kind the agent can do, name a ceiling for each, and take the highest floor any of them sets.
 
 Question 4 sets no amount, and this standard names none. What a given agent may move is a per-agent number, recorded as the value ceiling in section 3 of its design document and accepted by the person who signs it off. The anchors above judge the shape of the control instead: whether a ceiling exists, whether it covers a day as well as a single action, and whether the platform enforces it or the agent is trusted to observe it. That is the part a company-wide standard can rule on. The size is a judgment about one agent.
 

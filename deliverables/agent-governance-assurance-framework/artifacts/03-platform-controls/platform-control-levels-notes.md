@@ -1,6 +1,6 @@
 # Notes on the Platform Control Levels
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This document explains the [Platform Control Levels](platform-control-levels.md): where the ladder comes from, what it deliberately leaves out, and what we would like your feedback on. You do not need to read it to use the standard.
 
@@ -48,6 +48,18 @@ Companies run agents in several places, and those places are rarely controlled e
 Scoring each agent instead would be worse in the other direction. Twenty agents on one platform would produce twenty identical assessments.
 
 So the platform carries the score, and the agent records what was actually applied to it within that ceiling. That gives two numbers, which is one more than we wanted and one fewer than the truth requires.
+
+### Why revocation has a stated endpoint
+
+"Revocation takes effect in seconds" is a claim almost every platform will make and few can support, because the three things it can mean are minutes apart: new calls refused, the agent's already-issued token dead, in-flight work stopped. A platform can be honest about the first and an hour away from the second, which is the one an incident depends on.
+
+So the level names the endpoint and asks for a measured number instead of naming a smaller unit. A hard figure would be the wrong instrument here: the floor is the longest-lived credential and the longest cache in the path, so a number most Level 3 platforms cannot beat would only be claimed rather than met. This is the same move question 4 of the classification test makes with money — judge the shape of the control, record the size per platform.
+
+### Why Level 3 needs the grant list in a form code can read
+
+The grant list in section 3 of a design document is policy. It becomes a technical control only where something grants from it, and until then a person reads the table and creates the permissions by hand — which is Level 1, and is Level 2 as well, because a classification ceiling constrains how wide that hand-made grant may be without checking it against the rows.
+
+So the line between policy and enforcement falls inside Level 3, and it falls on whether the declaration is machine-readable. A team with excellent automation and a grant list that exists only as prose is at Level 2. Saying so in the level is more useful than saying it in the design document, because the level is what a sign-off rests on.
 
 ### Why "no" beats a claimed level
 

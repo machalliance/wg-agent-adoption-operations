@@ -1,6 +1,6 @@
 # Notes on the Platform and Sign-off Record
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This document explains the [Platform and Sign-off Record](platform-and-sign-off-record.md): why each section is there, where its questions come from, and what we would like your feedback on. You do not need to read it to fill the form in.
 
@@ -43,6 +43,12 @@ The argument for keeping them apart is in [the notes on the Risk Classifications
 "What is granted that the design document does not list" is the only row in this framework where stage 3 can contradict stage 1 in writing, before stage 4 catches the same thing at runtime. Most teams find something the first time they fill it in, usually an inherited role or a credential shared with a service.
 
 Write it down anyway. Recorded now, it is a scoping decision that somebody accepts or refuses at sign-off, and the same discovery after go-live is handled as an incident instead.
+
+### Why the enforcement column is per row
+
+The form used to ask where the grant list is enforced once, for the whole agent, and the answer was always one component. Real agents are held by several: a gateway in front of the tools, a scoped credential on one system, a wrapper somebody wrote for the one API that has no scopes, and one row held by nothing at all.
+
+That last case is the reason for the column. A grant that nothing enforces looks identical, on a form with a single enforcement field, to a grant behind a policy engine. Per row, it has to be written down, and "nowhere" is what carries it into the remaining risk at sign-off.
 
 ---
 

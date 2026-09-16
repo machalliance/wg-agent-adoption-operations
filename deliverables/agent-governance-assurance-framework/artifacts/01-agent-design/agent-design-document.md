@@ -1,6 +1,6 @@
 # The Agent Design Document
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 1 artifact of the [Agent Governance and Assurance Framework](../../README.md): one document for one agent, written before the agent goes near production. It records what the agent is for, what it can touch, what it decides alone, and which risk classification it belongs to.
 
@@ -60,7 +60,7 @@ The team that builds the agent fills it in, not a risk function. Section 6 is an
 
 This is the grant list. Stage 3 grants what is in this table and refuses everything else. If it is not here, the agent does not get it.
 
-| Tool or system | What the agent does with it | Read or write | Data it reaches, and how sensitive | Can the action be undone, and within what window | Grant list granularity |
+| Tool or system | What the agent does with it | Read or write | Data it reaches, and how sensitive | Can the action be undone, by whom, and within what window | Grant list granularity |
 |---|---|---|---|---|---|
 | | | | | | |
 | | | | | | |
@@ -89,13 +89,13 @@ Every platform we have looked at can scope at tool level, meaning this agent may
 
 > 
 
-**Value ceiling.** The most money or value the agent can move in one action, and in one day. Write "none" if there is no ceiling, and expect section 6 to charge you for it.
+**Value ceiling.** The most money or value the agent can move in one action, and in one day, stated for each kind of movement it can make: money out (payments, refunds, credits, discounts), money in (charges, invoices, collections), and commitments that become money later (orders, contracts, billable provisioning). Value that is not currency counts: inventory, store credit, points, gift cards, licences. Write "none" against a kind that has no ceiling, and expect section 6 to charge you for it.
 
 > 
 
 ### 4. What it decides alone
 
-| Action or decision | Alone, never, or needs a person to approve | Where the control is enforced |
+| Action or decision | Never, needs a person to approve, alone and reviewed afterwards, or alone and unreviewed | Where the control is enforced |
 |---|---|---|
 | | | |
 | | | |
@@ -105,6 +105,10 @@ Every platform we have looked at can scope at tool level, meaning this agent may
 | | | |
 | | | |
 | | | |
+
+**The middle column takes four answers:** **never**, **needs a person to approve**, **alone, and a person sees the result afterwards**, or **alone, and nobody sees the result unless something alerts**. The last three are question 7's Routine, Sensitive and Critical anchors, in that order, which is how this column answers that question. "Never" is not one of them. It says the agent does not do this at all, and it sets no floor.
+
+Question 7 is answered for the agent and not for one row, so read the whole column and take the highest anchor any row reaches. Its remaining anchor — a person reviews the actions that set a floor above Routine — is not an answer a row can give. It is what this column says when the rows that act alone are the ones that would sit at Routine on their own.
 
 **Where the control is enforced** takes one of four answers: **in the platform**, **in the tool layer**, **in the prompt**, or **nowhere**. It asks what stops a decision being made, which is a different question from grant list granularity in section 3. "In the prompt" counts as an answer, and it is the weakest of the four. Section 6 charges you for it.
 
@@ -159,12 +163,16 @@ The classifications below are placeholders. If you already keep your own risk cl
 |---|---|---|---|---|
 | 1 | How critical is the process it automates? If the agent stopped for a day, what stops with it? | | | |
 | 2 | How sensitive is the data it can read? Name the most sensitive item, not the average. | | | |
-| 3 | Which regulations reach this process? Name them, or write "none that we have identified" and say who looked. | | | |
-| 4 | How much money or value can it move, in one action and in one day? | | | |
-| 5 | Can you undo what it does? Name the action that is hardest to undo, and how long you have. | | | |
+| 3 | Which regulations reach this process? Name them, or write "none that we have identified". Either way, name the legal, compliance or privacy adviser who determined it. | | | |
+| 4 | How much money or value can it move, in one action and in one day? Answer for each kind of movement it can make: money out, money in, and commitments that become money later. | | | |
+| 5 | Can you undo what it does? Name the action that is hardest to undo, and how long you have from the moment it takes effect. | | | |
 | 6 | How far does the damage spread beyond the system it acted on? | | | |
 | 7 | What can it do with no person in the loop at all? | | | |
 | 8 | Who is on the other end: internal staff, your customers, or the public? | | | |
+
+**Question 3 is not yours to answer.** Which regulations reach this process is a determination from whoever advises your company on regulation — legal, compliance, or privacy. Record their answer and name them. "None that we have identified" with nobody named behind it leaves the row unanswered.
+
+**Question 4 covers three kinds of movement.** Money out, money in, and commitments that become money later — an order, a contract, or billable provisioning the company owes whether or not anything moved at the time. Value that is not currency counts too. Answer for each kind the agent can make, and take the highest floor any of them sets.
 
 **The rule.** The classification is the highest floor that any single row sets. One critical row makes the agent critical, however routine the other seven are.
 

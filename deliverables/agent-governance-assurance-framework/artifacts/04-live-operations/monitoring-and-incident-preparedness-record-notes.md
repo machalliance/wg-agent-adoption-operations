@@ -1,6 +1,6 @@
 # Notes on the Monitoring and Incident Preparedness Record
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This document explains the [Monitoring and Incident Preparedness Record](monitoring-and-incident-preparedness-record.md): the three monitoring levels, why the sections are ordered as they are, and what we would like your feedback on. You do not need to read it to fill the form in.
 

@@ -1,6 +1,6 @@
 # Platform Control Levels
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 3 standard of the [Agent Governance and Assurance Framework](../../README.md). You write it once for your company. Its companion is the [Platform and Sign-off Record](platform-and-sign-off-record.md), which you fill in once per agent.
 
@@ -14,7 +14,9 @@ It answers one question: **how tightly is an agent's access actually controlled,
 
 Every level requires least privilege: an agent gets the tools and data its design document lists, and nothing else. What changes between levels is **who decides the permissions** and **what stops them drifting**.
 
-### Level 1 — a person sets the scope
+The three are **Hand-scoped**, **Classification ceiling** and **Policy as code**. Use the number and the name together wherever a level is recorded.
+
+### Level 1 — Hand-scoped
 
 An engineer creates a login for the agent, scoped by hand to what its design document lists.
 
@@ -25,26 +27,28 @@ An engineer creates a login for the agent, scoped by hand to what its design doc
 
 Level 1 is a legitimate place to stand while you learn. Most teams shipping their first agent are here, and the record should say so.
 
-### Level 2 — the classification sets the ceiling
+### Level 2 — Classification ceiling
 
 The agent's risk classification decides the most access it can be granted. An engineer works inside that ceiling and cannot exceed it.
 
 - Everything in Level 1.
 - Each classification names a widest grant list allowed, in your [Risk Classifications](../02-policy/risk-classifications.md).
 - Granting past that maximum is blocked, not merely discouraged.
-- Credentials are short-lived and reissued, not long-lived and rotated occasionally.
+- Credentials are short-lived and reissued, not long-lived and rotated occasionally. Their lifetime is the floor of the revocation time recorded in part 3: an agent holding an eight-hour token cannot be revoked in seconds, whatever the revoke button does.
 - Somebody reviews each agent's access on a stated schedule.
 
 The difference from Level 1 is that a mistake by one engineer can no longer produce an over-permissioned agent.
 
-### Level 3 — code grants it and keeps checking
+### Level 3 — Policy as code
 
 Access is granted and removed by policy expressed as code, and something continuously checks that what is granted still matches what the classification allows.
 
 - Everything in Level 2.
 - Permissions are granted and revoked automatically, from the agent's declared design.
-- A continuous check compares granted access against declared access and reports the difference.
-- Revocation takes effect in seconds, across every system the agent reaches.
+- That declared design is machine-readable. A grant list only a person can read caps a platform at Level 2 however good the automation around it, because code cannot grant from a document it cannot parse.
+- A continuous check compares granted access against declared access and reports the difference. Continuous means no person starts it and the longest gap between two checks is stated, recorded beside the level in part 3. A nightly batch is a stated gap of a day, not a continuous check.
+- Revocation takes effect in seconds rather than hours, across every system the agent reaches, measured from the moment a named person triggers it to the moment the agent's existing credentials stop working — not the moment new ones stop being issued.
+- The platform records that time, measured rather than assumed. Its floor is the longest-lived credential and the longest cache in the path, not how fast the revoke button responds.
 - Access review is automatic and its results are recorded.
 
 ---
@@ -53,25 +57,26 @@ Access is granted and removed by policy expressed as code, and something continu
 
 Answer for one platform. Any "no" means you are not yet at that level, whatever else is true.
 
-**Level 1**
+**Level 1 — Hand-scoped**
 
 - Does each agent have a login used by nothing else?
 - Was its scope set from its design document rather than copied from an existing role?
 - Can a named person revoke it, using a written procedure?
 - Are its credentials absent from readable code and configuration?
 
-**Level 2**
+**Level 2 — Classification ceiling**
 
 - Does each risk classification name a widest grant list allowed?
 - Would an attempt to exceed that maximum be blocked rather than logged?
 - Do credentials expire in hours rather than months?
 - Is each agent's access reviewed on a schedule somebody owns?
 
-**Level 3**
+**Level 3 — Policy as code**
 
 - Are permissions granted and revoked by code from a declared source, with no manual step?
-- Does something continuously compare granted access against declared access?
-- Can you revoke an agent everywhere within seconds?
+- Is that source a grant list code reads directly, rather than a document somebody transcribes?
+- Does something compare granted access against declared access with no person starting it, and do you know the longest gap between two of those checks?
+- Have you measured how long revocation takes to reach an agent's existing credentials, everywhere it reaches, and was the answer in seconds rather than hours?
 - Are access reviews automatic, with recorded results?
 
 Answer honestly. A level you claim and do not have is worse than a lower level recorded accurately, because the sign-off in stage 3 rests on it.
@@ -97,10 +102,12 @@ So there are two numbers, and both matter:
 
 ### Your platforms
 
-| Platform | Level | Assessed on | Who assessed it | What is needed to reach the next level |
-|---|---|---|---|---|
-| | | | | |
-| | | | | |
+| Platform | Level | Measured revocation time | Longest gap between access checks | Assessed on | Who assessed it | What is needed to reach the next level |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+| | | | | | | |
+
+Revocation time is the measured one described in Level 3, and it is worth recording at every level: a Level 1 platform with a written revocation procedure nobody has timed does not know what that procedure is worth.
 
 ---
 

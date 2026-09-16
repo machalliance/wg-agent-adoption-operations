@@ -1,6 +1,6 @@
 # Monitoring Levels
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 4 standard of the [Agent Governance and Assurance Framework](../../README.md). You write it once for your company. Its companion is the [Monitoring and Incident Preparedness Record](monitoring-and-incident-preparedness-record.md), which you fill in once per agent.
 
@@ -14,7 +14,9 @@ It answers one question: **how much can you actually see of what an agent did, a
 
 Every level requires that something is recorded on every run and that somebody is told when it looks wrong. What changes between levels is **how much of the run you keep** and **whether anything checks it without being asked**.
 
-### Level 1 — the tool call log
+The three are **Tool call log**, **Run records** and **Replay and test**. Use the number and the name together wherever a level is recorded.
+
+### Level 1 — Tool call log
 
 You know what the agent did, after the fact, if you go looking.
 
@@ -25,7 +27,7 @@ You know what the agent did, after the fact, if you go looking.
 
 Most teams running their first agent are here. That is the right place to be for an agent whose classification asks for Level 1, rather than for one that asks for more. What Level 1 cannot tell you is why the agent did something, or whether a run that looked fine was correct.
 
-### Level 2 — run records
+### Level 2 — Run records
 
 You can reconstruct a run and compare it to what the agent was supposed to do.
 
@@ -35,11 +37,11 @@ You can reconstruct a run and compare it to what the agent was supposed to do.
 - Live behavior is compared against the agent's design document, and drift raises an alert as well as errors.
 - Evals run against the live agent without a person starting them, whether on a schedule, on each deployment, or continuously.
 - Their results are compared against the baseline recorded at sign-off.
-- You would know within a day if they stopped running.
+- You would know within a day of a run that did not happen, because something raises it rather than because somebody went to look. Name what raises it.
 
 The difference from Level 1 is that you find out about a problem because something checked, not because somebody complained.
 
-### Level 3 — tested and replayable
+### Level 3 — Replay and test
 
 You can re-run the past and test against it.
 
@@ -55,23 +57,23 @@ You can re-run the past and test against it.
 
 Answer for one platform. Any "no" means you are not yet at that level, whatever else is true.
 
-**Level 1**
+**Level 1 — Tool call log**
 
 - Is every tool call logged, with its arguments?
 - Are inputs and outputs kept for a period somebody has stated in writing?
 - Would a call to a tool outside the declared set raise an alert?
 - Is there a named person who receives that alert and is expected to act?
 
-**Level 2**
+**Level 2 — Run records**
 
 - Can you retrieve the prompt and context of a specific run from last week?
 - Can you follow that run step by step, from the request to the answer?
 - Does anything compare live behavior to the agent's design document?
 - Do evals run with no person starting them?
 - Are their results measured against the baseline recorded at sign-off?
-- Would you find out within a day if they stopped running?
+- If a scheduled run did not happen, would something tell you within a day, without anybody going to look?
 
-**Level 3**
+**Level 3 — Replay and test**
 
 - Can you replay a specific past run?
 - Do you keep a set of the ways this agent has gone wrong, and test new runs against it?

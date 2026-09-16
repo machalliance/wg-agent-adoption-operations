@@ -24,7 +24,7 @@ Suggested wording, adapted to fit where you use it:
 > Based on the Agent Governance and Assurance Framework by the MACH Alliance Agent Adoption & Operations Working Group, September 2026 Draft, licensed under CC BY 4.0.
 > https://github.com/machalliance/wg-agent-adoption-operations
 
-Cite the version you built against. This is a draft and it changes.
+Cite the release you built against, and name it. Do not cite the working copy: it changes without notice, so it gives a reader nothing to check your document against.
 
 ## The full license
 

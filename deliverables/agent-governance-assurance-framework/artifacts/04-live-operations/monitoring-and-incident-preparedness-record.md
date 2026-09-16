@@ -1,6 +1,6 @@
 # The Monitoring and Incident Preparedness Record
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 4 artifact of the [Agent Governance and Assurance Framework](../../README.md): one per agent, alongside its [Agent Design Document](../01-agent-design/agent-design-document.md) and its [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md). Sections A to C are the Monitoring Plan: what you record on every run, what counts as normal, and what starts an alert. Sections D and E are the Incident Playbook: what happens once an alert starts, and who does it.
 
@@ -22,7 +22,7 @@ The two monitoring rows ask different questions. The first is the most this plat
 | Version of this record | |
 | Date of this version | |
 | Monitoring level the classification requires | |
-| Monitoring level of the platform it runs on: 1, 2 or 3 | |
+| Monitoring level of the platform it runs on: Level 1 Tool call log, Level 2 Run records or Level 3 Replay and test | |
 | Monitoring level actually applied to this agent | |
 | Version of the Monitoring Levels this score was made against | |
 | Who owns this monitoring | |
@@ -39,6 +39,10 @@ Where the level applied is lower than the level the classification requires, the
 | Escalations to a person, and the outcome | | | |
 | Enough of the run to replay it | | | |
 | Cost and token use per run | | | |
+
+**How you would know these records had stopped being collected, and how long after.** A pipeline that has stopped writing looks like an agent with nothing to report. The alerts in section C stop firing because nothing arrives to fire them, and stage 5 reads green against records nobody is writing. Name what tells you, as section B does for the evals.
+
+> 
 
 **What you deliberately do not record, and why.** Usually personal data you have no basis to retain. Say what you lose by not recording it.
 
@@ -58,7 +62,7 @@ Where the level applied is lower than the level the classification requires, the
 | Where the results go | |
 | Who is told when one fails | |
 | Who owns extending the eval set as the agent changes | |
-| How you would know they had stopped running | |
+| How you would know they had stopped running, and how long after the run that did not happen | |
 
 **Which baseline the results are compared against.** Normally the eval results recorded in the Platform and Sign-off Record at sign-off. Name the version.
 
@@ -66,20 +70,26 @@ Where the level applied is lower than the level the classification requires, the
 
 ### C. What counts as normal, and what starts an alert
 
-| Signal | What normal looks like | What starts an alert | Who receives it | Implemented today |
-|---|---|---|---|---|
-| A call to a tool outside the declared set | Never | | | |
-| Volume of runs | | | | |
-| Escalation rate to a person | | | | |
-| Eval failure | Never | | | |
-| Cost per run or per day | | | | |
-| Error or retry rate | | | | |
-| Drift from the design document | | | | |
-| | | | | |
+| Signal | What normal looks like | What starts an alert | Who receives it | What happens if it is not acknowledged, and within what time | Where it is implemented |
+|---|---|---|---|---|---|
+| A call to a tool outside the declared set | Never | | | | |
+| Volume of runs | | | | | |
+| Escalation rate to a person | | | | | |
+| Eval failure | Never | | | | |
+| Cost per run or per day | | | | | |
+| Error or retry rate | | | | | |
+| Drift from the design document | | | | | |
+| | | | | | |
 
-Answer the last column for what is implemented today, not for what is planned. A row with nothing behind it is a gap the sign-off has to carry.
+**Where it is implemented** takes the name of the alert, the rule, the monitor or the dashboard: something somebody else could open. Leave it blank where nothing is built, and the sign-off carries the gap. Answer it for what exists today, not for what is planned. A name is harder to write for an alert that does not exist.
+
+**What happens if it is not acknowledged** is the question section 5 of the design document asks of the agent, asked here of your own alerting. An alert nobody picks up, on an agent that acts alone, leaves you where you would be with no monitoring at all. Name what happens when the triage time in section D runs out.
 
 The first row needs the granted permissions from section A of the Platform and Sign-off Record. Naming where the monitor gets that list is the difference between an alert you can build and one you intend to.
+
+**How long a problem can run before any of the signals above fires.** Measured from the moment an action takes effect, and not from the moment somebody looks. Compare it with question 5 of this agent's classification: where detection is slower than the window for undoing the action, the window is spent before anybody knows, and that is remaining risk for section C of the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md).
+
+> 
 
 ### D. What an alert starts
 
