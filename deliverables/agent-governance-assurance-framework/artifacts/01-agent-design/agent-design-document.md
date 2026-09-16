@@ -159,12 +159,14 @@ The classifications below are placeholders. If you already keep your own risk cl
 |---|---|---|---|---|
 | 1 | How critical is the process it automates? If the agent stopped for a day, what stops with it? | | | |
 | 2 | How sensitive is the data it can read? Name the most sensitive item, not the average. | | | |
-| 3 | Which regulations reach this process? Name them, or write "none that we have identified" and say who looked. | | | |
+| 3 | Which regulations reach this process? Name them, or write "none that we have identified". Either way, name the legal, compliance or privacy adviser who determined it. | | | |
 | 4 | How much money or value can it move, in one action and in one day? | | | |
 | 5 | Can you undo what it does? Name the action that is hardest to undo, and how long you have. | | | |
 | 6 | How far does the damage spread beyond the system it acted on? | | | |
 | 7 | What can it do with no person in the loop at all? | | | |
 | 8 | Who is on the other end: internal staff, your customers, or the public? | | | |
+
+**Question 3 is not yours to answer.** Which regulations reach this process is a determination from whoever advises your company on regulation — legal, compliance, or privacy. Record their answer and name them. "None that we have identified" with nobody named behind it leaves the row unanswered.
 
 **The rule.** The classification is the highest floor that any single row sets. One critical row makes the agent critical, however routine the other seven are.
 

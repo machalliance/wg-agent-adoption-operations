@@ -87,9 +87,11 @@ A risk register lists things that might go wrong and who owns them. This lists k
 
 Classifications describe how much enforcement an agent needs. The ladders in stages 3 and 4 describe how much your platforms can deliver. A company at platform control Level 1 can still classify an agent as critical, and the honest result is an agent it should not yet be running.
 
-### A legal assessment
+### Which regulations apply to you
 
-Question 3 asks which regulations reach the process. Finding the answer is work for whoever advises you on regulation.
+Question 3 asks which regulations reach the process, and this standard does not answer it for you. Which law reaches a given process depends on where you operate and what that process does, so the determination belongs to whoever advises your company on regulation — legal, compliance, or privacy.
+
+What the standard does is make that answer a recorded one: written into the agent's design document, with the adviser named beside it, and with "none that we have identified" available as an answer only when a named adviser is the one who looked.
 
 ## What we want feedback on
 

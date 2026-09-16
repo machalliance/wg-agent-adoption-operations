@@ -132,7 +132,7 @@ Section 6 of the design document reproduces the questions so that a team can fil
 |---|---|---|
 | 1 | How critical is the process it automates? If the agent stopped for a day, what stops with it? | Process criticality |
 | 2 | How sensitive is the data it can read? Name the most sensitive item, not the average. | Data sensitivity |
-| 3 | Which regulations reach this process? Name them, or write "none that we have identified" and say who looked. | Regulatory reach |
+| 3 | Which regulations reach this process? Name them, or write "none that we have identified". Either way, name the legal, compliance or privacy adviser who determined it. | Regulatory reach |
 | 4 | How much money or value can it move, in one action and in one day? | Financial exposure |
 | 5 | Can you undo what it does? Name the action that is hardest to undo, and how long you have. | Reversibility |
 | 6 | How far does the damage spread beyond the system it acted on? | Spread |
@@ -157,6 +157,8 @@ These anchors describe the four starter classifications. If you rename, merge or
 | 6. Spread | It stays in the system the agent acted on. | Another internal system or team has to correct it. | It reaches a customer, a partner, or a system you do not control. | It reaches many people at once, a public channel, or another agent that acts on it. |
 | 7. Autonomy | A person reviews every action before it takes effect. | A person reviews the actions that set a floor above Routine. | It acts alone inside a scope somebody set, and a person sees the result afterwards. | It acts alone, and nobody sees the result unless something alerts. |
 | 8. Audience | Internal staff. | Internal staff, and named customers under supervision. | Customers, who are told they are dealing with an agent. | The public, or anybody who reads the output as your company's position. |
+
+Question 3 is not a question this standard answers, and it is not one the agent's team answers on its own. Which regulations reach a process depends on where you operate and what the process does, so the determination belongs to whoever advises your company on regulation — legal, compliance, or privacy. The team records their answer and names them. A team's own reading of its process is not a determination, and "none that we have identified" with no named adviser behind it is an unanswered question.
 
 Question 4 sets no amount, and this standard names none. What a given agent may move is a per-agent number, recorded as the value ceiling in section 3 of its design document and accepted by the person who signs it off. The anchors above judge the shape of the control instead: whether a ceiling exists, whether it covers a day as well as a single action, and whether the platform enforces it or the agent is trusted to observe it. That is the part a company-wide standard can rule on. The size is a judgment about one agent.
 
