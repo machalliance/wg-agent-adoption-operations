@@ -37,7 +37,7 @@ You can reconstruct a run and compare it to what the agent was supposed to do.
 - Live behavior is compared against the agent's design document, and drift raises an alert as well as errors.
 - Evals run against the live agent without a person starting them, whether on a schedule, on each deployment, or continuously.
 - Their results are compared against the baseline recorded at sign-off.
-- You would know within a day if they stopped running.
+- You would know within a day of a run that did not happen, because something raises it rather than because somebody went to look. Name what raises it.
 
 The difference from Level 1 is that you find out about a problem because something checked, not because somebody complained.
 
@@ -71,7 +71,7 @@ Answer for one platform. Any "no" means you are not yet at that level, whatever 
 - Does anything compare live behavior to the agent's design document?
 - Do evals run with no person starting them?
 - Are their results measured against the baseline recorded at sign-off?
-- Would you find out within a day if they stopped running?
+- If a scheduled run did not happen, would something tell you within a day, without anybody going to look?
 
 **Level 3 — Replay and test**
 

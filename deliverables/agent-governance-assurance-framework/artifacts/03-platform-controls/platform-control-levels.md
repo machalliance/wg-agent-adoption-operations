@@ -34,7 +34,7 @@ The agent's risk classification decides the most access it can be granted. An en
 - Everything in Level 1.
 - Each classification names a widest grant list allowed, in your [Risk Classifications](../02-policy/risk-classifications.md).
 - Granting past that maximum is blocked, not merely discouraged.
-- Credentials are short-lived and reissued, not long-lived and rotated occasionally.
+- Credentials are short-lived and reissued, not long-lived and rotated occasionally. Their lifetime is the floor of the revocation time recorded in part 3: an agent holding an eight-hour token cannot be revoked in seconds, whatever the revoke button does.
 - Somebody reviews each agent's access on a stated schedule.
 
 The difference from Level 1 is that a mistake by one engineer can no longer produce an over-permissioned agent.
@@ -45,7 +45,7 @@ Access is granted and removed by policy expressed as code, and something continu
 
 - Everything in Level 2.
 - Permissions are granted and revoked automatically, from the agent's declared design.
-- A continuous check compares granted access against declared access and reports the difference.
+- A continuous check compares granted access against declared access and reports the difference. Continuous means no person starts it and the longest gap between two checks is stated, recorded beside the level in part 3. A nightly batch is a stated gap of a day, not a continuous check.
 - Revocation takes effect in seconds rather than hours, across every system the agent reaches, measured from the moment a named person triggers it to the moment the agent's existing credentials stop working — not the moment new ones stop being issued.
 - The platform records that time, measured rather than assumed. Its floor is the longest-lived credential and the longest cache in the path, not how fast the revoke button responds.
 - Access review is automatic and its results are recorded.
@@ -73,7 +73,7 @@ Answer for one platform. Any "no" means you are not yet at that level, whatever 
 **Level 3 — Policy as code**
 
 - Are permissions granted and revoked by code from a declared source, with no manual step?
-- Does something continuously compare granted access against declared access?
+- Does something compare granted access against declared access with no person starting it, and do you know the longest gap between two of those checks?
 - Have you measured how long revocation takes to reach an agent's existing credentials, everywhere it reaches, and was the answer in seconds rather than hours?
 - Are access reviews automatic, with recorded results?
 
@@ -100,10 +100,10 @@ So there are two numbers, and both matter:
 
 ### Your platforms
 
-| Platform | Level | Measured revocation time | Assessed on | Who assessed it | What is needed to reach the next level |
-|---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
+| Platform | Level | Measured revocation time | Longest gap between access checks | Assessed on | Who assessed it | What is needed to reach the next level |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+| | | | | | | |
 
 Revocation time is the measured one described in Level 3, and it is worth recording at every level: a Level 1 platform with a written revocation procedure nobody has timed does not know what that procedure is worth.
 

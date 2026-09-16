@@ -161,7 +161,7 @@ The classifications below are placeholders. If you already keep your own risk cl
 | 2 | How sensitive is the data it can read? Name the most sensitive item, not the average. | | | |
 | 3 | Which regulations reach this process? Name them, or write "none that we have identified". Either way, name the legal, compliance or privacy adviser who determined it. | | | |
 | 4 | How much money or value can it move, in one action and in one day? Answer for each kind of movement it can make: money out, money in, and commitments that become money later. | | | |
-| 5 | Can you undo what it does? Name the action that is hardest to undo, and how long you have. | | | |
+| 5 | Can you undo what it does? Name the action that is hardest to undo, and how long you have from the moment it takes effect. | | | |
 | 6 | How far does the damage spread beyond the system it acted on? | | | |
 | 7 | What can it do with no person in the loop at all? | | | |
 | 8 | Who is on the other end: internal staff, your customers, or the public? | | | |

@@ -58,7 +58,7 @@ Where the level applied is lower than the level the classification requires, the
 | Where the results go | |
 | Who is told when one fails | |
 | Who owns extending the eval set as the agent changes | |
-| How you would know they had stopped running | |
+| How you would know they had stopped running, and how long after the run that did not happen | |
 
 **Which baseline the results are compared against.** Normally the eval results recorded in the Platform and Sign-off Record at sign-off. Name the version.
 
