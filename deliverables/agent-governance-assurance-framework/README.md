@@ -2,7 +2,7 @@
 
 A framework to govern AI agents in production, and to keep them safe and ready for an audit. You do not need a plan for the whole company; you can start with one agent.
 
-The [MACH Alliance](https://machalliance.org) [Agent Adoption & Operations Working Group](https://github.com/machalliance/wg-agent-adoption-operations) develops this framework. This is the September 2026 Draft.
+The [MACH Alliance](https://machalliance.org) [Agent Adoption & Operations Working Group](https://github.com/machalliance/wg-agent-adoption-operations) develops this framework. This is the working copy, where changes land between releases. The current release is the September 2026 Draft.
 
 ## Who this is for
 
@@ -64,10 +64,12 @@ The per-agent records are also available as a single spreadsheet, [agent-governa
 
 ## License
 
-[CC BY 4.0](LICENSE.md). Copy the forms, rename them, and rewrite them for your own company. Attribution and the version you built against are all we ask. The MACH Alliance name and logo are not covered by that license, so replace the branding if you adapt the spreadsheet.
+[CC BY 4.0](LICENSE.md). Copy the forms, rename them, and rewrite them for your own company. Attribution and the release you built against are all we ask. The MACH Alliance name and logo are not covered by that license, so replace the branding if you adapt the spreadsheet.
 
 ## Status
 
-**September 2026 Draft.** Cite the version you built against.
+**Working copy, unreleased.** This is the September 2026 Draft plus whatever the working group has changed since. It changes without notice, and nothing in it is settled until it is released.
+
+Cite a release, not this. The current one is the **September 2026 Draft**. Read this copy to see where the framework is going, and to comment before the next release fixes it.
 
 The MACH Alliance Agent Adoption & Operations Working Group discusses this version now. We welcome your feedback. Please open an issue or a pull request.

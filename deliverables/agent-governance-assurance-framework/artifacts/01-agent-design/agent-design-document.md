@@ -1,6 +1,6 @@
 # The Agent Design Document
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 1 artifact of the [Agent Governance and Assurance Framework](../../README.md): one document for one agent, written before the agent goes near production. It records what the agent is for, what it can touch, what it decides alone, and which risk classification it belongs to.
 

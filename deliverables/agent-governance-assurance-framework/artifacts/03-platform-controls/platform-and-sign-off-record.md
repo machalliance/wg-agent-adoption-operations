@@ -1,6 +1,6 @@
 # The Platform and Sign-off Record
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is a stage 3 artifact of the [Agent Governance and Assurance Framework](../../README.md): one per agent, alongside its [Agent Design Document](../01-agent-design/agent-design-document.md). It records what the agent actually runs on, what your evals found when you ran them against that setup, and who signed off on the result. Nothing goes live without this record completed and section C signed.
 

@@ -1,6 +1,6 @@
 # Notes on the Risk Classifications
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This document explains the [Risk Classifications and the Classification Test](risk-classifications.md): why the criteria are what they are, why the test works the way it does, and what we would like your feedback on. You do not need to read it to use the standard.
 

@@ -1,6 +1,6 @@
 # Risk Classifications and the Classification Test
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 2 artifact of the [Agent Governance and Assurance Framework](../../README.md). It is a **standard**: you write it once for your company, and it grows as you build agents it does not yet describe.
 

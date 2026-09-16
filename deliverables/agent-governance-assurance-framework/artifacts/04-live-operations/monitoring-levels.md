@@ -1,6 +1,6 @@
 # Monitoring Levels
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 4 standard of the [Agent Governance and Assurance Framework](../../README.md). You write it once for your company. Its companion is the [Monitoring and Incident Preparedness Record](monitoring-and-incident-preparedness-record.md), which you fill in once per agent.
 

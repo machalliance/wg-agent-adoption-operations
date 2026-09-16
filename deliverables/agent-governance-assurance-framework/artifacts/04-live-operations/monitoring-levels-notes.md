@@ -1,6 +1,6 @@
 # Notes on the Monitoring Levels
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This document explains the [Monitoring Levels](monitoring-levels.md): why the levels are drawn where they are, and what we would like your feedback on. You do not need to read it to use the standard.
 

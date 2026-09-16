@@ -1,6 +1,6 @@
 # Glossary
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 Risk and compliance work has a large vocabulary. We use plain words instead, so that the people who have to apply a control can understand it. This table gives our word, what it means, and the word that other frameworks use for the same thing.
 

@@ -1,6 +1,6 @@
 # Notes on the Audit and Assurance Record
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This document explains the [Audit and Assurance Record](audit-and-assurance-record.md): why it is separate from stage 4, why section C records reviews and not runs, and what we would like your feedback on. You do not need to read it to fill the form in.
 

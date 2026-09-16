@@ -1,6 +1,6 @@
 # The forms
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 These are the fill-in documents for the [Agent Governance and Assurance Framework](../README.md). Each stage has a form, and the reasoning behind it sits in a separate notes file so you can fill one in without reading an essay first.
 

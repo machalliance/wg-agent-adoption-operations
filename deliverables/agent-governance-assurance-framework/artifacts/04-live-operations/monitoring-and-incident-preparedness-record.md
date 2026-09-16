@@ -1,6 +1,6 @@
 # The Monitoring and Incident Preparedness Record
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 4 artifact of the [Agent Governance and Assurance Framework](../../README.md): one per agent, alongside its [Agent Design Document](../01-agent-design/agent-design-document.md) and its [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md). Sections A to C are the Monitoring Plan: what you record on every run, what counts as normal, and what starts an alert. Sections D and E are the Incident Playbook: what happens once an alert starts, and who does it.
 

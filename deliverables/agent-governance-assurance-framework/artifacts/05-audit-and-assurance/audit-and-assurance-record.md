@@ -1,6 +1,6 @@
 # The Audit and Assurance Record
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This is the stage 5 artifact of the [Agent Governance and Assurance Framework](../../README.md), one per agent. Section A is where this agent's records actually go, and section B is where it departs from the [Audit Log Rules](audit-log-rules.md). Sections C and D are the Assurance Record: what the evals are telling you, who read them, and what changed because of it. Section E is filled in when the agent is switched off, and section F is its revision history.
 

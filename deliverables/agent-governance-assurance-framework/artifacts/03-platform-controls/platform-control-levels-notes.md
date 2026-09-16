@@ -1,6 +1,6 @@
 # Notes on the Platform Control Levels
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 This document explains the [Platform Control Levels](platform-control-levels.md): where the ladder comes from, what it deliberately leaves out, and what we would like your feedback on. You do not need to read it to use the standard.
 

@@ -1,6 +1,6 @@
 # Agent Governance and Assurance: The Five Stages
 
-*A working document of the MACH Alliance Agent Adoption & Operations Working Group. September 2026 Draft, for discussion.*
+*A working document of the MACH Alliance Agent Adoption & Operations Working Group. Unreleased working copy, for discussion.*
 
 ## Purpose
 
