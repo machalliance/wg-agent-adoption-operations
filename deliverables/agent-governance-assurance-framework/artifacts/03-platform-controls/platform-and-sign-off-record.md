@@ -18,12 +18,15 @@ What the agent actually runs on, and not what it is supposed to run on.
 
 The two platform control rows ask different questions. The first is the strongest control the platform could enforce. The second is what was actually applied to this agent, which can be lower and cannot be higher. The monitoring levels are recorded once, in the [Monitoring and Incident Preparedness Record](../04-live-operations/monitoring-and-incident-preparedness-record.md); section C here records only whether the level applied meets what the classification requires.
 
+A model version that floats changes underneath this record. Nothing produces a row in section D, nothing re-runs the classification test that a new model version is supposed to trigger, and the record still reads as accurate. Answer the row that asks, and carry a floating answer into section C as remaining risk.
+
 | Field | Your answer |
 |---|---|
 | Agent name, and the version of its design document this record serves | |
 | Version of this record | |
 | Date of this version | |
 | Model, and its exact version | |
+| Is that model version pinned, or does it float | |
 | Model provider, and where inference happens | |
 | Agent framework, and its version | |
 | Where it is hosted | |
@@ -81,12 +84,15 @@ Evals run against the setup in section A, not against a development configuratio
 | Date of the run | |
 | What they found | |
 | What you changed because of it | |
+| Which rows of section 3 and section 4 the evals exercised, and which they did not | |
 | What you know you did not test | |
 | Where the results are kept | |
 
 For any agent that reads content it did not author, whether it can be talked into something is what the sign-off most needs to know. Name what you tested against from [OWASP's Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), which is the same list stage 4's incident playbook works from.
 
-Two rows carry more weight than the rest. "What they found" is what the person signing off is accepting. "What you know you did not test" is where stage 4's monitoring has to begin.
+**Which rows the evals exercised.** Name them the way sections 3 and 4 name them. An agent with twelve grants and four decisions it makes alone can pass this section on evals that reached two grants and no decisions, and nothing else here would show the difference.
+
+Two rows carry more weight than the rest. "What they found" is what the person signing off is accepting. "What you know you did not test" is where stage 4's monitoring has to begin, and the row above it is where most of that answer comes from.
 
 ### C. Sign-off
 
@@ -102,6 +108,12 @@ One named person accepts the agent as a whole: what it is for, its classificatio
 | The risk that is left, stated in their words | |
 | Any classification floor lowered by a compensating control, named | |
 | Conditions on the sign-off, and when it must be looked at again | |
+| Who can change this configuration after sign-off, and what review that change gets | |
+| What prevents deployment without this signature: a pipeline check, a registry gate, a named person, or nothing | |
+
+**Who can change this configuration after sign-off** is the other half of section D. That table records a change once it has happened, and only when whoever made it writes the row. This one says who was permitted to make it. Without it, a grant list widened between reviews leaves a record describing a configuration nobody is holding in place.
+
+**What prevents deployment without this signature** takes one of the four answers named in the row. This record opens by saying nothing goes live without it, and until one of the first three is true that is a control written into a document, which carries the weakness section 4 of the design document names in a control that lives only in the prompt. "Nothing" is the honest answer for most teams, and it belongs in the risk that is left.
 
 **The level gap.** The agent's classification names a platform control level and a monitoring level that an agent in it requires. Where the level applied is lower than the level required, the gap is accepted here, by name, or it is not accepted at all.
 

@@ -60,7 +60,7 @@ The team that builds the agent fills it in, not a risk function. Section 6 is an
 
 This is the grant list. Stage 3 grants what is in this table and refuses everything else. If it is not here, the agent does not get it.
 
-| Tool or system | What the agent does with it | Read or write | Data it reaches, and how sensitive | Can the action be undone, and within what window | Grant list granularity |
+| Tool or system | What the agent does with it | Read or write | Data it reaches, and how sensitive | Can the action be undone, by whom, and within what window | Grant list granularity |
 |---|---|---|---|---|---|
 | | | | | | |
 | | | | | | |
@@ -95,7 +95,7 @@ Every platform we have looked at can scope at tool level, meaning this agent may
 
 ### 4. What it decides alone
 
-| Action or decision | Alone, never, or needs a person to approve | Where the control is enforced |
+| Action or decision | Never, needs a person to approve, alone and reviewed afterwards, or alone and unreviewed | Where the control is enforced |
 |---|---|---|
 | | | |
 | | | |
@@ -105,6 +105,10 @@ Every platform we have looked at can scope at tool level, meaning this agent may
 | | | |
 | | | |
 | | | |
+
+**The middle column takes four answers:** **never**, **needs a person to approve**, **alone, and a person sees the result afterwards**, or **alone, and nobody sees the result unless something alerts**. The last three are question 7's Routine, Sensitive and Critical anchors, in that order, which is how this column answers that question. "Never" is not one of them. It says the agent does not do this at all, and it sets no floor.
+
+Question 7 is answered for the agent and not for one row, so read the whole column and take the highest anchor any row reaches. Its remaining anchor — a person reviews the actions that set a floor above Routine — is not an answer a row can give. It is what this column says when the rows that act alone are the ones that would sit at Routine on their own.
 
 **Where the control is enforced** takes one of four answers: **in the platform**, **in the tool layer**, **in the prompt**, or **nowhere**. It asks what stops a decision being made, which is a different question from grant list granularity in section 3. "In the prompt" counts as an answer, and it is the weakest of the four. Section 6 charges you for it.
 
