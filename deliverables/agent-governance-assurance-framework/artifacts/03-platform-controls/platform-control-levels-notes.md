@@ -55,6 +55,12 @@ So the platform carries the score, and the agent records what was actually appli
 
 So the level names the endpoint and asks for a measured number instead of naming a smaller unit. A hard figure would be the wrong instrument here: the floor is the longest-lived credential and the longest cache in the path, so a number most Level 3 platforms cannot beat would only be claimed rather than met. This is the same move question 4 of the classification test makes with money — judge the shape of the control, record the size per platform.
 
+### Why Level 3 needs the grant list in a form code can read
+
+The grant list in section 3 of a design document is policy. It becomes a technical control only where something grants from it, and until then a person reads the table and creates the permissions by hand — which is Level 1, and is Level 2 as well, because a classification ceiling constrains how wide that hand-made grant may be without checking it against the rows.
+
+So the line between policy and enforcement falls inside Level 3, and it falls on whether the declaration is machine-readable. A team with excellent automation and a grant list that exists only as prose is at Level 2. Saying so in the level is more useful than saying it in the design document, because the level is what a sign-off rests on.
+
 ### Why "no" beats a claimed level
 
 The self-assessment in part 2 is a list of yes/no questions, because a description invites generous reading.

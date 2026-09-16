@@ -36,23 +36,36 @@ The two platform control rows ask different questions. The first is the stronges
 | Autonomy level, on the four-level scale in the [CSA agentic profile](https://labs.cloudsecurityalliance.org/agentic/agentic-nist-ai-rmf-profile-v1/), or your own if you keep one | |
 | Tool servers and connectors it reaches, and who publishes each one | |
 
-**Where the grant list is enforced.** Section 3 of the design document lists the tools and the data this agent needs. Say what enforces that list here: a gateway, a policy engine, scoped credentials, or a tool wrapper. Name the component.
+**Where the grant list is enforced.** Section 3 of the design document lists the tools and the data this agent needs. Name the component that enforces most of it here: a gateway, a policy engine, scoped credentials, or a tool wrapper. It is rarely all one thing, which is what the last column of the table below is for.
 
 > 
 
 **What was actually granted, row by row.** Take each row of section 3 and write the permission that was really created for it, using the exact name your platform uses. This is the list your monitor compares live tool calls against.
 
-| Row in section 3 | The permission actually granted, as the platform names it | Wider, narrower, or the same |
-|---|---|---|
-| | | |
-| | | |
-| | | |
+| Row in section 3 | The permission actually granted, as the platform names it | Wider, narrower, or the same | Where it is enforced |
+|---|---|---|---|
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+
+Add rows until every row of section 3 has one here. A summary of thirty grants is not this table.
+
+**Wider, narrower, or the same** takes one of those three answers, and nothing else. **Where it is enforced** takes one of five: gateway, policy engine, scoped credential, tool wrapper, or nowhere. "Nowhere" is an honest answer, and it means the row is a sentence in a document rather than a control. Carry those rows into section C as remaining risk.
 
 **Anything narrower than the design document asks for.** Say what the agent cannot do as a result, and whether anybody has worked around it.
 
 > 
 
 **What is granted that the design document does not list.** Anything the agent can reach that section 3 does not name. This should be empty. Where it is not, write down what you found and carry it into section C as remaining risk. Do not fix it quietly and leave this row blank.
+
+> 
+
+**Limits the platform cannot express.** Every row of section 3 whose granularity is "not enforceable here": a boundary that was declared in stage 1 and that nothing here can hold. Say what the agent can reach as a result, and carry these into section C as remaining risk too. This is the mirror of the row above. That one is access nobody meant to grant; this one is a limit nobody can enforce, and it is the one that disappears quietly, because the design document has already described it as a decision.
 
 > 
 

@@ -45,6 +45,7 @@ Access is granted and removed by policy expressed as code, and something continu
 
 - Everything in Level 2.
 - Permissions are granted and revoked automatically, from the agent's declared design.
+- That declared design is machine-readable. A grant list only a person can read caps a platform at Level 2 however good the automation around it, because code cannot grant from a document it cannot parse.
 - A continuous check compares granted access against declared access and reports the difference. Continuous means no person starts it and the longest gap between two checks is stated, recorded beside the level in part 3. A nightly batch is a stated gap of a day, not a continuous check.
 - Revocation takes effect in seconds rather than hours, across every system the agent reaches, measured from the moment a named person triggers it to the moment the agent's existing credentials stop working — not the moment new ones stop being issued.
 - The platform records that time, measured rather than assumed. Its floor is the longest-lived credential and the longest cache in the path, not how fast the revoke button responds.
@@ -73,6 +74,7 @@ Answer for one platform. Any "no" means you are not yet at that level, whatever 
 **Level 3 — Policy as code**
 
 - Are permissions granted and revoked by code from a declared source, with no manual step?
+- Is that source a grant list code reads directly, rather than a document somebody transcribes?
 - Does something compare granted access against declared access with no person starting it, and do you know the longest gap between two of those checks?
 - Have you measured how long revocation takes to reach an agent's existing credentials, everywhere it reaches, and was the answer in seconds rather than hours?
 - Are access reviews automatic, with recorded results?
