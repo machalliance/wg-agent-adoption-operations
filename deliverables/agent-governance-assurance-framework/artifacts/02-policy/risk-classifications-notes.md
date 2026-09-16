@@ -44,6 +44,10 @@ That is deliberate, and it is where we differ from the autonomy scales in circul
 
 Record the autonomy level too, in the [Platform and Sign-off Record](../03-platform-controls/platform-and-sign-off-record.md), beside the platform control level. It is useful for deciding how closely to watch an agent, which is a different question from how much control it needs.
 
+### Why question 4 asks which way the money goes
+
+"Moves money" reads as spending, and teams answer it that way. An agent that takes a payment it should not have taken has the same exposure and a different remedy, and an agent that accepts a contract has an obligation that reversing a transaction does not unwind. Naming the three kinds also stops an agent that commits spend without ever touching a payment rail from answering that it moves no money.
+
 ### Why the highest floor wins
 
 The alternative is a weighted score, and a weighted score is how a critical property gets averaged away by seven reassuring ones.
